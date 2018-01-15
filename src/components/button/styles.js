@@ -4,7 +4,6 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
   button: {
     width: 100,
-    color: 'black',
     borderColor: 'black',
     borderWidth: 1,
     paddingLeft: 10,
