@@ -7,5 +7,9 @@ export default StyleSheet.create({
   },
   fieldContainer: {
     display: 'flex'
+  },
+  buttonContainer: {
+    display: 'flex',
+    alignItems: 'center'
   }
 });
