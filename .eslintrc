@@ -13,5 +13,9 @@
     "ecmaFeatures": {
       "jsx": true
     }
+  },
+  "plugins": ["react", "react-native"],
+  "settings": {
+    "import/extensions": ["js", "jsx"]
   }
 }
