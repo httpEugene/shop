@@ -8,6 +8,7 @@ export default class Field extends PureComponent {
     return (
       <TextInput
         placeholder={this.props.placeholder}
+        secureTextEntry={this.props.type === 'password'}
         onChange={this.props.onChangeHandler}
         style={styles.field}
       />
