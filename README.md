@@ -15,7 +15,3 @@ CLI commands:
 
 * npm run android
   Like npm start, but also attempts to open your app on a connected Android device or emulator. Requires an installation of Android build tools (see React Native docs for detailed setup).
-
-* npm run eject
-  This will start the process of "ejecting" from Create React Native App's build scripts. You'll be asked a couple of questions about how you'd like to build your project.
-  Warning: Running eject is a permanent action. Please use a version control system, such as git, so you can revert back if necessary. An ejected app will require you to have an Xcode and/or Android Studio environment set up.
