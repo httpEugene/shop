@@ -57,3 +57,6 @@ yarn.lock
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+android/.gradle
+android/.idea
+android/build
