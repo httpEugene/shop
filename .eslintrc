@@ -1,5 +1,5 @@
 {
-  "extends": "airbnb-base",
+  "extends": ["airbnb-base", "plugin:react/recommended"],
   "rules": {
     "class-methods-use-this": 0,
     "no-useless-constructor": 0,
@@ -17,5 +17,9 @@
   "plugins": ["react", "react-native"],
   "settings": {
     "import/extensions": ["js", "jsx"]
+  },
+  "env": {
+    "browser": true,
+    "node": true
   }
 }
