@@ -5,6 +5,7 @@ import styles from './styles';
 
 export default class Button extends PureComponent {
   render() {
+    console.log(this.props.navigator);
     return (
       <TouchableHighlight
         onPress={this.props.onPressHandler}

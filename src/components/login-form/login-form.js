@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import { View } from 'react-native';
 import Field from '../field';
@@ -16,7 +17,7 @@ function mapDispatchToProps(dispatch) {
     },
     onLogin(data) {
       // dispatch(loginRequestAction(data));
-      console.log('hi')
+      Actions.gray()
     },
   };
 }
