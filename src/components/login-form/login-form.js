@@ -1,10 +1,16 @@
 import React, { PureComponent } from 'react';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
 import Field from '../field';
 import Button from '../button';
 import styles from './styles';
+import {
+    View,
+    Text,
+    TextInput,
+    TouchableHighlight,
+    TouchableOpacity,
+} from 'react-native';
 
 function mapStateToProps() {
   return {};
@@ -29,13 +35,23 @@ export default class LoginForm extends PureComponent {
       <View style={styles.container}>
         <View>
           <View style={styles.fieldContainer}>
-            <Field placeholder="Enter your login" />
+          <Text style={styles.login}>Login</Text>
+            <Field style={styles.input} placeholder="Enter your login" />
+
+             <TextInput
+                defaultValue='Test'
+                style={styles.input}
+                value='test'
+              />
+              <Text style={styles.login}>Password</Text>
+
+              <Field placeholder="Enter your password" type="password" />
           </View>
-          <View style={styles.fieldContainer}>
-            <Field placeholder="Enter your password" type="password" />
-          </View>
+
           <View style={styles.buttonContainer}>
-            <Button onPressHandler={this.props.onLogin}/>
+            <TouchableOpacity style={styles.button} onPressHandler={this.props.onLogin}>
+                  <Text style={styles.buttonText}>Login</Text>
+            </ TouchableOpacity>
           </View>
         </View>
       </View>
