@@ -60,3 +60,5 @@ yarn.lock
 android/.gradle
 android/.idea
 android/build
+
+ios/build
