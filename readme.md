@@ -29,6 +29,11 @@ android/local.properties
 
 sdk.dir = /Users/USER/Library/Android/sdk
 
+## How to reload in the default Android emulator for react native app ##
+
+For android one can use CTRL +R For apple one can use R+R(two times R).
+
+For developers options : One can also use the Command⌘ + D keyboard shortcut when your app is running in the iPhone Simulator, or Command⌘ + M when running in an Android emulator.
 
 
 ## Release ##:
