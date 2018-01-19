@@ -34,4 +34,3 @@ export default StyleSheet.create({
       borderColor: "#dadada"
   }
 });
-

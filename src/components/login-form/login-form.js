@@ -101,7 +101,7 @@ export default class LoginForm extends PureComponent {
                   </View>
 
                   <View style={styles.buttonContainer}>
-                    <Button styleName='button' styleTextName='buttonText' label='Login' onPressHandler={this.props.onLogin} />
+                    <Button styleName={'button'} styleTextName={'buttonText'} label='Login' onPressHandler={this.props.onLogin} />
                   </View>
                 </View>
               </View>
