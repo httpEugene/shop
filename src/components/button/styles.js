@@ -1,15 +1,27 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import {
+    StyleSheet,
+    PixelRatio
+    } from 'react-native';
 
 export default StyleSheet.create({
   button: {
-    width: 100,
-    borderColor: 'black',
-    borderWidth: 1,
-    paddingLeft: 10,
-    paddingRight: 10,
-    paddingTop: 10,
-    paddingBottom: 10,
-    marginBottom: 10
-  }
+        borderWidth: 1/PixelRatio.get(),
+        borderColor: "#995aba",
+        borderRadius: 10,
+        backgroundColor: '#995aba',
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 50
+    },
+    buttonText: {
+        fontSize: 24,
+        color: "#fff",
+        margin: 10
+    },
+    buttonTextSecond: {
+        fontSize: 24,
+        color: "#00e5ff",
+        margin: 10
+    }
 });

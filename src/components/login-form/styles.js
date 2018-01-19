@@ -32,20 +32,6 @@ export default StyleSheet.create({
       color: "#666",
       borderWidth: 1/PixelRatio.get(),
       borderColor: "#dadada"
-  },
-  button: {
-      borderWidth: 1/PixelRatio.get(),
-      borderColor: "#995aba",
-      borderRadius: 10,
-      backgroundColor: '#995aba',
-      alignItems: 'center',
-      justifyContent: 'center',
-      marginTop: 50
-  },
-  buttonText: {
-      fontSize: 24,
-      color: "#fff",
-      margin: 10
   }
 });
 

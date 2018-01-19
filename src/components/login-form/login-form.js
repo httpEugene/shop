@@ -12,6 +12,7 @@ import {
     TextInput,
     TouchableHighlight,
     TouchableOpacity,
+    AsyncStorage
 } from 'react-native';
 
 function mapStateToProps() {
@@ -25,7 +26,7 @@ function mapDispatchToProps(dispatch) {
     },
     onLogin(data) {
       // dispatch(loginRequestAction(data));
-      Actions.gray()
+      Actions.main();
     },
   };
 }
@@ -34,15 +35,27 @@ function mapDispatchToProps(dispatch) {
 
 export default class LoginForm extends PureComponent {
 
-        constructor (props) {
-            super(props);
+        state = {
+            username: '',
+            password: '',
+            errors: ''
+        };
 
-            this.state = {
-                username: '',
-                password: '',
-                errors: ''
-            };
-        }
+        componentWillReceiveProps (nextProps) {
+                const {user} = nextProps;
+
+                const currentUser = {
+                    username: user.username,
+                    id:  user._id
+                };
+
+                if (user.success) {
+                    //AsyncStorage.setItem(('user', JSON.stringify(currentUser));
+                   // AsyncStorage.setItem(('x-access-token', user.token);
+
+                    Actions.main()
+                }
+            }
 
         handleSubmit = (e) => {
                 e.preventDefault();
@@ -83,17 +96,12 @@ export default class LoginForm extends PureComponent {
                   <Text style={styles.login}>Login</Text>
                     <Field onChangeHandler={this.onChangeHandler} handleForm = { this.handleForm } placeholder="Enter your login" />
                     <Text>{this.state.errors.username}</Text>
-          
-                      <Text style={styles.login}>Password</Text>
-
                       <Field handleForm={(e) => this.handleForm(e)} placeholder="Enter your password" type="password" />
                       <Text>{this.state.errors.password}</Text>
                   </View>
 
                   <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.button} onPressHandler={this.props.onLogin}>
-                          <Text style={styles.buttonText}>Login</Text>
-                    </ TouchableOpacity>
+                    <Button styleName='button' styleTextName='buttonText' label='Login' onPressHandler={this.props.onLogin} />
                   </View>
                 </View>
               </View>
