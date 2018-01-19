@@ -3,9 +3,9 @@ import { Actions } from 'react-native-router-flux'
 import { connect } from 'react-redux'
 import Field from '../field'
 import Button from '../button'
-import DetailedList from './detailed-list'
-
 import styles from './styles'
+import Item from './item'
+
 import {
   View,
   Text,
@@ -37,24 +37,26 @@ export default class ListItem extends PureComponent {
   render () {
     return (
       <View style={styles.listItemContainer}>
+        <Text>-----Detailes List------</Text>
         <Text style={styles.id}>id</Text>
         <Text style={styles.date}>date</Text>
 
         <View style={styles.statusContainer}>
-          <Text style={styles.status}>date</Text>
-        </View>
-        <View style={styles.purchaseContainer}>
-          <Text style={styles.purchaseItem}>item</Text>
-          <Text style={styles.purchaseSumm}>Summ</Text>
-        </View>
-        <View style={styles.buttonContainer}>
-          <Button styleName='details' styleTextName='buttonTextSecond' label='Details'
-                  onPressHandler={() => this.getDetails()}/>
-          <Button styleName='deliveryDetails' styleTextName='buttonTextSecond' label='Delivery Details'
-                  onPressHandler={() => this.getDeliveryDetails()}/>
+          <Text style={styles.status}>status</Text>
+          <Text style={styles.status}>DONE</Text>
         </View>
 
-        <DetailedList style={this.state} />
+        <Item />
+
+         <View style={styles.statusContainer}>
+            <Text style={styles.status}>Shipping</Text>
+            <Text style={styles.status}>10$</Text>
+         </View>
+         <View style={styles.statusContainer}>
+            <Text style={styles.status}>Total</Text>
+            <Text style={styles.status}>100$</Text>
+          </View>
+
       </View>
     )
   }
