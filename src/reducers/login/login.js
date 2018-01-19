@@ -1,7 +1,4 @@
-import {
-  LOGIN_SUCCESS,
-  LOGIN_FAILED,
-} from '../../actions/actions';
+import { LOGIN_SUCCESS, LOGIN_FAILED } from '../../actions/actions';
 
 const initState = null;
 
@@ -10,6 +7,8 @@ export default (state = initState, action) => {
     return {
       email: action.payload.email,
       name: action.payload.name,
+      isLogged: action.payload.responseText,
+      status: action.payload.status,
     };
   }
 
