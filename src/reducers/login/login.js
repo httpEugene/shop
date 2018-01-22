@@ -8,6 +8,7 @@ export default (state = initState, action) => {
       name: action.payload.name,
       email: action.payload.email || 'test@gmail.com',
       isLogged: true,
+      status: 200,
     };
   }
 
