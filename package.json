@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
+    "babel-eslint": "^8.2.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-native-stage-0": "^1.0.1",
     "eslint": "^4.15.0",
@@ -17,7 +18,8 @@
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "test": "node node_modules/jest/bin/jest.js --watch",
+    "run-test": "node node_modules/jest/bin/jest.js --watch",
+    "test": "npm eslint",
     "eslint": "eslint **/*.js"
   },
   "jest": {
@@ -29,6 +31,7 @@
   "dependencies": {
     "eslint-plugin-react-native": "^3.2.1",
     "md5": "^2.2.1",
+    "prop-types": "^15.6.0",
     "react": "16.0.0",
     "react-native": "0.50.3",
     "react-native-router-flux": "^4.0.0-beta.28",

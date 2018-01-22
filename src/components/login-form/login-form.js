@@ -1,20 +1,15 @@
 import React, { PureComponent } from 'react';
+import md5 from 'md5';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
+import { View, Text } from 'react-native';
+import PropTypes from 'prop-types';
+
 import Field from '../field';
 import Button from '../button';
 import styles from './styles';
 import { validate } from '../../helpers/validation';
-import md5 from 'md5';
-import  login from '../../actions/login';
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableHighlight,
-  TouchableOpacity,
-  AsyncStorage,
-} from 'react-native';
+import login from '../../actions/login';
 
 function mapStateToProps() {
   return {};
@@ -22,7 +17,7 @@ function mapStateToProps() {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onRegisterSubmit(data) {
+    onRegisterSubmit() {
       // dispatch(registerRequestAction(data));
     },
     onLogin(data) {
@@ -33,6 +28,12 @@ function mapDispatchToProps(dispatch) {
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class LoginForm extends PureComponent {
+  static propTypes = {
+    user: PropTypes.Shape,
+    loginUser: PropTypes.func,
+    onLogin: PropTypes.func,
+  };
+
   state = {
     username: '',
     password: '',
@@ -42,20 +43,20 @@ export default class LoginForm extends PureComponent {
   componentWillReceiveProps(nextProps) {
     const { user } = nextProps;
 
-    const currentUser = {
+    /*  const currentUser = {
       username: user.username,
       id: user._id,
-    };
+    }; */
 
     if (user.success) {
-      //AsyncStorage.setItem(('user', JSON.stringify(currentUser));
+      // AsyncStorage.setItem(('user', JSON.stringify(currentUser));
       // AsyncStorage.setItem(('x-access-token', user.token);
 
       Actions.main();
     }
   }
 
-  handleSubmit = e => {
+  handleSubmit = (e) => {
     e.preventDefault();
 
     if (Object.keys(validate(this.state)).length !== 0) return;
@@ -68,7 +69,7 @@ export default class LoginForm extends PureComponent {
     this.props.loginUser(data);
   };
 
-  handleForm = e => {
+  handleForm = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -79,8 +80,6 @@ export default class LoginForm extends PureComponent {
   validateForm = () => {
     validate(this.state);
 
-    console.log('Validation...', this.state);
-
     this.setState({
       errors: validate(this.state),
     });
@@ -88,8 +87,7 @@ export default class LoginForm extends PureComponent {
 
   handleFormSubmit = () => {
     this.props.onLogin();
-    console.log(this);
-    // Actions.main();
+    Actions.main();
   };
 
   render() {

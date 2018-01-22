@@ -1,30 +1,23 @@
-import React, { PureComponent } from 'react'
-import { Actions } from 'react-native-router-flux'
-import { connect } from 'react-redux'
-import Field from '../field'
-import Button from '../button'
-import styles from './styles'
+import React, { PureComponent } from 'react';
 import {
   View,
   Text,
-  TextInput,
-  TouchableHighlight,
-  TouchableOpacity,
-  AsyncStorage
-} from 'react-native'
+} from 'react-native';
 
-function mapStateToProps () {
-  return {}
+import { connect } from 'react-redux';
+import styles from './styles';
+
+function mapStateToProps() {
+  return {};
 }
 
-function mapDispatchToProps (dispatch) {
-  return {}
+function mapDispatchToProps() {
+  return {};
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
-
 export default class Item extends PureComponent {
-  render () {
+  render() {
     return (
       <View style={styles.listItemContainer}>
         <Text>...Item...</Text>
@@ -33,6 +26,6 @@ export default class Item extends PureComponent {
         <Text>Items</Text>
         <Text>Price</Text>
       </View>
-    )
+    );
   }
 }

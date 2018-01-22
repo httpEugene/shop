@@ -1,40 +1,33 @@
-import React, { PureComponent } from 'react'
-import { Actions } from 'react-native-router-flux'
-import { connect } from 'react-redux'
-import Field from '../field'
-import Button from '../button'
-import styles from './styles'
-import Item from './item'
-
+import React, { PureComponent } from 'react';
+import { Actions } from 'react-native-router-flux';
+import { connect } from 'react-redux';
 import {
   View,
   Text,
-  TextInput,
-  TouchableHighlight,
-  TouchableOpacity,
-  AsyncStorage
-} from 'react-native'
+} from 'react-native';
 
-function mapStateToProps () {
-  return {}
+import styles from './styles';
+import Item from './item';
+
+function mapStateToProps() {
+  return {};
 }
 
-function mapDispatchToProps (dispatch) {
-  return {}
+function mapDispatchToProps() {
+  return {};
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
-
 export default class ListItem extends PureComponent {
   getDeliveryDetails = () => {
     Actions.deliveryDetails();
-  }
+  };
 
   getDetails = () => {
     // Actions.details();
-  }
+  };
 
-  render () {
+  render() {
     return (
       <View style={styles.listItemContainer}>
         <Text>-----Detailes List------</Text>
@@ -48,16 +41,15 @@ export default class ListItem extends PureComponent {
 
         <Item />
 
-         <View style={styles.statusContainer}>
-            <Text style={styles.status}>Shipping</Text>
-            <Text style={styles.status}>10$</Text>
-         </View>
-         <View style={styles.statusContainer}>
-            <Text style={styles.status}>Total</Text>
-            <Text style={styles.status}>100$</Text>
-          </View>
-
+        <View style={styles.statusContainer}>
+          <Text style={styles.status}>Shipping</Text>
+          <Text style={styles.status}>10$</Text>
+        </View>
+        <View style={styles.statusContainer}>
+          <Text style={styles.status}>Total</Text>
+          <Text style={styles.status}>100$</Text>
+        </View>
       </View>
-    )
+    );
   }
 }

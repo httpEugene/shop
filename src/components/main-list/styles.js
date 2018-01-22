@@ -1,8 +1,4 @@
-import React from 'react';
-import {
-    StyleSheet,
-    PixelRatio
-} from 'react-native';
+import { StyleSheet, PixelRatio } from 'react-native';
 
 export default StyleSheet.create({
   container: {
@@ -11,29 +7,22 @@ export default StyleSheet.create({
   listItemContainer: {
     display: 'flex',
     margin: 10,
-    borderWidth: 1/PixelRatio.get(),
-    borderColor: "#dadada"
+    borderWidth: 1 / PixelRatio.get(),
+    borderColor: '#dadada',
   },
-  id: {
-  },
-  date: {
-  },
-  statusContainer: {
-  },
-  status: {
-  },
-  purchaseContainer: {
-  },
-  purchaseItem: {
-  },
-  purchaseSumm: {
-  },
+  id: {},
+  date: {},
+  statusContainer: {},
+  status: {},
+  purchaseContainer: {},
+  purchaseItem: {},
+  purchaseSumm: {},
   delivery: {
     fontSize: 30,
-    color: "#00e5ff"
+    color: '#00e5ff',
   },
   deliveryDetails: {
     fontSize: 30,
-    color: "#00e5ff"
-  }
+    color: '#00e5ff',
+  },
 });
