@@ -16,10 +16,10 @@ function mapDispatchToProps() {
 
 export default class MainOrderList extends PureComponent {
   render() {
-      return (
-        <View style={styles.container}>
-          <OrderItem />
-        </View>
-      );
+    return (
+      <View style={styles.container}>
+        <OrderItem/>
+      </View>
+    );
   }
 }

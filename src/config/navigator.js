@@ -25,22 +25,22 @@ const Navigator = () => (
         component={Second}
         title="Gray"
       />
-       <Scene
-          key="main"
-          component={MainOrderList}
-          title="My Orders"
-        />
-        <Scene
-          key="order"
-          component={OrderItem}
-          title="Order Details"
-        />
+      <Scene
+        key="main"
+        component={MainOrderList}
+        title="My Orders"
+      />
+      <Scene
+        key="order"
+        component={OrderItem}
+        title="Order Details"
+      />
 
-        <Scene
-          key="deliveryDetails"
-          component={DeliveryDetails}
-          title="Delivery Details"
-        />
+      <Scene
+        key="deliveryDetails"
+        component={DeliveryDetails}
+        title="Delivery Details"
+      />
     </Scene>
   </Router>
 );
