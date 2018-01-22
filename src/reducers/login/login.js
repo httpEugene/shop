@@ -1,15 +1,14 @@
-import {
-  LOGIN_SUCCESS,
-  LOGIN_FAILED,
-} from '../../actions/actions';
+import { LOGIN_SUCCESS, LOGIN_FAILED } from '../../actions/actions';
 
 const initState = null;
 
 export default (state = initState, action) => {
   if (action.type === LOGIN_SUCCESS) {
     return {
-      email: action.payload.email,
       name: action.payload.name,
+      email: action.payload.email || 'test@gmail.com',
+      isLogged: true,
+      status: 200,
     };
   }
 

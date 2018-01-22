@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     StyleSheet,
     PixelRatio
@@ -18,19 +17,19 @@ export default StyleSheet.create({
   },
   login: {
       fontSize: 30,
-      color: "#333"
+      color: '#333'
   },
   validation: {
       fontSize: 12,
-      color: "green"
+      color: 'green'
   },
   error: {
       color: 'red'
   },
   input: {
       fontSize: 30,
-      color: "#666",
+      color: '#666',
       borderWidth: 1/PixelRatio.get(),
-      borderColor: "#dadada"
+      borderColor: '#dadada'
   }
 });

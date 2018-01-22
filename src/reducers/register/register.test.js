@@ -2,7 +2,7 @@ import reducer from './index';
 import { REGISTER_SUCCESS, REGISTER_FAILED } from '../../actions/actions';
 
 describe('Register reducer', () => {
-  it('should set user data after register', () => {
+  test('should set user data after register', () => {
     const initState = null;
 
     const user = {
@@ -17,7 +17,7 @@ describe('Register reducer', () => {
     expect(reducer(initState, { type: REGISTER_SUCCESS, payload: user })).toEqual(expectedState);
   });
 
-  it('should set error if register is failed', () => {
+  test('should set error if register is failed', () => {
     const initState = null;
 
     const error = 'Some error during fetch from server';

@@ -1,9 +1,8 @@
-import fetch from 'isomorphic-fetch';
 import {
   REGISTER_SUCCESS,
   REGISTER_FAILED,
   REGISTER_REQUEST,
-} from './actions';
+} from '../actions';
 
 const registerSuccess = data => ({
   type: REGISTER_SUCCESS,

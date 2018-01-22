@@ -1,19 +1,15 @@
 import React, { PureComponent } from 'react';
+import md5 from 'md5';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
+import { View, Text } from 'react-native';
+import PropTypes from 'prop-types';
+
 import Field from '../field';
 import Button from '../button';
 import styles from './styles';
-import {validate} from '../../helpers/validation';
-import md5 from 'md5';
-import {
-    View,
-    Text,
-    TextInput,
-    TouchableHighlight,
-    TouchableOpacity,
-    AsyncStorage
-} from 'react-native';
+import { validate } from '../../helpers/validation';
+import login from '../../actions/login';
 
 function mapStateToProps() {
   return {};
@@ -21,90 +17,109 @@ function mapStateToProps() {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onRegisterSubmit(data) {
+    onRegisterSubmit() {
       // dispatch(registerRequestAction(data));
     },
     onLogin(data) {
-      // dispatch(loginRequestAction(data));
-      Actions.main();
+      dispatch(login(data));
     },
   };
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
-
 export default class LoginForm extends PureComponent {
+  static propTypes = {
+    user: PropTypes.Shape,
+    loginUser: PropTypes.func,
+    onLogin: PropTypes.func,
+  };
 
-        state = {
-            username: '',
-            password: '',
-            errors: ''
-        };
+  state = {
+    username: '',
+    password: '',
+    errors: '',
+  };
 
-        componentWillReceiveProps (nextProps) {
-                const {user} = nextProps;
+  componentWillReceiveProps(nextProps) {
+    const { user } = nextProps;
 
-                const currentUser = {
-                    username: user.username,
-                    id:  user._id
-                };
+    /*  const currentUser = {
+      username: user.username,
+      id: user._id,
+    }; */
 
-                if (user.success) {
-                    //AsyncStorage.setItem(('user', JSON.stringify(currentUser));
-                   // AsyncStorage.setItem(('x-access-token', user.token);
+    if (user.success) {
+      // AsyncStorage.setItem(('user', JSON.stringify(currentUser));
+      // AsyncStorage.setItem(('x-access-token', user.token);
 
-                    Actions.main()
-                }
-            }
+      Actions.main();
+    }
+  }
 
-        handleSubmit = (e) => {
-                e.preventDefault();
+  handleSubmit = (e) => {
+    e.preventDefault();
 
-                if(Object.keys(validate(this.state)).length !== 0) return;
+    if (Object.keys(validate(this.state)).length !== 0) return;
 
-                const data = {
-                    username: this.state.username,
-                    password: md5(this.state.password)
-                };
+    const data = {
+      username: this.state.username,
+      password: md5(this.state.password),
+    };
 
-                this.props.loginUser(data);
-            }
+    this.props.loginUser(data);
+  };
 
-        handleForm = (e) => {
-            this.setState({
-                [e.target.name]: e.target.value
-            });
+  handleForm = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
 
-            this.validateForm();
-        }
+    this.validateForm();
+  };
 
-        validateForm = () => {
-            validate(this.state);
+  validateForm = () => {
+    validate(this.state);
 
-            console.log('Validation...', this.state);
+    this.setState({
+      errors: validate(this.state),
+    });
+  };
 
-            this.setState({
-                errors: validate(this.state)
-            })
-        }
+  handleFormSubmit = () => {
+    this.props.onLogin();
+    Actions.main();
+  };
 
-          render() {
-            return (
-              <View style={styles.container}>
-                <View>
-                  <View style={styles.fieldContainer}>
-                  <Text style={styles.login}>Login</Text>
-                    <Field onChangeHandler={this.onChangeHandler} handleForm = { this.handleForm } placeholder="Enter your login" />
-                    <Text>{this.state.errors.username}</Text>
-                      <Field handleForm={(e) => this.handleForm(e)} placeholder="Enter your password" type="password" />
-                      <Text>{this.state.errors.password}</Text>
-                  </View>
+  render() {
+    return (
+      <View style={styles.container}>
+        <View>
+          <View style={styles.fieldContainer}>
+            <Text style={styles.login}>Login</Text>
+            <Field
+              onChangeHandler={this.onChangeHandler}
+              handleForm={this.handleForm}
+              placeholder="Enter your login"
+            />
+            <Text>{this.state.errors.username}</Text>
+            <Field
+              handleForm={e => this.handleForm(e)}
+              placeholder="Enter your password"
+              type="password"
+            />
+            <Text>{this.state.errors.password}</Text>
+          </View>
 
-                  <View style={styles.buttonContainer}>
-                    <Button styleName={'button'} styleTextName={'buttonText'} label='Login' onPressHandler={this.props.onLogin} />
-                  </View>
-                </View>
-              </View>
-            );
+          <View style={styles.buttonContainer}>
+            <Button
+              styleName="button"
+              styleTextName="buttonText"
+              label="Login"
+              onPressHandler={this.handleFormSubmit}
+            />
+          </View>
+        </View>
+      </View>
+    );
   }
 }
