@@ -26,13 +26,22 @@ function mapDispatchToProps (dispatch) {
 export default class Item extends PureComponent {
   render () {
     return (
-      <View style={styles.listItemContainer}>
-        <Text>...Item...</Text>
-        <Text>Name</Text>
-        <Text>Image</Text>
-        <Text>Items</Text>
-        <Text>Price</Text>
-      </View>
+       <View style={styles.container}>
+
+            <View style={styles.listItemContainer}>
+              <Text style={styles.name}>Name</Text>
+            </View>
+
+            <View style={styles.listItemContainer}>
+              <Text>Image</Text>
+            </View>
+
+            <View style={styles.purchaseContainer}>
+              <Text style={styles.purchaseItem}>1 ITEM</Text>
+              <Text style={styles.purchaseSumm}>180$</Text>
+            </View>
+
+        </View>
     )
   }
 }

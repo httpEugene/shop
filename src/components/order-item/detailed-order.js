@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Field from '../field'
 import Button from '../button'
 import styles from './styles'
-import Item from './item'
+import Item from './order'
 
 import {
   View,
@@ -36,14 +36,20 @@ export default class ListItem extends PureComponent {
 
   render () {
     return (
-      <View style={styles.listItemContainer}>
-        <Text>-----Detailes List------</Text>
-        <Text style={styles.id}>id</Text>
-        <Text style={styles.date}>date</Text>
+      <View style={styles.container}>
+         <View style={styles.listItemContainer}>
+            <Text style={styles.id}>id</Text>
+            <Text style={styles.date}>date</Text>
+        </View>
 
         <View style={styles.statusContainer}>
-          <Text style={styles.status}>status</Text>
+          <Text style={styles.statusText}>STATUS: </Text>
           <Text style={styles.status}>DONE</Text>
+        </View>
+
+        <View style={styles.purchaseContainer}>
+          <Text style={styles.purchaseItem}>1 ITEM</Text>
+          <Text style={styles.purchaseSumm}>180$</Text>
         </View>
 
         <Item />
