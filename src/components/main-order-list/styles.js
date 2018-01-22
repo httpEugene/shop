@@ -1,86 +1,83 @@
-import React from 'react';
-import {
-    StyleSheet,
-    PixelRatio
-} from 'react-native';
+import { StyleSheet, PixelRatio } from 'react-native';
 
-import variables from '../../config/variables.js';
+import colors from '../../config/colors';
 
 export default StyleSheet.create({
   container: {
+    margin: 20,
+    flex: 1,
     display: 'flex',
-    borderWidth: 1/PixelRatio.get(),
-    borderColor: variables.secondColor_2
+    backgroundColor:
   },
 
   listItemContainer: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    margin: 5
+    margin: 5,
   },
 
-   statusContainer: {
+  statusContainer: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-end',
     margin: 5,
   },
 
-   purchaseContainer: {
+  purchaseContainer: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     margin: 5,
-    borderWidth: 1/PixelRatio.get(),
-    borderColor: variables.secondColor_2
+    borderWidth: 1 / PixelRatio.get(),
+    borderColor: colors.secondColorLightGray,
   },
 
   id: {
-    color: variables.mainColor_2,
+    color: colors.mainColorBlack,
     fontSize: 24,
     margin: 10,
   },
 
   name: {
-    color: variables.mainColor_2,
+    color: colors.mainColorBlack,
     fontSize: 24,
     margin: 10,
   },
 
   date: {
-    color: variables.secondColor_1,
+    color: colors.secondColorDarkGray,
     fontSize: 20,
     margin: 10,
   },
 
   statusText: {
-    color: variables.secondColor_1,
+    color: colors.secondColorDarkGray,
     fontSize: 14,
     margin: 10,
   },
 
   status: {
-    color: variables.additionalColor_1,
+    color: colors.additionalColorGgreen,
     fontSize: 18,
     margin: 10,
   },
 
   purchaseContainer: {
-     display: 'flex',
-     flexDirection: 'row',
-     justifyContent: 'space-between',
-     margin: 5
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    margin: 5,
   },
 
   purchaseItem: {
-    color: variables.secondColor_1,
-    fontSize: 20
+    color: colors.secondColorDarkGray,
+    fontSize: 20,
   },
 
   purchaseSumm: {
-    color: variables.mainColor_1,
-    fontSize: 24
+    color: colors.mainColorBlue,
+    fontSize: 24,
   },
 
   buttonContainer: {
@@ -91,11 +88,11 @@ export default StyleSheet.create({
 
   delivery: {
     fontSize: 30,
-    color: "#00e5ff"
+    color: '#00e5ff',
   },
 
   deliveryDetails: {
     fontSize: 30,
-    color: "#00e5ff"
-  }
+    color: '#00e5ff',
+  },
 });

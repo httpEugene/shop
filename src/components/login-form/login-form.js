@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-import md5 from 'md5';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
@@ -8,7 +7,7 @@ import PropTypes from 'prop-types';
 import Field from '../field';
 import Button from '../button';
 import styles from './styles';
-import { validate } from '../../helpers/validation';
+
 import login from '../../actions/login';
 
 function mapStateToProps() {
@@ -29,9 +28,11 @@ function mapDispatchToProps(dispatch) {
 @connect(mapStateToProps, mapDispatchToProps)
 export default class LoginForm extends PureComponent {
   static propTypes = {
-    user: PropTypes.Shape,
     loginUser: PropTypes.func,
     onLogin: PropTypes.func,
+    nextProps: PropTypes.shape({
+      user: PropTypes.str,
+    })
   };
 
   state = {
@@ -40,53 +41,7 @@ export default class LoginForm extends PureComponent {
     errors: '',
   };
 
-  componentWillReceiveProps(nextProps) {
-    const { user } = nextProps;
-
-    /*  const currentUser = {
-      username: user.username,
-      id: user._id,
-    }; */
-
-    if (user.success) {
-      // AsyncStorage.setItem(('user', JSON.stringify(currentUser));
-      // AsyncStorage.setItem(('x-access-token', user.token);
-
-      Actions.main();
-    }
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (Object.keys(validate(this.state)).length !== 0) return;
-
-    const data = {
-      username: this.state.username,
-      password: md5(this.state.password),
-    };
-
-    this.props.loginUser(data);
-  };
-
-  handleForm = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-
-    this.validateForm();
-  };
-
-  validateForm = () => {
-    validate(this.state);
-
-    this.setState({
-      errors: validate(this.state),
-    });
-  };
-
   handleFormSubmit = () => {
-    this.props.onLogin();
     Actions.main();
   };
 
@@ -100,6 +55,7 @@ export default class LoginForm extends PureComponent {
               onChangeHandler={this.onChangeHandler}
               handleForm={this.handleForm}
               placeholder="Enter your login"
+              type="text"
             />
             <Text>{this.state.errors.username}</Text>
             <Field

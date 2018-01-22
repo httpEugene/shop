@@ -1,16 +1,15 @@
-import React from 'react';
 import {
   StyleSheet,
-  PixelRatio
+  PixelRatio,
 } from 'react-native';
 
-import variables from '../../config/variables.js';
+import colors from '../../config/colors';
 
 export default StyleSheet.create({
   container: {
-    display: 'flex'
+    display: 'flex',
     borderWidth: 1 / PixelRatio.get(),
-    borderColor: variables.secondColor_2,
+    borderColor: colors.secondColorLightGray,
   },
 
   listItemContainer: {
@@ -27,41 +26,32 @@ export default StyleSheet.create({
     margin: 5,
   },
 
-//   purchaseContainer: {
-//    display: 'flex',
-//    flexDirection: 'row',
-//    justifyContent: 'space-between',
-//    margin: 5,
-//    borderWidth: 1/PixelRatio.get(),
-//    borderColor: variables.secondColor_2
-//  },
-
   id: {
-    color: variables.mainColor_2,
+    color: colors.mainColorBlack,
     fontSize: 24,
     margin: 10,
   },
 
   name: {
-    color: variables.mainColor_2,
+    color: colors.mainColorBlack,
     fontSize: 24,
     margin: 10,
   },
 
   date: {
-    color: variables.secondColor_1,
+    color: colors.secondColorDarkGray,
     fontSize: 20,
     margin: 10,
   },
 
   statusText: {
-    color: variables.secondColor_1,
+    color: colors.secondColorDarkGray,
     fontSize: 14,
     margin: 10,
   },
 
   status: {
-    color: variables.additionalColor_1,
+    color: colors.additionalColorGgreen,
     fontSize: 18,
     margin: 10,
   },
@@ -70,16 +60,16 @@ export default StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    margin: 5
+    margin: 5,
   },
 
   purchaseItem: {
-    color: variables.secondColor_1,
+    color: colors.secondColorDarkGray,
     fontSize: 20,
   },
 
   purchaseSumm: {
-    color: variables.mainColor_1,
+    color: colors.mainColorBlue,
     fontSize: 24,
   },
 
@@ -107,13 +97,13 @@ export default StyleSheet.create({
   },
 
   shippingText: {
-    color: variables.secondColor_1,
+    color: colors.secondColorDarkGray,
     fontSize: 18,
     margin: 10,
   },
 
   shippingPrice: {
-    color: variables.secondColor_1,
+    color: colors.secondColorDarkGray,
     fontSize: 18,
     margin: 10,
   },
@@ -126,14 +116,14 @@ export default StyleSheet.create({
   },
 
   totalText: {
-    color: variables.mainColor_1,
+    color: colors.mainColorBlue,
     fontSize: 30,
     margin: 10,
   },
 
   totalPrice: {
-    color: variables.mainColor_1,
+    color: colors.mainColorBlue,
     fontSize: 30,
     margin: 10,
-  }
-})
+  },
+});

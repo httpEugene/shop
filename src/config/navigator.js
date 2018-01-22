@@ -7,9 +7,7 @@ import OrderItem from '../components/order-item';
 
 import DeliveryDetails from '../components/delivery-details';
 
-const Second = () => (
-  <Text>Second Screen</Text>
-);
+const Second = () => <Text>Second Screen</Text>;
 
 const Navigator = () => (
   <Router>

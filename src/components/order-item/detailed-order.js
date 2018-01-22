@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import {
+  ScrollView,
   View,
   Text,
 } from 'react-native';

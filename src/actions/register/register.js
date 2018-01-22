@@ -21,7 +21,7 @@ const registerRequest = () => ({
   isFetching: true,
 });
 
-export const register = data => (dispatch) => {
+export const register = data => dispatch => {
   dispatch(registerRequest());
 
   const registerUrl = '/register';
@@ -40,4 +40,3 @@ export const register = data => (dispatch) => {
 };
 
 export default register;
-
