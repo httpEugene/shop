@@ -22,9 +22,7 @@ function mapDispatchToProps(dispatch) {
 export default class SortForm extends PureComponent {
   static propTypes = {};
 
-  handleSort = () => {
-
-  };
+  handleSort = () => {};
 
   render() {
     return (
@@ -33,23 +31,22 @@ export default class SortForm extends PureComponent {
           styleName="sortButton"
           styleTextName="sortButtonTextLast"
           label="Last"
-         // onPressHandler={ () => this.handleSort }
+          onPressHandler={() => this.handleSort}
         />
 
         <Button
           styleName="sortButton"
           styleTextName="sortButtonTextDone"
           label="Done"
-         // onPressHandler={ () => this.handleSort }
+          onPressHandler={() => this.handleSort}
         />
 
         <Button
           styleName="sortButton"
           styleTextName="sortButtonTextUndone"
           label="Undone"
-          // onPressHandler={ () => this.handleSort }
+          onPressHandler={() => this.handleSort}
         />
-
       </View>
     );
   }

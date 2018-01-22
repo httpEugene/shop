@@ -1,15 +1,15 @@
-import constants from '../constants/login_validation_constants';
+import { usernameLengthMax, usernameLengthMin } from '../constants/login-validation-constants';
 
-const validate = (values) => {
+const validate = ({username, password, confirmPassword, email, age}) => {
   const errors = {};
-  if (!values.username) {
+  if (!username) {
     errors.username = 'Required';
-  } else if (values.username.length > constants.usernameLengthMax) {
+  } else if (username.length > usernameLengthMax) {
     errors.username = 'Must be 15 characters or less';
   }
-  if (!values.password) {
+  if (!password) {
     errors.password = 'Required';
-  } else if (values.username.length < constants.usernameLengthMin) {
+  } else if (username.length < usernameLengthMin) {
     errors.username = 'Must be 5 characters or more';
     // } else if (!/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).
     // {6,}$/i.test(values.password)) {
@@ -22,7 +22,7 @@ const validate = (values) => {
     //  At least one special character, (?=.*?[#?!@$%^&*-])
     //  Minimum six in length .{6,} (with the anchors)
     // }
-  } else if (!/^(?=.*?[a-z])(?=.*?[0-9]).{5,}$/i.test(values.password)) {
+  } else if (!/^(?=.*?[a-z])(?=.*?[0-9]).{5,}$/i.test(password)) {
     errors.password =
       'At least one lower case English letter. At least one digit. Minimum 5 in length';
     // At least one upper case English letter, (?=.*?[A-Z])
@@ -32,22 +32,22 @@ const validate = (values) => {
     // Minimum six in length .{6,} (with the anchors)
   }
 
-  if (!values.confirmPassword) {
+  if (!confirmPassword) {
     errors.confirmPassword = 'Required';
-  } else if (values.confirmPassword !== values.password) {
+  } else if (confirmPassword !== password) {
     errors.confirmPassword = "Passwords don't match.";
   }
 
-  if (!values.email) {
+  if (!email) {
     errors.email = 'Required';
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email)) {
     errors.email = 'Invalid email address';
   }
-  if (!values.age) {
+  if (!age) {
     errors.age = 'Required';
-  } else if (Number.isNaN(Number(values.age))) {
+  } else if (Number.isNaN(Number(age))) {
     errors.age = 'Must be a number';
-  } else if (Number(values.age) < 18) {
+  } else if (Number(age) < 18) {
     errors.age = 'Sorry, you must be at least 18 years old';
   }
 
@@ -55,7 +55,7 @@ const validate = (values) => {
 
   /* eslint no-restricted-syntax: 0 */
   for (const prop in errors) {
-    if (Object.keys(values).includes(prop)) {
+    if (Object.keys(val).includes(prop)) {
       errorsOutput[prop] = errors[prop];
     }
   }
@@ -63,9 +63,9 @@ const validate = (values) => {
   return errorsOutput;
 };
 
-const warn = (values) => {
+const warn = ({age}) => {
   const warnings = {};
-  if (values.age < 19) {
+  if (age < 19) {
     warnings.age = 'Hmm, you seem a bit young...';
   }
   return warnings;

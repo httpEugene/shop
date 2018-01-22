@@ -12,16 +12,16 @@ const colorCodes = {
 };
 
 const colors = {
-  mainColor_blue: colorCodes.blue,
-  mainColor_black: colorCodes.black,
-  secondColor_darkGray: colorCodes.darkGray,
-  secondColor_2: colorCodes.lightGray,
-  secondColor_3: colorCodes.white,
-  additionalColor_1: colorCodes.green,
-  additionalColor_2: colorCodes.orange,
-  additionalColor_3: colorCodes.pink,
-  additionalColor_4: colorCodes.lightGreen,
-  additionalColor_5: colorCodes.lightOrange,
+  mainColorBlue: colorCodes.blue,
+  mainColorBlack: colorCodes.black,
+  secondColorDarkGray: colorCodes.darkGray,
+  secondColorLightGray: colorCodes.lightGray,
+  secondColorWhite: colorCodes.white,
+  additionalColorGgreen: colorCodes.green,
+  additionalColorOrange: colorCodes.orange,
+  additionalColorPink: colorCodes.pink,
+  additionalColorLightGreen: colorCodes.lightGreen,
+  additionalColorLightOrange: colorCodes.lightOrange,
 };
 
 export default colors;

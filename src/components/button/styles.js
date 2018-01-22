@@ -7,18 +7,18 @@ import colors from '../../config/colors.js';
 export default StyleSheet.create({
   button: {
     borderWidth: 1 / PixelRatio.get(),
-    borderColor: colors.mainColor_blue,
+    borderColor: colors.mainColorBlue,
     borderRadius: 2,
-    backgroundColor: colors.mainColor_blue,
+    backgroundColor: colors.mainColorBlue,
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 50,
   },
   details: {
     borderWidth: 1 / PixelRatio.get(),
-    borderColor: colors.mainColor_blue,
+    borderColor: colors.mainColorBlue,
     borderRadius: 2,
-    backgroundColor: colors.mainColor_blue,
+    backgroundColor: colors.mainColorBlue,
     alignItems: 'center',
     justifyContent: 'center',
     margin: 10,
@@ -26,9 +26,9 @@ export default StyleSheet.create({
 
   deliveryDetails: {
     borderWidth: 1 / PixelRatio.get(),
-    borderColor: colors.additionalColor_4,
+    borderColor: colors.additionalColorLightGreen,
     borderRadius: 2,
-    backgroundColor: colors.additionalColor_4,
+    backgroundColor: colors.additionalColorLightGreen,
     alignItems: 'center',
     justifyContent: 'center',
     margin: 10,
@@ -36,31 +36,31 @@ export default StyleSheet.create({
 
   buttonText: {
     fontSize: 24,
-    color: colors.secondColor_3,
+    color: colors.secondColorWhite,
     margin: 10,
   },
 
   sortButtonTextLast: {
     fontSize: 20,
-    color: colors.mainColor_blue,
+    color: colors.mainColorBlue,
     margin: 5,
   },
 
   sortButtonTextDone: {
     fontSize: 20,
-    color: colors.additionalColor_1,
+    color: colors.additionalColorGgreen,
     margin: 5,
   },
 
   sortButtonTextUndone: {
     fontSize: 20,
-    color: colors.additionalColor_2,
+    color: colors.additionalColorOrange,
     margin: 5,
   },
 
   buttonTextSecond: {
     fontSize: 24,
-    color: colors.secondColor_3,
+    color: colors.secondColorWhite,
     margin: 10,
   },
 });

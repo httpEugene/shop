@@ -9,7 +9,7 @@ export default StyleSheet.create({
   container: {
     display: 'flex',
     borderWidth: 1 / PixelRatio.get(),
-    borderColor: colors.secondColor_2,
+    borderColor: colors.secondColorLightGray,
   },
 
   listItemContainer: {
@@ -27,31 +27,31 @@ export default StyleSheet.create({
   },
 
   id: {
-    color: colors.mainColor_black,
+    color: colors.mainColorBlack,
     fontSize: 24,
     margin: 10,
   },
 
   name: {
-    color: colors.mainColor_black,
+    color: colors.mainColorBlack,
     fontSize: 24,
     margin: 10,
   },
 
   date: {
-    color: colors.secondColor_darkGray,
+    color: colors.secondColorDarkGray,
     fontSize: 20,
     margin: 10,
   },
 
   statusText: {
-    color: colors.secondColor_darkGray,
+    color: colors.secondColorDarkGray,
     fontSize: 14,
     margin: 10,
   },
 
   status: {
-    color: colors.additionalColor_1,
+    color: colors.additionalColorGgreen,
     fontSize: 18,
     margin: 10,
   },
@@ -64,12 +64,12 @@ export default StyleSheet.create({
   },
 
   purchaseItem: {
-    color: colors.secondColor_darkGray,
+    color: colors.secondColorDarkGray,
     fontSize: 20,
   },
 
   purchaseSumm: {
-    color: colors.mainColor_blue,
+    color: colors.mainColorBlue,
     fontSize: 24,
   },
 
@@ -97,13 +97,13 @@ export default StyleSheet.create({
   },
 
   shippingText: {
-    color: colors.secondColor_darkGray,
+    color: colors.secondColorDarkGray,
     fontSize: 18,
     margin: 10,
   },
 
   shippingPrice: {
-    color: colors.secondColor_darkGray,
+    color: colors.secondColorDarkGray,
     fontSize: 18,
     margin: 10,
   },
@@ -116,13 +116,13 @@ export default StyleSheet.create({
   },
 
   totalText: {
-    color: colors.mainColor_blue,
+    color: colors.mainColorBlue,
     fontSize: 30,
     margin: 10,
   },
 
   totalPrice: {
-    color: colors.mainColor_blue,
+    color: colors.mainColorBlue,
     fontSize: 30,
     margin: 10,
   },

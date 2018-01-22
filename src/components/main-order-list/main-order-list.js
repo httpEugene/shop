@@ -5,7 +5,6 @@ import styles from './styles';
 import OrderItem from './order-item';
 import SortForm from '../sort-form';
 
-
 function mapStateToProps() {
   return {};
 }
