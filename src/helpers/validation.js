@@ -1,13 +1,15 @@
+import constants from '../constants/login_validation_constants';
+
 const validate = (values) => {
   const errors = {};
   if (!values.username) {
     errors.username = 'Required';
-  } else if (values.username.length > 15) {
+  } else if (values.username.length > constants.usernameLengthMax) {
     errors.username = 'Must be 15 characters or less';
   }
   if (!values.password) {
     errors.password = 'Required';
-  } else if (values.username.length < 5) {
+  } else if (values.username.length < constants.usernameLengthMin) {
     errors.username = 'Must be 5 characters or more';
     // } else if (!/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).
     // {6,}$/i.test(values.password)) {

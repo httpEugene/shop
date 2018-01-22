@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Actions } from 'react-native-router-flux';
 import {
+  ScrollView,
   View,
   Text,
 } from 'react-native';
@@ -31,7 +32,7 @@ export default class OrderItem extends PureComponent {
 
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.listItemContainer}>
             <Text style={styles.id}>id</Text>
             <Text style={styles.date}>date</Text>
@@ -55,7 +56,7 @@ export default class OrderItem extends PureComponent {
                   onPressHandler={() => this.getDeliveryDetails()}/>
         </View>
 
-      </View>
+      </ScrollView>
     );
   }
 }

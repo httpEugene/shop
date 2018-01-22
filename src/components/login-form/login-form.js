@@ -29,9 +29,11 @@ function mapDispatchToProps(dispatch) {
 @connect(mapStateToProps, mapDispatchToProps)
 export default class LoginForm extends PureComponent {
   static propTypes = {
-    user: PropTypes.Shape,
     loginUser: PropTypes.func,
     onLogin: PropTypes.func,
+    nextProps: PropTypes.shape({
+      user: PropTypes.str,
+    })
   };
 
   state = {
@@ -56,7 +58,7 @@ export default class LoginForm extends PureComponent {
     }
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = e => {
     e.preventDefault();
 
     if (Object.keys(validate(this.state)).length !== 0) return;
@@ -69,7 +71,7 @@ export default class LoginForm extends PureComponent {
     this.props.loginUser(data);
   };
 
-  handleForm = (e) => {
+  handleForm = e => {
     this.setState({
       [e.target.name]: e.target.value,
     });
@@ -100,6 +102,7 @@ export default class LoginForm extends PureComponent {
               onChangeHandler={this.onChangeHandler}
               handleForm={this.handleForm}
               placeholder="Enter your login"
+              type="text"
             />
             <Text>{this.state.errors.username}</Text>
             <Field

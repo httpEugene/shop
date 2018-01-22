@@ -11,7 +11,6 @@ const colorCodes = {
   lightOrange: '#f9daa0', // LightOrange
 };
 
-
 const colors = {
   mainColor_blue: colorCodes.blue,
   mainColor_black: colorCodes.black,

@@ -4,9 +4,9 @@ import colors from '../../config/colors';
 
 export default StyleSheet.create({
   container: {
-    display: 'flex',
-    borderWidth: 1 / PixelRatio.get(),
-    borderColor: colors.secondColor_2,
+    margin: 20,
+    flex: 1,
+    display: 'flex'
   },
 
   listItemContainer: {
