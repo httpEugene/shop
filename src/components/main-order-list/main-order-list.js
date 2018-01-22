@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Field from '../field';
 import Button from '../button';
 import styles from './styles';
-import ListItem from './list-item';
+import OrderItem from './order-item';
 
 import {
     View,
@@ -25,7 +25,7 @@ function mapDispatchToProps(dispatch) {
 
 @connect(mapStateToProps, mapDispatchToProps)
 
-export default class MainList extends PureComponent {
+export default class MainOrderList extends PureComponent {
 
         constructor (props) {
             super(props);
@@ -34,7 +34,7 @@ export default class MainList extends PureComponent {
         render() {
             return (
               <View style={styles.container}>
-                <ListItem />
+                <OrderItem />
               </View>
             );
         }

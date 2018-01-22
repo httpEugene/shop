@@ -1,3 +1,3 @@
-import MainList from './main-list';
+import MainOrderList from './main-order-list';
 
-export default MainList;
+export default MainOrderList;

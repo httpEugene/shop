@@ -23,7 +23,7 @@ function mapDispatchToProps (dispatch) {
 
 @connect(mapStateToProps, mapDispatchToProps)
 
-export default class Item extends PureComponent {
+export default class Order extends PureComponent {
   render () {
     return (
        <View style={styles.container}>
@@ -37,6 +37,11 @@ export default class Item extends PureComponent {
             </View>
 
             <View style={styles.purchaseContainer}>
+              <Text style={styles.purchaseItem}>1 ITEM</Text>
+              <Text style={styles.purchaseSumm}>180$</Text>
+            </View>
+
+             <View style={styles.purchaseContainer}>
               <Text style={styles.purchaseItem}>1 ITEM</Text>
               <Text style={styles.purchaseSumm}>180$</Text>
             </View>

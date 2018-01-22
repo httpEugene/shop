@@ -3,9 +3,9 @@ import { Actions } from 'react-native-router-flux'
 import { connect } from 'react-redux'
 import Field from '../field'
 import Button from '../button'
-import DetailedOrder from './detailed-order'
 
 import styles from './styles'
+
 import {
   View,
   Text,
@@ -31,7 +31,7 @@ export default class OrderItem extends PureComponent {
   }
 
   getDetails = () => {
-    // Actions.details();
+    Actions.order();
   }
 
   render () {
@@ -59,8 +59,6 @@ export default class OrderItem extends PureComponent {
           <Button styleName='deliveryDetails' styleTextName='buttonTextSecond' label='Delivery Details'
                   onPressHandler={() => this.getDeliveryDetails()}/>
         </View>
-
-        <DetailedOrder />
 
       </View>
     )

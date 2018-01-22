@@ -2,7 +2,9 @@ import React from 'react';
 import { Text } from 'react-native';
 import { Router, Scene } from 'react-native-router-flux';
 import LoginForm from '../components/login-form';
-import MainList from '../components/main-list';
+import MainOrderList from '../components/main-order-list';
+import OrderItem from '../components/order-item';
+
 import DeliveryDetails from '../components/delivery-details';
 
 const Second = () => (
@@ -25,8 +27,13 @@ const Navigator = () => (
       />
        <Scene
           key="main"
-          component={MainList}
+          component={MainOrderList}
           title="My Orders"
+        />
+        <Scene
+          key="order"
+          component={OrderItem}
+          title="Order Details"
         />
 
         <Scene

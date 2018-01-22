@@ -25,7 +25,7 @@ function mapDispatchToProps (dispatch) {
 
 @connect(mapStateToProps, mapDispatchToProps)
 
-export default class ListItem extends PureComponent {
+export default class DetailedOrder extends PureComponent {
   getDeliveryDetails = () => {
     Actions.deliveryDetails();
   }
@@ -47,20 +47,15 @@ export default class ListItem extends PureComponent {
           <Text style={styles.status}>DONE</Text>
         </View>
 
-        <View style={styles.purchaseContainer}>
-          <Text style={styles.purchaseItem}>1 ITEM</Text>
-          <Text style={styles.purchaseSumm}>180$</Text>
-        </View>
-
         <Item />
 
          <View style={styles.statusContainer}>
-            <Text style={styles.status}>Shipping</Text>
-            <Text style={styles.status}>10$</Text>
+            <Text style={styles.shippingText}>Shipping</Text>
+            <Text style={styles.shippingPrice}>10$</Text>
          </View>
-         <View style={styles.statusContainer}>
-            <Text style={styles.status}>Total</Text>
-            <Text style={styles.status}>100$</Text>
+         <View style={styles.totalContainer}>
+            <Text style={styles.totalText}>Total</Text>
+            <Text style={styles.totalPrice}>100$</Text>
           </View>
 
       </View>

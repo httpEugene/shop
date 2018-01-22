@@ -24,7 +24,7 @@ function mapDispatchToProps(dispatch) {
 
 @connect(mapStateToProps, mapDispatchToProps)
 
-export default class MainList extends PureComponent {
+export default class MainOrderList extends PureComponent {
         constructor (props) {
             super(props);
         }

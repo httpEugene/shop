@@ -27,14 +27,14 @@ export default StyleSheet.create({
     margin: 5,
   },
 
-   purchaseContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    margin: 5,
-    borderWidth: 1/PixelRatio.get(),
-    borderColor: variables.secondColor_2
-  },
+//   purchaseContainer: {
+//    display: 'flex',
+//    flexDirection: 'row',
+//    justifyContent: 'space-between',
+//    margin: 5,
+//    borderWidth: 1/PixelRatio.get(),
+//    borderColor: variables.secondColor_2
+//  },
 
   id: {
     color: variables.mainColor_2,
@@ -97,5 +97,43 @@ export default StyleSheet.create({
   deliveryDetails: {
     fontSize: 30,
     color: "#00e5ff"
-  }
+  },
+
+    shippingContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        margin: 5,
+    },
+
+    shippingText: {
+        color: variables.secondColor_1,
+        fontSize: 18,
+        margin: 10
+    },
+
+    shippingPrice: {
+        color: variables.secondColor_1,
+        fontSize: 18,
+        margin: 10
+    },
+
+    totalContainer: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        margin: 5,
+    },
+
+    totalText: {
+        color: variables.mainColor_1,
+        fontSize: 30,
+        margin: 10
+    },
+
+    totalPrice: {
+        color: variables.mainColor_1,
+        fontSize: 30,
+        margin: 10
+    }
 });

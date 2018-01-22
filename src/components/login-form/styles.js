@@ -28,7 +28,7 @@ export default StyleSheet.create({
       color: 'red'
   },
   input: {
-      fontSize: 24,
+      fontSize: 30,
       color: "#666",
       borderWidth: 1/PixelRatio.get(),
       borderColor: "#dadada"

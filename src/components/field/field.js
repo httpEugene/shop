@@ -10,7 +10,7 @@ export default class Field extends PureComponent {
 
      render() {
         return (
-          <TextInput
+          <TextInput style={styles.field}
             placeholder={this.props.placeholder}
             secureTextEntry={this.props.type === 'password'}
             onChange={this.props.handleForm}
