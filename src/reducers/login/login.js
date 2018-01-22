@@ -5,10 +5,9 @@ const initState = null;
 export default (state = initState, action) => {
   if (action.type === LOGIN_SUCCESS) {
     return {
-      email: action.payload.email,
       name: action.payload.name,
-      isLogged: action.payload.responseText,
-      status: action.payload.status,
+      email: action.payload.email || 'test@gmail.com',
+      isLogged: true,
     };
   }
 

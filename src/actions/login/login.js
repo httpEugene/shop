@@ -18,14 +18,15 @@ const loginRequest = () => ({
   isFetching: true,
 });
 
-export const login = data => dispatch => {
+export const login = data => (dispatch) => {
   dispatch(loginRequest());
 
   const options = {
-    method: 'GET',
+    method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-    }
+    },
+    body: JSON.stringify(data),
   };
 
   return fetch(config.loginUrl, options)

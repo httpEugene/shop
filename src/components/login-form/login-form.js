@@ -27,7 +27,6 @@ function mapDispatchToProps(dispatch) {
     },
     onLogin(data) {
       dispatch(login(data));
-      Actions.main();
     },
   };
 }
@@ -87,6 +86,12 @@ export default class LoginForm extends PureComponent {
     });
   };
 
+  handleFormSubmit = () => {
+    this.props.onLogin();
+    console.log(this);
+    // Actions.main();
+  };
+
   render() {
     return (
       <View style={styles.container}>
@@ -112,7 +117,7 @@ export default class LoginForm extends PureComponent {
               styleName="button"
               styleTextName="buttonText"
               label="Login"
-              onPressHandler={this.props.onLogin}
+              onPressHandler={this.handleFormSubmit}
             />
           </View>
         </View>
