@@ -6,17 +6,14 @@ export default (state = initState, action) => {
   if (action.type === LOGIN_SUCCESS) {
     return {
       name: action.payload.name,
-      email: action.payload.email || 'test@gmail.com',
+      email: action.payload.email,
       isLogged: true,
       status: 200,
     };
   }
 
   if (action.type === LOGIN_FAILED) {
-    return {
-      mentor: null,
-      error: action.payload,
-    };
+    return action.payload;
   }
 
   return state;
