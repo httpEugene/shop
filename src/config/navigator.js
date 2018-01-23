@@ -9,29 +9,6 @@ import DeliveryDetails from '../components/delivery-details';
 
 const Second = () => <Text>Second Screen</Text>;
 
-const scenes = [
-  {
-    key: 'login',
-    component: 'LoginForm',
-    title: 'Login',
-  },
-  {
-    key: 'main',
-    component: 'MainOrderList',
-    title: 'My Orders',
-  },
-  {
-    key: 'order',
-    component: 'OrderItem',
-    title: 'Order Details',
-  },
-  {
-    key: 'deliveryDetails',
-    component: 'DeliveryDetails',
-    title: 'Delivery Details',
-  },
-];
-
 const Navigator = () => (
   <Router>
     <Scene key="root">
