@@ -1,5 +1,5 @@
 import reducer from './index';
-import { REGISTER_SUCCESS, REGISTER_FAILED } from '../../actions/actions';
+import { REGISTER_SUCCESS, REGISTER_FAILED } from '../../authorization-statuses';
 
 describe('Register reducer', () => {
   test('should set user data after register', () => {

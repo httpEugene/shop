@@ -1,7 +1,7 @@
 import {
   REGISTER_SUCCESS,
   REGISTER_FAILED,
-} from '../../actions/actions';
+} from '../../authorization-statuses';
 
 const initState = null;
 

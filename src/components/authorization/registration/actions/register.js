@@ -2,7 +2,7 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAILED,
   REGISTER_REQUEST,
-} from '../actions';
+} from '../../authorization-statuses';
 
 const registerSuccess = data => ({
   type: REGISTER_SUCCESS,
