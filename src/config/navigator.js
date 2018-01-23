@@ -30,20 +30,16 @@ const scenes = [
 ];
 
 const initialScene = 0;
-const scenesComponent = initialSceneNumber =>
-  scenes.map((el, index) => {
-    if (index === initialSceneNumber) {
-      return (
-        <Scene key={el.key} component={el.component} title={el.type} initial />
-      );
-    }
-
-    return <Scene key={el.key} component={el.component} title={el.type} />;
+const scenesCollections = initialSceneNumber =>
+  scenes.map(({ key, component, type }, index) => {
+    return index === initialSceneNumber
+      ? <Scene key={key} component={component} title={type} initial />
+      : <Scene key={key} component={component} title={type} />;
   });
 
 const Navigator = () => (
   <Router>
-    <Scene key="root">{scenesComponent(initialScene)}</Scene>
+    <Scene key="root">{scenesCollections(initialScene)}</Scene>
   </Router>
 );
 
