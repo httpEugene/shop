@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text } from 'react-native';
 import { Router, Scene } from 'react-native-router-flux';
 import LoginForm from '../components/login-form';
 import MainOrderList from '../components/main-order-list';
 import OrderItem from '../components/order-item';
 
 import DeliveryDetails from '../components/delivery-details';
+import UiExamples from '../components/ui-example';
 
 const scenes = [
   {
@@ -27,6 +27,11 @@ const scenes = [
     key: 'deliveryDetails',
     component: DeliveryDetails,
     title: 'Delivery Details',
+  },
+  {
+    key: 'UiExamples',
+    component: UiExamples,
+    title: 'React Native Elements UI Toolkit for UI',
   },
 ];
 

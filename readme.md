@@ -46,4 +46,10 @@ $ cd android && ./gradlew assembleRelease
 
 Generate key
  keytool -genkey -v -keystore mafia.keystore -alias mafia_main -keyalg RSA -keysize 2048 -validity 10000
+ 
+ ## We use React Native Elements UI Toolkit for UI ##
+ 
+ * Take a look documentation:
+ 
+ * https://react-native-training.github.io/react-native-elements/
 

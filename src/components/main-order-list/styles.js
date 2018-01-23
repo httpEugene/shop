@@ -7,7 +7,7 @@ export default StyleSheet.create({
     margin: 20,
     flex: 1,
     display: 'flex',
-    backgroundColor:
+    backgroundColor: colors.secondColorWhite,
   },
 
   listItemContainer: {
