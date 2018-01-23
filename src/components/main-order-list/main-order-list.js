@@ -20,7 +20,7 @@ export default class MainOrderList extends PureComponent {
     return (
       <View style={styles.container}>
         <SortForm />
-        <OrderItem/>
+        <OrderItem />
       </View>
     );
   }
