@@ -1,86 +1,76 @@
-import React from 'react';
 import {
-    StyleSheet,
-    PixelRatio
+  StyleSheet,
+  PixelRatio,
 } from 'react-native';
 
-import variables from '../../config/variables.js';
+import colors from '../../config/colors';
 
 export default StyleSheet.create({
   container: {
     display: 'flex',
-    borderWidth: 1/PixelRatio.get(),
-    borderColor: variables.secondColor_2
+    borderWidth: 1 / PixelRatio.get(),
+    borderColor: colors.secondColorLightGray,
   },
 
   listItemContainer: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    margin: 5
+    margin: 5,
   },
 
-   statusContainer: {
+  statusContainer: {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-end',
     margin: 5,
   },
 
-//   purchaseContainer: {
-//    display: 'flex',
-//    flexDirection: 'row',
-//    justifyContent: 'space-between',
-//    margin: 5,
-//    borderWidth: 1/PixelRatio.get(),
-//    borderColor: variables.secondColor_2
-//  },
-
   id: {
-    color: variables.mainColor_2,
+    color: colors.mainColorBlack,
     fontSize: 24,
     margin: 10,
   },
 
   name: {
-    color: variables.mainColor_2,
+    color: colors.mainColorBlack,
     fontSize: 24,
     margin: 10,
   },
 
   date: {
-    color: variables.secondColor_1,
+    color: colors.secondColorDarkGray,
     fontSize: 20,
     margin: 10,
   },
 
   statusText: {
-    color: variables.secondColor_1,
+    color: colors.secondColorDarkGray,
     fontSize: 14,
     margin: 10,
   },
 
   status: {
-    color: variables.additionalColor_1,
+    color: colors.additionalColorGgreen,
     fontSize: 18,
     margin: 10,
   },
 
   purchaseContainer: {
-     display: 'flex',
-     flexDirection: 'row',
-     justifyContent: 'space-between',
-     margin: 5
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    margin: 5,
   },
 
   purchaseItem: {
-    color: variables.secondColor_1,
-    fontSize: 20
+    color: colors.secondColorDarkGray,
+    fontSize: 20,
   },
 
   purchaseSumm: {
-    color: variables.mainColor_1,
-    fontSize: 24
+    color: colors.mainColorBlue,
+    fontSize: 24,
   },
 
   buttonContainer: {
@@ -91,49 +81,49 @@ export default StyleSheet.create({
 
   delivery: {
     fontSize: 30,
-    color: "#00e5ff"
+    color: '#00e5ff',
   },
 
   deliveryDetails: {
     fontSize: 30,
-    color: "#00e5ff"
+    color: '#00e5ff',
   },
 
-    shippingContainer: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
-        margin: 5,
-    },
+  shippingContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    margin: 5,
+  },
 
-    shippingText: {
-        color: variables.secondColor_1,
-        fontSize: 18,
-        margin: 10
-    },
+  shippingText: {
+    color: colors.secondColorDarkGray,
+    fontSize: 18,
+    margin: 10,
+  },
 
-    shippingPrice: {
-        color: variables.secondColor_1,
-        fontSize: 18,
-        margin: 10
-    },
+  shippingPrice: {
+    color: colors.secondColorDarkGray,
+    fontSize: 18,
+    margin: 10,
+  },
 
-    totalContainer: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        margin: 5,
-    },
+  totalContainer: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    margin: 5,
+  },
 
-    totalText: {
-        color: variables.mainColor_1,
-        fontSize: 30,
-        margin: 10
-    },
+  totalText: {
+    color: colors.mainColorBlue,
+    fontSize: 30,
+    margin: 10,
+  },
 
-    totalPrice: {
-        color: variables.mainColor_1,
-        fontSize: 30,
-        margin: 10
-    }
+  totalPrice: {
+    color: colors.mainColorBlue,
+    fontSize: 30,
+    margin: 10,
+  },
 });

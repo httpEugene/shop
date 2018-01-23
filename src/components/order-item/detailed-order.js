@@ -2,8 +2,9 @@ import React, { PureComponent } from 'react';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import {
+  ScrollView,
   View,
-  Text
+  Text,
 } from 'react-native';
 
 import styles from './styles';
@@ -22,18 +23,18 @@ function mapDispatchToProps() {
 export default class DetailedOrder extends PureComponent {
   getDeliveryDetails = () => {
     Actions.deliveryDetails();
-  };
+  }
 
   getDetails = () => {
     // Actions.details();
-  };
+  }
 
   render() {
     return (
       <View style={styles.container}>
-         <View style={styles.listItemContainer}>
-            <Text style={styles.id}>id</Text>
-            <Text style={styles.date}>date</Text>
+        <View style={styles.listItemContainer}>
+          <Text style={styles.id}>id</Text>
+          <Text style={styles.date}>date</Text>
         </View>
 
         <View style={styles.statusContainer}>
@@ -41,13 +42,13 @@ export default class DetailedOrder extends PureComponent {
           <Text style={styles.status}>DONE</Text>
         </View>
 
-        <Order />
+        <Order/>
 
-       <View style={styles.statusContainer}>
+        <View style={styles.statusContainer}>
           <Text style={styles.shippingText}>Shipping</Text>
           <Text style={styles.shippingPrice}>10$</Text>
-       </View>
-       <View style={styles.totalContainer}>
+        </View>
+        <View style={styles.totalContainer}>
           <Text style={styles.totalText}>Total</Text>
           <Text style={styles.totalPrice}>100$</Text>
         </View>

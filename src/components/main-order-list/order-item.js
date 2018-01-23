@@ -1,9 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Actions } from 'react-native-router-flux';
-import {
-  View,
-  Text,
-} from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
+
 import { connect } from 'react-redux';
 import Button from '../button';
 
@@ -18,7 +16,6 @@ function mapDispatchToProps() {
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
-
 export default class OrderItem extends PureComponent {
   getDeliveryDetails = () => {
     Actions.deliveryDetails();
@@ -30,10 +27,10 @@ export default class OrderItem extends PureComponent {
 
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.listItemContainer}>
-            <Text style={styles.id}>id</Text>
-            <Text style={styles.date}>date</Text>
+          <Text style={styles.id}>id</Text>
+          <Text style={styles.date}>date</Text>
         </View>
 
         <View style={styles.statusContainer}>
@@ -47,14 +44,20 @@ export default class OrderItem extends PureComponent {
         </View>
 
         <View style={styles.buttonContainer}>
-
-          <Button styleName='details' styleTextName='buttonTextSecond' label='Details'
-                  onPressHandler={() => this.getDetails()}/>
-          <Button styleName='deliveryDetails' styleTextName='buttonTextSecond' label='Delivery Details'
-                  onPressHandler={() => this.getDeliveryDetails()}/>
+          <Button
+            styleName="details"
+            styleTextName="buttonTextSecond"
+            label="Details"
+            onPressHandler={() => this.getDetails()}
+          />
+          <Button
+            styleName="deliveryDetails"
+            styleTextName="buttonTextSecond"
+            label="Delivery Details"
+            onPressHandler={() => this.getDeliveryDetails()}
+          />
         </View>
-
-      </View>
+      </ScrollView>
     );
   }
 }
