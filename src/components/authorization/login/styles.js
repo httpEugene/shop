@@ -1,6 +1,6 @@
 import {
-    StyleSheet,
-    PixelRatio
+  StyleSheet,
+  PixelRatio,
 } from 'react-native';
 
 export default StyleSheet.create({
@@ -9,27 +9,27 @@ export default StyleSheet.create({
   },
   fieldContainer: {
     display: 'flex',
-    margin: 50
+    margin: 50,
   },
   buttonContainer: {
     display: 'flex',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   login: {
-      fontSize: 30,
-      color: '#333'
+    fontSize: 30,
+    color: '#333',
   },
   validation: {
-      fontSize: 12,
-      color: 'green'
+    fontSize: 12,
+    color: 'green',
   },
   error: {
-      color: 'red'
+    color: 'red',
   },
   input: {
-      fontSize: 30,
-      color: '#666',
-      borderWidth: 1/PixelRatio.get(),
-      borderColor: '#dadada'
-  }
+    fontSize: 30,
+    color: '#666',
+    borderWidth: 1 / PixelRatio.get(),
+    borderColor: '#dadada',
+  },
 });

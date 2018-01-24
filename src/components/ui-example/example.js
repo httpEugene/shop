@@ -283,12 +283,12 @@ export default class UiExample extends PureComponent {
           onPress={() => console.log('hello')} />
 
 
-        <List containerStyle={{marginBottom: 20}}>
+        <List containerStyle={{ marginBottom: 20 }}>
           {
             list.map((l, i) => (
               <ListItem
                 roundAvatar
-                avatar={{uri:l.avatar_url}}
+                avatar={{ uri: l.avatar_url }}
                 key={i}
                 title={l.name}
               />
@@ -302,11 +302,11 @@ export default class UiExample extends PureComponent {
             title='Limited supply! Its like digital gold!'
             subtitle={
               <View style={styles.subtitleView}>
-                <Image source={{uri: 'https://www.zappas.co.uk/files/2013/01/five-stars.png'}} style={styles.ratingImage}/>
+                <Image source={{ uri: 'https://www.zappas.co.uk/files/2013/01/five-stars.png' }} style={styles.ratingImage}/>
                 <Text style={styles.ratingText}>5 months ago</Text>
               </View>
             }
-            avatar={{uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'}}
+            avatar={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg' }}
           />
         </List>
 

@@ -2,6 +2,7 @@
   "name": "shop",
   "version": "0.1.0",
   "private": true,
+  "eslint": "eslint './src/**/*.js'",
   "devDependencies": {
     "babel-eslint": "^8.2.1",
     "babel-preset-react": "^6.24.1",
