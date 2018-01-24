@@ -4,11 +4,10 @@ import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
-import Field from '../field';
-import Button from '../button';
+import Field from '../../field';
+import Button from '../../button';
 import styles from './styles';
-
-import login from '../../actions/login';
+import login from './actions/login';
 
 function mapStateToProps() {
   return {};
@@ -16,9 +15,7 @@ function mapStateToProps() {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onRegisterSubmit() {
-      // dispatch(registerRequestAction(data));
-    },
+    onRegisterSubmit() {},
     onLogin(data) {
       dispatch(login(data));
     },

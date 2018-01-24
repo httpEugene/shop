@@ -1,6 +1,6 @@
 import React from 'react';
 import { Router, Scene } from 'react-native-router-flux';
-import LoginForm from '../components/login-form';
+import LoginForm from '../components/authorization/login';
 import MainOrderList from '../components/main-order-list';
 import OrderItem from '../components/order-item';
 

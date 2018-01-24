@@ -1,5 +1,5 @@
-import loginReducer from '../login';
-import registerReducer from '../register';
+import loginReducer from '../../../components/authorization/login/reducers/login';
+import registerReducer from '../../../components/authorization/registration/reducers/register';
 
 import {
   LOGIN_SUCCESS,
@@ -8,7 +8,7 @@ import {
   REGISTER_FAILED,
   REGISTER_SUCCESS,
   REGISTER_REQUEST,
-} from '../../actions/actions';
+} from '../../../components/authorization/authorization-statuses';
 
 const initState = null;
 

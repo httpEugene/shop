@@ -1,5 +1,5 @@
 import loginReducer from './login';
-import { LOGIN_SUCCESS, LOGIN_FAILED } from '../../actions/actions';
+import { LOGIN_SUCCESS, LOGIN_FAILED } from '../../authorization-statuses';
 
 const initState = null;
 

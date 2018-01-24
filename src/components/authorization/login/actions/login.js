@@ -1,5 +1,5 @@
-import config from '../../config';
-import { LOGIN_SUCCESS, LOGIN_FAILED, LOGIN_REQUEST } from '../actions';
+import config from '../../../../config';
+import { LOGIN_SUCCESS, LOGIN_FAILED, LOGIN_REQUEST } from '../../authorization-statuses';
 
 const loginSuccess = data => ({
   type: LOGIN_SUCCESS,
