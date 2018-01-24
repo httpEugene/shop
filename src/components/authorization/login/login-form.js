@@ -15,9 +15,7 @@ function mapStateToProps() {
 
 function mapDispatchToProps(dispatch) {
   return {
-    onRegisterSubmit() {
-      // dispatch(registerRequestAction(data));
-    },
+    onRegisterSubmit() {},
     onLogin(data) {
       dispatch(login(data));
     },
