@@ -15,10 +15,6 @@ function mapDispatchToProps() {
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class TimeStatus extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   static propTypes = {
     timeStatus: PropTypes.object,
   };

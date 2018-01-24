@@ -16,13 +16,15 @@ function mapDispatchToProps() {
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class DeliveryDay extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   static propTypes = {
     deliveryDay: PropTypes.object,
   };
+
+  renderTimeStatusCollection() {
+    return this.props.deliveryDay.deliveryStatuses.map(status => (
+      <TimeStatus key={status.deliveryStatus} timeStatus={status} />
+    ));
+  }
 
   render() {
     return (
@@ -30,9 +32,7 @@ export default class DeliveryDay extends PureComponent {
         <Text style={styles.date}>
           {convertDateToShortUTC(this.props.deliveryDay.date)}
         </Text>
-        {this.props.deliveryDay.deliveryStatuses.map(status => (
-          <TimeStatus key={status.deliveryStatus} timeStatus={status} />
-        ))}
+        {this.renderTimeStatusCollection()}
       </View>
     );
   }

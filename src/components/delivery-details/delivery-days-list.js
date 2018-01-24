@@ -16,20 +16,17 @@ function mapDispatchToProps() {
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class DeliveryDaysList extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   static propTypes = {
     deliveryDetails: PropTypes.arrayOf(Object),
   };
 
+  renderDeliveryDayCollection() {
+    return this.props.deliveryDetails.map(item => (
+      <DeliveryDay key={item.date} deliveryDay={item} />
+    ));
+  }
+
   render() {
-    return (
-      <View>
-        {this.props.deliveryDetails
-          .map(item => <DeliveryDay key={item.date} deliveryDay={item} />)}
-      </View>
-    );
+    return <View>{this.renderDeliveryDayCollection()}</View>;
   }
 }

@@ -1,4 +1,4 @@
-import convertDateToShortUTC from '../converters';
+import convertDateToShortUTC from './converters';
 
 describe('convertDateToShortUTC', () => {
   test('should convert date in format YYYY-MM-DD to short UTC format', () => {

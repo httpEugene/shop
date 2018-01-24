@@ -35,10 +35,6 @@ export default class DeliveryDetails extends PureComponent {
     deliveryDetails: PropTypes.arrayOf(PropTypes.object),
   };
 
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.getDeliveryDetails();
   }
