@@ -15,7 +15,7 @@ describe('Login reducer', () => {
     };
 
     const expectedResult = {
-      shopData: 'any data',
+      shopsData: 'any data',
       isFetching: false,
       error: null,
     };
@@ -29,7 +29,7 @@ describe('Login reducer', () => {
     };
 
     const expectedResult = {
-      shopData: null,
+      shopsData: null,
       error: null,
       isFetching: true,
     };
@@ -46,7 +46,7 @@ describe('Login reducer', () => {
     const expectedResult = {
       error: 'Any error',
       isFetching: false,
-      shopData: null,
+      shopsData: null,
     };
 
     expect(mapDataReducer(initState, action)).toEqual(expectedResult);

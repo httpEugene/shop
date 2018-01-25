@@ -9,7 +9,7 @@ const initState = null;
 export default (state = initState, action) => {
   if (action.type === FETCH_REQUEST) {
     return {
-      shopData: null,
+      shopsData: null,
       error: null,
       isFetching: true,
     };
@@ -17,7 +17,7 @@ export default (state = initState, action) => {
 
   if (action.type === FETCH_SUCCESS) {
     return {
-      shopData: action.payload,
+      shopsData: action.payload,
       isFetching: false,
       error: null,
     };
@@ -27,7 +27,7 @@ export default (state = initState, action) => {
     return {
       error: action.payload,
       isFetching: false,
-      shopData: null,
+      shopsData: null,
     };
   }
 

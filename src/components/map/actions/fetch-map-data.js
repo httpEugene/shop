@@ -31,7 +31,7 @@ export const fetchMapData = () => (dispatch) => {
     },
   };
 
-  return fetch(config.shopDataUrl, options)
+  return fetch(config.shopsDataUrl, options)
     .then(response => response.json())
     .then(response => dispatch(fetchSuccess(response)))
     .catch(error => dispatch(fetchFailed(error)));

@@ -56,7 +56,7 @@ describe('async actions', () => {
   });
 
   it('creates success when fetching has been done', () => {
-    fetchMock.getOnce(config.shopDataUrl, {
+    fetchMock.getOnce(config.shopsDataUrl, {
       headers: { 'content-type': 'application/json' },
       body: { shop: 'some shop' },
     });
@@ -71,8 +71,7 @@ describe('async actions', () => {
     ];
     const store = mockStore();
 
-    return store.dispatch(fetchMapData()).then(() => {
-      expect(store.getActions()).toEqual(expectedActions);
-    });
+    return store.dispatch(fetchMapData())
+      .then(() => expect(store.getActions()).toEqual(expectedActions));
   });
 });
