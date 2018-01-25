@@ -41,7 +41,7 @@ const scenes = [
   },
 ];
 
-const initialScene = 5;
+const initialScene = 0;
 const scenesCollections = initialSceneNumber =>
   scenes.map(({ key, component, type }, index) => {
     return index === initialSceneNumber
