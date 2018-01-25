@@ -24,15 +24,6 @@ export default StyleSheet.create({
     margin: 5,
   },
 
-  purchaseContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    margin: 5,
-    borderWidth: 1 / PixelRatio.get(),
-    borderColor: colors.secondColorLightGray,
-  },
-
   id: {
     color: colors.mainColorBlack,
     fontSize: 24,
@@ -68,6 +59,8 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     margin: 5,
+    borderWidth: 1 / PixelRatio.get(),
+    borderColor: colors.secondColorLightGray,
   },
 
   purchaseItem: {

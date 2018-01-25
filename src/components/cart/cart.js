@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { View, Text } from 'react-native';
+import { ScrollView, View, Text } from 'react-native';
+
 import styles from './styles';
 
 function mapStateToProps() {
@@ -12,12 +13,14 @@ function mapDispatchToProps() {
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
-export default class MainOrderList extends PureComponent {
+export default class Cart extends PureComponent {
   render() {
     return (
-      <View style={styles.container}>
-        <Text> Delivery details </Text>
-      </View>
+      <ScrollView style={styles.container}>
+        <View>
+          <Text>Order Page</Text>
+        </View>
+      </ScrollView>
     );
   }
 }
