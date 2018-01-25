@@ -6,7 +6,7 @@ import {
   DELIVERY_DETAILS_REQUEST,
 } from '../delivery-statuses';
 
-const deliveryDetailsSuccess = (data) => {
+export const deliveryDetailsSuccess = (data) => {
   return {
     type: DELIVERY_DETAILS_SUCCESS,
     payload: data,
@@ -14,7 +14,7 @@ const deliveryDetailsSuccess = (data) => {
   };
 };
 
-const deliveryDetailsFailed = (error) => {
+export const deliveryDetailsFailed = (error) => {
   return {
     type: DELIVERY_DETAILS_FAILED,
     payload: error,
@@ -22,12 +22,12 @@ const deliveryDetailsFailed = (error) => {
   };
 };
 
-const deliveryDetailsRequest = () => ({
+export const deliveryDetailsRequest = () => ({
   type: DELIVERY_DETAILS_REQUEST,
   isFetching: true,
 });
 
-const fetchDeliveryDetails = () => (dispatch) => {
+export const fetchDeliveryDetails = () => (dispatch) => {
   dispatch(deliveryDetailsRequest());
   return fetch(config.deliveryDetailsUrl)
     .then(response => response.json())

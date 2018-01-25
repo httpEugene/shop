@@ -5,6 +5,6 @@ describe('convertDateToShortUTC', () => {
     const date = '2018-01-24';
     const expectedValue = '24 Jan 2018';
 
-    expect(convertDateToShortUTC(date).toEqual(expectedValue));
+    expect(convertDateToShortUTC(date)).toEqual(expectedValue);
   });
 });

@@ -5,7 +5,7 @@ script:
   - rm -rf node_modules
   - npm install
   - npm run eslint
-  - npm run run-test
+  - npm run test
 
 notifications:
   email: false
