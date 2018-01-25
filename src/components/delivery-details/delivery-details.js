@@ -39,6 +39,12 @@ export default class DeliveryDetails extends PureComponent {
     this.props.getDeliveryDetails();
   }
 
+  renderDeliveryDaysList() {
+    return this.props.deliveryDetails ? (
+      <DeliveryDaysList deliveryDetails={this.props.deliveryDetails} />
+    ) : null;
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -57,9 +63,7 @@ export default class DeliveryDetails extends PureComponent {
           />
         </View>
 
-        {this.props.deliveryDetails ? (
-          <DeliveryDaysList deliveryDetails={this.props.deliveryDetails} />
-        ) : null}
+        {this.renderDeliveryDaysList()}
       </View>
     );
   }
