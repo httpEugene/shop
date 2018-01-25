@@ -20,8 +20,7 @@
     "start": "react-native start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "run-test": "node node_modules/jest/bin/jest.js",
-    "test": "npm run eslint && npm run run-test",
+    "test": "node node_modules/jest/bin/jest.js",
     "eslint": "eslint src/**/*.js"
   },
   "jest": {
