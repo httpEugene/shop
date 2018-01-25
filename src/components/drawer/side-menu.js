@@ -41,7 +41,7 @@ export default class SideMenu extends PureComponent {
   };
 
   mainListRender = () => {
-    mainMenulist.map(({ title, icon, path }, i) =>
+    return mainMenulist.map(({ title, icon, path }, i) =>
       (title === 'Notifications' ? (
           <ListItem
             key={i}
@@ -78,7 +78,7 @@ export default class SideMenu extends PureComponent {
   };
 
   secondListRender = () => {
-    secondMenulist.map((item, i) => (
+    return secondMenulist.map((item, i) => (
       <ListItem
         key={i}
         title={item.title}
