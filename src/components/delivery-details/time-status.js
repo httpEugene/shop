@@ -29,16 +29,12 @@ export class TimeStatus extends PureComponent {
     }
   }
 
-
   render() {
     return (
       <View style={styles.timeStatusRow}>
         <Text style={styles.time}>{this.props.timeStatus.time}</Text>
         <Text
-          style={[
-            styles.status,
-            this.setStatusColor(this.props.timeStatus),
-          ]}
+          style={[styles.status, this.setStatusColor(this.props.timeStatus)]}
         >
           {statuses[this.props.timeStatus.deliveryStatus]}
         </Text>
