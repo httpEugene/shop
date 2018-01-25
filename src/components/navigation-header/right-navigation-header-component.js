@@ -3,6 +3,7 @@ import { TouchableOpacity } from 'react-native';
 import { Icon, Badge } from 'react-native-elements';
 import PropTypes from 'prop-types';
 import { Actions } from 'react-native-router-flux';
+import styles from './styles';
 
 export default class rightNavigationComponent extends PureComponent {
   static propTypes = {
@@ -17,12 +18,8 @@ export default class rightNavigationComponent extends PureComponent {
 
   render() {
     return (
-      <TouchableOpacity style={{
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'flex-end',
-      }} onPress={this.handlePress}>
-        <Badge value={3} textStyle={{ color: 'orange' }} containerStyle={{ backgroundColor: '#333' }} />
+      <TouchableOpacity style={ styles.touchableOpacity } onPress={this.handlePress}>
+        <Badge value={3} textStyle={ styles.badgeText } containerStyle={ styles.badgeContainer } />
         <Icon name="shopping-cart" color="#fff" />
       </TouchableOpacity>
     );

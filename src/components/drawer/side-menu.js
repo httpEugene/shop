@@ -40,16 +40,65 @@ export default class SideMenu extends PureComponent {
     Actions[route]();
   };
 
+  mainListRender = () => {
+    mainMenulist.map(({ title, icon, path }, i) =>
+      (title === 'Notifications' ? (
+          <ListItem
+            key={i}
+            title={title}
+            leftIcon={{ name: icon }}
+            containerStyle={{
+              marginTop: 0,
+              borderTopWidth: 0,
+              borderBottomWidth: 1,
+              borderBottomColor: '#fff',
+            }}
+            wrapperStyle={{ border: 0 }}
+            badge={{
+              value: 3,
+              textStyle: { color: 'orange' },
+              containerStyle: { marginTop: 5 },
+            }}
+          />
+      ) : (
+          <ListItem
+            key={i}
+            title={title}
+            leftIcon={{ name: icon }}
+            containerStyle={{
+              marginTop: 0,
+              borderTopWidth: 0,
+              borderBottomWidth: 1,
+              borderBottomColor: '#fff',
+            }}
+            wrapperStyle={{ border: 0 }}
+            onPress={() => this.navigateTo(path)}
+          />
+      )));
+  };
+
+  secondListRender = () => {
+    secondMenulist.map((item, i) => (
+      <ListItem
+        key={i}
+        title={item.title}
+        leftIcon={{ name: item.icon }}
+      />
+    ));
+  }
+
   render() {
     return (
       <View>
-        <View style={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'flex-start',
-          marginTop: 25,
-          marginLeft: 10,
-        }}>
+        <View
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'flex-start',
+            marginTop: 25,
+            marginLeft: 10,
+          }}
+        >
           <Avatar
             small
             rounded
@@ -60,58 +109,21 @@ export default class SideMenu extends PureComponent {
             onPress={() => console.log('Works!')}
             activeOpacity={0.7}
           />
-          <Text style={{
-            marginTop: 5,
-            marginLeft: 10,
-            fontSize: 18,
-            color: '#000',
-          }}>User</Text>
+          <Text
+            style={{
+              marginTop: 5,
+              marginLeft: 10,
+              fontSize: 18,
+              color: '#000',
+            }}
+          >
+            User
+          </Text>
         </View>
-        <List>
-          {mainMenulist.map((item, i) =>
-              (item.title === 'Notifications' ? (
-                <ListItem
-                  key={i}
-                  title={item.title}
-                  leftIcon={{ name: item.icon }}
-                  containerStyle={{
-                    marginTop: 0,
-                    borderTopWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: '#fff',
-                  }}
-                  wrapperStyle={{ border: 0 }}
-                  badge={{
-                    value: 3,
-                    textStyle: { color: 'orange' },
-                    containerStyle: { marginTop: 5 },
-                  }}
-                />
-              ) : (
-                <ListItem
-                  key={i}
-                  title={item.title}
-                  leftIcon={{ name: item.icon }}
-                  containerStyle={{
-                    marginTop: 0,
-                    borderTopWidth: 0,
-                    borderBottomWidth: 1,
-                    borderBottomColor: '#fff',
-                  }}
-                  wrapperStyle={{ border: 0 }}
-                  onPress={() => this.navigateTo(item.path)}
-                />
-              )))}
-        </List>
+        <List>{this.mainListRender()}</List>
 
         <List>
-          {secondMenulist.map((item, i) => (
-            <ListItem
-              key={i}
-              title={item.title}
-              leftIcon={{ name: item.icon }}
-            />
-          ))}
+          {this.secondListRender()}
         </List>
 
         <List
