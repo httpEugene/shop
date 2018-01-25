@@ -8,7 +8,7 @@ import fetchMapAction from './actions';
 
 function mapStateToProps(state) {
   return {
-    shopsOnMap: state.shopsData,
+    shopsData: state.shopsData ? state.shopsData.shops : null,
   };
 }
 
@@ -24,9 +24,7 @@ function mapDispatchToProps(dispatch) {
 export default class MyApp extends PureComponent {
   static propTypes = {
     fetchMapData: PropTypes.func,
-    shopsOnMap: PropTypes.shape({
-      shopsData: PropTypes.array,
-    }),
+    shopsData: PropTypes.array,
   };
 
   componentDidMount() {
@@ -34,9 +32,9 @@ export default class MyApp extends PureComponent {
   }
 
   renderPins = () => {
-    if (!this.props.shopsOnMap || !this.props.shopsOnMap.shopsData) return null;
+    if (!this.props.shopsData) return null;
 
-    return this.props.shopsOnMap.shopsData.map(marker => (
+    return this.props.shopsData.map(marker => (
       <MapView.Marker coordinate={marker.latlng} key={marker.address}>
         <MapView.Callout>
           <Text>{marker.address}</Text>
