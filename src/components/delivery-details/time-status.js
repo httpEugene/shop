@@ -1,19 +1,10 @@
 import React, { PureComponent } from 'react';
-import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './styles';
 import * as statuses from '../../constants/status-constants';
 
-function mapStateToProps() {
-  return {};
-}
-
-function mapDispatchToProps() {
-  return {};
-}
-
-export class TimeStatus extends PureComponent {
+export default class TimeStatus extends PureComponent {
   static propTypes = {
     timeStatus: PropTypes.object,
   };
@@ -42,5 +33,3 @@ export class TimeStatus extends PureComponent {
     );
   }
 }
-
-export default connect(mapDispatchToProps, mapStateToProps)(TimeStatus);
