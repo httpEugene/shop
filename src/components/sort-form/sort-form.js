@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { View, Text } from 'react-native';
-import PropTypes from 'prop-types';
-
+import { View } from 'react-native';
 import Button from '../button';
 import styles from './styles';
 
@@ -10,7 +8,7 @@ function mapStateToProps() {
   return {};
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps() {
   return {
     handleSort() {
       // dispatch(registerRequestAction(data));

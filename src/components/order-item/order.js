@@ -1,16 +1,17 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import styles from './styles';
 import {
   View,
   Text,
 } from 'react-native';
+import styles from './styles';
+
 
 function mapStateToProps() {
   return {};
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps() {
   return {};
 }
 

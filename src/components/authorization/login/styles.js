@@ -1,7 +1,4 @@
-import {
-  StyleSheet,
-  PixelRatio,
-} from 'react-native';
+import { StyleSheet, PixelRatio } from 'react-native';
 
 export default StyleSheet.create({
   container: {

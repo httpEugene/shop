@@ -2,7 +2,7 @@ import {
   StyleSheet,
   PixelRatio } from 'react-native';
 
-import colors from '../../config/colors.js';
+import colors from '../../config/colors';
 
 export default StyleSheet.create({
   button: {
@@ -15,7 +15,6 @@ export default StyleSheet.create({
     marginTop: 50,
   },
   sortButtonTextUndone: {
-    fontSize: 20,
     color: colors.additionalColorOrange,
     backgroundColor: '#9c27b0',
     margin: 5,

@@ -44,7 +44,7 @@ export default class LoginForm extends PureComponent {
 
   showUiExamples = () => {
     Actions.UiExamples();
-  }
+  };
 
   render() {
     return (
