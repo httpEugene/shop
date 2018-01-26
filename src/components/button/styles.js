@@ -1,6 +1,4 @@
-import {
-  StyleSheet,
-  PixelRatio } from 'react-native';
+import { StyleSheet, PixelRatio } from 'react-native';
 
 import colors from '../../config/colors';
 
@@ -62,5 +60,24 @@ export default StyleSheet.create({
     fontSize: 24,
     color: colors.secondColorWhite,
     margin: 10,
+  },
+
+  backButton: {
+    backgroundColor: colors.secondColorWhite,
+  },
+
+  backButtonText: {
+    color: colors.mainColorBlue,
+    fontSize: 20,
+  },
+
+  feedbackButton: {
+    backgroundColor: colors.mainColorBlue,
+  },
+
+  feedbackButtonText: {
+    fontSize: 20,
+    color: colors.secondColorWhite,
+    margin: 5,
   },
 });
