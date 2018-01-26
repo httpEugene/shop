@@ -29,7 +29,7 @@ export default class LoginForm extends PureComponent {
     onLogin: PropTypes.func,
     nextProps: PropTypes.shape({
       user: PropTypes.str,
-    })
+    }),
   };
 
   state = {
@@ -44,7 +44,7 @@ export default class LoginForm extends PureComponent {
 
   showUiExamples = () => {
     Actions.UiExamples();
-  }
+  };
 
   render() {
     return (

@@ -1,14 +1,22 @@
 import React, { PureComponent } from 'react';
-import {
-  ScrollView,
-  View,
-  Image,
-} from 'react-native';
-
+import { ScrollView, View, Image } from 'react-native';
 import {
   Text,
   Button,
-  Avatar, AvatarIcon, AvatarProps, Badge, BadgeProps, ButtonGroup, ButtonGroupProps, ButtonIcon, ButtonInformation, ButtonProps, Card, CardProps, CheckBox, CheckBoxProps, Colors, colors, Divider, DividerProps, ElementObject, FormInput, FormInputProps, FormLabel, FormLabelProps, FormValidationMessage, FormValidationMessageProps, getIconType, Header, HeaderIcon, HeaderProps, HeaderSubComponent, Icon, IconObject, IconProps, IconType, InnerBorderStyleProperty, List, ListItem, ListItemProps, ListProps, normalize, PricingCard, PricingCardProps, Rating, RatingProps, SearchBar, SearchBarProps, Slider, SliderProps, SocialIcon, SocialIconProps, SocialMediaType, TextProps, Tile, TileProps,
+  Badge,
+  ButtonGroup,
+  Card,
+  Divider,
+  FormInput,
+  FormLabel,
+  FormValidationMessage,
+  Icon,
+  List,
+  ListItem,
+  PricingCard,
+  Rating,
+  SearchBar,
+  Tile,
 } from 'react-native-elements';
 
 import styles from './styles';
@@ -16,47 +24,56 @@ import styles from './styles';
 const list = [
   {
     name: 'Amy Farha',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
     subtitle: 'Vice President',
   },
   {
     name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman',
   },
   {
     name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman',
   },
   {
     name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman',
   },
   {
     name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman',
   },
   {
     name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman',
   },
   {
     name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman',
   },
   {
     name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman',
   },
   {
     name: 'Chris Jackson',
-    avatar_url: 'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
+    avatar_url:
+      'https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg',
     subtitle: 'Vice Chairman',
   },
 ];
@@ -97,6 +114,7 @@ export default class UiExample extends PureComponent {
     super();
     this.state = {
       selectedIndex: 2,
+      test: '',
     };
     this.updateIndex = this.updateIndex.bind(this);
   }
@@ -105,53 +123,63 @@ export default class UiExample extends PureComponent {
     this.setState({ selectedIndex });
   }
 
-  someFunction = () => {
-
-  }
+  someFunction = () => {};
 
   ratingCompleted = (rating) => {
     console.log('Rating ', rating);
-  }
+  };
 
+  toggleDrawer = () => {
+    console.log('....toggleDrawer....');
+    this._drawer.open();
+  };
+
+  // closeControlPanel = () => {
+  //   this._drawer.close();
+  //   Actions.refresh({key: 'drawer', open: false });
+  // };
+  // openControlPanel = () => {
+  //   console.log('....toggleDrawer....');
+  //   this.setState({
+  //     test: 'open',
+  //   });
+  //
+  //   Actions.refresh({key: 'drawer', open: true });
+  //   //this._drawer.open();
+  // };
 
   render() {
     const buttons = ['Hello', 'World', 'Buttons'];
     const { selectedIndex } = this.state;
 
-
     return (
       <ScrollView>
 
-        <Header
-          leftComponent={{ icon: 'menu', color: '#fff' }}
-          centerComponent={{ text: 'MY TITLE', style: { color: '#fff' } }}
-          rightComponent={{ icon: 'home', color: '#fff' }}
-        />
-
         <Tile
-          imageSrc={{ uri: 'http://geeksnation.org/wp-content/uploads/2016/10/Beautiful-Girl.jpg' }}
+          imageSrc={{
+            uri:
+              'http://geeksnation.org/wp-content/uploads/2016/10/Beautiful-Girl.jpg',
+          }}
           title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores dolore exercitationem"
           featured
           caption="Some Caption Text"
         />
-
 
         <Text h1>Heading 1</Text>
         <Text h2>Heading 2</Text>
         <Text h3>Heading 3</Text>
         <Text h4>Heading 4</Text>
 
-
-        <Badge
-          value={3}
-          textStyle={{ color: 'orange' }}
-        />
-
         <Badge containerStyle={{ backgroundColor: 'violet' }}>
           <Text>User 1</Text>
         </Badge>
 
-        <Badge onPress={() => { console.log('pressed'); }} value="5" />
+        <Badge
+          onPress={() => {
+            console.log('pressed');
+          }}
+          value="5"
+        />
 
         <ButtonGroup
           onPress={this.updateIndex}
@@ -161,155 +189,156 @@ export default class UiExample extends PureComponent {
         />
 
         <PricingCard
-          color='#4f9deb'
-          title='Free'
-          price='$0'
+          color="#4f9deb"
+          title="Free"
+          price="$0"
           info={['1 User', 'Basic Support', 'All Core Features']}
           button={{ title: 'GET STARTED', icon: 'flight-takeoff' }}
         />
 
+        <Button title="BUTTON" buttonStyle={styles.sortButtonTextUndone} />
 
-        <Button
-          title='BUTTON' buttonStyle={styles.sortButtonTextUndone} />
-
-        <Button
-          raised
-          icon={{ name: 'cached' }}
-          title='BUTTON WITH ICON' />
+        <Button raised icon={{ name: 'cached' }} title="BUTTON WITH ICON" />
 
         <Button
           large
           iconRight={{ name: 'code' }}
-          title='LARGE WITH RIGHT ICON' />
+          title="LARGE WITH RIGHT ICON"
+        />
 
         <Button
           large
           icon={{ name: 'envira', type: 'font-awesome' }}
-          title='LARGE WITH ICON TYPE' />
+          title="LARGE WITH ICON TYPE"
+        />
 
         <Button
           large
           icon={{ name: 'squirrel', type: 'octicon' }}
-          title='OCTICON' buttonStyle={styles.sortButtonTextUndone} />
+          title="OCTICON"
+          buttonStyle={styles.sortButtonTextUndone}
+        />
 
         <Divider style={{ backgroundColor: 'blue' }} />
 
         <Card title="CARD WITH DIVIDER">
-          {
-            users.map((u, i) => {
-              return (
-                <View key={i} style={styles.user}>
-                  <Image
-                    style={styles.image}
-                    resizeMode="cover"
-                    source={{ uri: u.avatar }}
-                  />
-                  <Text style={styles.name}>{u.name}</Text>
-                </View>
-              );
-            })
-          }
+          {users.map((u, i) => {
+            return (
+              <View key={i} style={styles.user}>
+                <Image
+                  style={styles.image}
+                  resizeMode="cover"
+                  source={{ uri: u.avatar }}
+                />
+                <Text style={styles.name}>{u.name}</Text>
+              </View>
+            );
+          })}
         </Card>
 
-          <Card containerStyle={{ padding: 0 }} >
-            {
-              users.map((u, i) => {
-                return (
-                  <ListItem
-                    key={i}
-                    roundAvatar
-                    title={u.name}
-                    avatar={{ uri: u.avatar }}
-                  />
-                );
-              })
-            }
-          </Card>
+        <Card containerStyle={{ padding: 0 }}>
+          {users.map((u, i) => {
+            return (
+              <ListItem
+                key={i}
+                roundAvatar
+                title={u.name}
+                avatar={{ uri: u.avatar }}
+              />
+            );
+          })}
+        </Card>
 
         <Card
-          title='HELLO WORLD'
-          image={{ uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg' }}>
+          title="HELLO WORLD"
+          image={{
+            uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
+          }}
+        >
           <Text style={{ marginBottom: 10 }}>
-            The idea with React Native Elements is more about component structure.
+            The idea with React Native Elements is more about component
+            structure.
           </Text>
           <Button
             icon={{ name: 'code' }}
-            backgroundColor='#03A9F4'
-            fontFamily='Lato'
+            backgroundColor="#03A9F4"
+            fontFamily="Lato"
             buttonStyle={{
- borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0,
-}}
-            title='VIEW NOW' />
+              borderRadius: 0,
+              marginLeft: 0,
+              marginRight: 0,
+              marginBottom: 0,
+            }}
+            title="VIEW NOW"
+          />
         </Card>
 
-
         <FormLabel>Name</FormLabel>
-        <FormInput onChangeText={() => this.someFunction}/>
+        <FormInput onChangeText={() => this.someFunction} />
         <FormValidationMessage>Error message</FormValidationMessage>
 
         <FormLabel>Address</FormLabel>
-        <FormInput onChangeText={() => this.someFunction}/>
+        <FormInput onChangeText={() => this.someFunction} />
         <FormValidationMessage>Error message</FormValidationMessage>
 
         <FormLabel>Phone</FormLabel>
-        <FormInput onChangeText={() => this.someFunction}/>
+        <FormInput onChangeText={() => this.someFunction} />
         <FormValidationMessage>Error message</FormValidationMessage>
 
-        <Icon
-          name='rowing' />
+        <Icon name="rowing" />
 
-        <Icon
-          name='g-translate'
-          color='#00aced' />
+        <Icon name="g-translate" color="#00aced" />
 
-        <Icon
-          name='sc-telegram'
-          type='evilicon'
-          color='#517fa4'
-        />
+        <Icon name="sc-telegram" type="evilicon" color="#517fa4" />
 
         <Icon
           reverse
-          name='ios-american-football'
-          type='ionicon'
-          color='#517fa4'
+          name="ios-american-football"
+          type="ionicon"
+          color="#517fa4"
         />
 
         <Icon
           raised
-          name='heartbeat'
-          type='font-awesome'
-          color='#f50'
-          onPress={() => console.log('hello')} />
+          name="heartbeat"
+          type="font-awesome"
+          color="#f50"
+          onPress={() => console.log('hello')}
+        />
 
-
-        <List containerStyle={{marginBottom: 20}}>
-          {
-            list.map((l, i) => (
-              <ListItem
-                roundAvatar
-                avatar={{uri:l.avatar_url}}
-                key={i}
-                title={l.name}
-              />
-            ))
-          }
+        <List containerStyle={{ marginBottom: 20 }}>
+          {list.map((l, i) => (
+            <ListItem
+              roundAvatar
+              avatar={{ uri: l.avatar_url }}
+              key={i}
+              title={l.name}
+            />
+          ))}
         </List>
 
         <List>
           <ListItem
             roundAvatar
-            title='Limited supply! Its like digital gold!'
+            title="Limited supply! Its like digital gold!"
             subtitle={
               <View style={styles.subtitleView}>
-                <Image source={{uri: 'https://www.zappas.co.uk/files/2013/01/five-stars.png'}} style={styles.ratingImage}/>
+                <Image
+                  source={{
+                    uri:
+                      'https://www.zappas.co.uk/files/2013/01/five-stars.png',
+                  }}
+                  style={styles.ratingImage}
+                />
                 <Text style={styles.ratingText}>5 months ago</Text>
               </View>
             }
-            avatar={{uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg'}}
+            avatar={{
+              uri:
+                'https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg',
+            }}
           />
         </List>
-
 
         <Rating
           showRating
@@ -342,33 +371,37 @@ export default class UiExample extends PureComponent {
         <SearchBar
           onChangeText={() => this.someMethod}
           onClearText={() => this.someMethod}
-          placeholder='Type Here...' />
+          placeholder="Type Here..."
+        />
 
         <SearchBar
           noIcon
           onChangeText={() => this.someMethod}
           onClearText={() => this.someMethod}
-          placeholder='Type Here...' />
+          placeholder="Type Here..."
+        />
 
         <SearchBar
           round
           onChangeText={() => this.someMethod}
           onClearText={() => this.someMethod}
-          placeholder='Type Here...' />
+          placeholder="Type Here..."
+        />
 
         <SearchBar
           lightTheme
           onChangeText={() => this.someMethod}
           onClearText={() => this.someMethod}
-          placeholder='Type Here...' />
+          placeholder="Type Here..."
+        />
 
         <SearchBar
           lightTheme
           onChangeText={() => this.someMethod}
           onClearText={() => this.someMethod}
           icon={{ type: 'font-awesome', name: 'search' }}
-          placeholder='Type Here...' />
-
+          placeholder="Type Here..."
+        />
       </ScrollView>
     );
   }

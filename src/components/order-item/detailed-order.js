@@ -31,7 +31,7 @@ export default class DetailedOrder extends PureComponent {
 
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.listItemContainer}>
           <Text style={styles.id}>id</Text>
           <Text style={styles.date}>date</Text>
@@ -52,7 +52,7 @@ export default class DetailedOrder extends PureComponent {
           <Text style={styles.totalText}>Total</Text>
           <Text style={styles.totalPrice}>100$</Text>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }

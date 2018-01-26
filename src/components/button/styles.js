@@ -2,7 +2,7 @@ import {
   StyleSheet,
   PixelRatio } from 'react-native';
 
-import colors from '../../config/colors.js';
+import colors from '../../config/colors';
 
 export default StyleSheet.create({
   button: {

@@ -1,29 +1,18 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import Field from '../field';
-import Button from '../button';
+import { View, Text } from 'react-native';
 import styles from './styles';
-
-import {
-  View,
-  Text
-} from 'react-native';
 
 function mapStateToProps() {
   return {};
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps() {
   return {};
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
-
 export default class MainOrderList extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <View style={styles.container}>
