@@ -3,7 +3,6 @@ import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 import styles from './styles';
 import TimeStatus from './time-status';
-import convertDateToShortUTC from '../../helpers/converters';
 
 export default class DeliveryDay extends PureComponent {
   static propTypes = {
@@ -16,11 +15,20 @@ export default class DeliveryDay extends PureComponent {
     ));
   }
 
+  convertStringToLocaleDateString(dateStr) {
+    return new Date(dateStr).toLocaleDateString('en-GB', {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+    });
+  }
+
   render() {
+    const { deliveryDay } = this.props;
     return (
-      <View key={this.props.deliveryDay.date} style={styles.deliveryDay}>
+      <View key={deliveryDay.date} style={styles.deliveryDay}>
         <Text style={styles.date}>
-          {convertDateToShortUTC(this.props.deliveryDay.date)}
+          {this.convertStringToLocaleDateString(deliveryDay.date)}
         </Text>
         {this.renderTimeStatusCollection()}
       </View>

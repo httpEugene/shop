@@ -21,13 +21,12 @@ export default class TimeStatus extends PureComponent {
   }
 
   render() {
+    const { timeStatus } = this.props;
     return (
       <View style={styles.timeStatusRow}>
-        <Text style={styles.time}>{this.props.timeStatus.time}</Text>
-        <Text
-          style={[styles.status, this.setStatusColor(this.props.timeStatus)]}
-        >
-          {statuses[this.props.timeStatus.deliveryStatus]}
+        <Text style={styles.time}>{timeStatus.time}</Text>
+        <Text style={[styles.status, this.setStatusColor(timeStatus)]}>
+          {statuses[timeStatus.deliveryStatus]}
         </Text>
       </View>
     );

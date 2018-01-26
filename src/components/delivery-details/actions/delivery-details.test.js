@@ -60,7 +60,7 @@ describe('Delivery details async action', () => {
     fetchMock.restore();
   });
 
-  test('Creates DELIVERY_DETAILS_SUCCESS when fetching delivery details has been done', () => {
+  test('Should update state with success status of request', () => {
     fetchMock.getOnce(config.deliveryDetailsUrl, {
       body: [{ date: '2018-01-25' }],
       headers: { 'content-type': 'application/json' },
