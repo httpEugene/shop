@@ -11,61 +11,14 @@ import Cart from '../components/cart';
 import SideMenu from '../components/drawer/side-menu';
 import CustomNavBar from '../components/navigation-header/header-component';
 
+
+import Comments from '../components/comments';
+const a = [{
+  text: 'fdfdfs',
+  id: 343
+}]
 const Navigator = () => (
-  <Router>
-    <Scene key="root" hideNavBar={true}>
-      <Scene key="auth" initial>
-        <Scene
-          key="login"
-          component={ LoginForm }
-          hideNavBar
-          titleStyle={{ display: 'none', textAlign: 'center' }}
-        />
-      </Scene>
-      <Scene key="drawer" contentComponent={SideMenu} drawer>
-        <Scene key="main">
-          <Scene
-            key="main"
-            component={ MainOrderList }
-            title="My Orders"
-            navBar={() => <CustomNavBar title={'Your Order'} /> }
-            initial
-          />
-          <Scene key="cart"
-            component={ Cart }
-            navBar={() => <CustomNavBar title={'Your Cart'} /> }
-          />
-          <Scene
-            key="UiExamples"
-            component={UiExamples}
-            navBar={() => <CustomNavBar title={'React Native Elements UI'} /> }
-          />
-          <Scene
-            key="deliveryDetails"
-            component={ DeliveryDetails }
-            title="Delivery Details"
-            navBar={() => <CustomNavBar title={'Delivery Details'} /> }
-          />
-          <Scene
-            key="order"
-            component={ OrderItem }
-            title="Order Detail"
-            navBar={() => <CustomNavBar title={'Your Order'} /> }
-          />
-          <Scene key="order"
-            component={ OrderItem }
-            title="Order Details"
-            navBar={() => <CustomNavBar title={'Order Details'} /> }
-          />
-          <Scene key="map"
-            component={ Map }
-            title="Shops"
-            navBar={() => <CustomNavBar title={'Shops'} /> }
-          />
-        </Scene>
-      </Scene>
-    </Scene>
-  </Router>
+  <Comments comments={a} />
 );
 
 export default Navigator;
