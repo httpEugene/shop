@@ -47,30 +47,19 @@ export default class SideMenu extends PureComponent {
             key={i}
             title={title}
             leftIcon={{ name: icon }}
-            containerStyle={{
-              marginTop: 0,
-              borderTopWidth: 0,
-              borderBottomWidth: 1,
-              borderBottomColor: '#fff',
-            }}
+            containerStyle={styles.listItem}
             wrapperStyle={{ border: 0 }}
             badge={{
               value: 3,
               textStyle: { color: 'orange' },
               containerStyle: { marginTop: 5 },
             }}
-          />
-      ) : (
+          />) : (
           <ListItem
             key={i}
             title={title}
             leftIcon={{ name: icon }}
-            containerStyle={{
-              marginTop: 0,
-              borderTopWidth: 0,
-              borderBottomWidth: 1,
-              borderBottomColor: '#fff',
-            }}
+            containerStyle={ styles.listItem }
             wrapperStyle={{ border: 0 }}
             onPress={() => this.navigateTo(path)}
           />
@@ -79,25 +68,15 @@ export default class SideMenu extends PureComponent {
 
   secondListRender = () => {
     return secondMenulist.map((item, i) => (
-      <ListItem
-        key={i}
-        title={item.title}
-        leftIcon={{ name: item.icon }}
-      />
+      <ListItem key={i} title={item.title} leftIcon={{ name: item.icon }} />
     ));
-  }
+  };
 
   render() {
     return (
       <View>
         <View
-          style={{
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'flex-start',
-            marginTop: 25,
-            marginLeft: 10,
-          }}
+          style={ styles.avatarBlock }
         >
           <Avatar
             small
@@ -109,39 +88,23 @@ export default class SideMenu extends PureComponent {
             onPress={() => console.log('Works!')}
             activeOpacity={0.7}
           />
-          <Text
-            style={{
-              marginTop: 5,
-              marginLeft: 10,
-              fontSize: 18,
-              color: '#000',
-            }}
-          >
+          <Text style={ styles.userText } >
             User
           </Text>
         </View>
         <List>{this.mainListRender()}</List>
 
-        <List>
-          {this.secondListRender()}
-        </List>
+        <List>{this.secondListRender()}</List>
 
-        <List
-          containerStyle={{
-            marginTop: 20,
-            borderTopWidth: 0,
-            borderBottomWidth: 1,
-            borderBottomColor: '#fff',
-          }}
-        >
+        <List containerStyle={ styles.plainListContainer }>
           <ListItem
-            containerStyle={ styles.listTypePlain }
+            containerStyle={styles.listTypePlain}
             title={'Shops'}
             hideChevron={true}
             onPress={() => this.navigateTo('map')}
           />
           <ListItem
-            containerStyle={ styles.listTypePlain }
+            containerStyle={styles.listTypePlain}
             title={'Logout'}
             hideChevron={true}
           />
