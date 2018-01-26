@@ -24,8 +24,8 @@ const requestHandler = type => ({
 const fetchAndDispatchData = (url, options, type, dispatch) => {
   return fetch(url, options)
     .then(response => response.json())
-    .then(response => dispatch(successHandler(response)))
-    .catch(error => dispatch(failureHandler(error)));
+    .then(response => dispatch(successHandler(response, type)))
+    .catch(error => dispatch(failureHandler(error, type)));
 };
 
 const get = (url, type, dispatch) => {
