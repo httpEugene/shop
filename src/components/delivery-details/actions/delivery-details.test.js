@@ -17,7 +17,7 @@ import {
 } from './delivery-details';
 
 describe('Delivery details actions', () => {
-  test('Should return action on delivery details success', () => {
+  it('Should return action on delivery details success', () => {
     const data = 'Some data';
 
     const expectedAction = {
@@ -29,7 +29,7 @@ describe('Delivery details actions', () => {
     expect(deliveryDetailsSuccess(data)).toEqual(expectedAction);
   });
 
-  test('Should return action on delivery details fail', () => {
+  it('Should return action on delivery details fail', () => {
     const error = 'Any error';
 
     const expectedAction = {
@@ -41,7 +41,7 @@ describe('Delivery details actions', () => {
     expect(deliveryDetailsFailed(error)).toEqual(expectedAction);
   });
 
-  test('Should return action on delivery details request', () => {
+  it('Should return action on delivery details request', () => {
     const expectedAction = {
       type: DELIVERY_DETAILS_REQUEST,
       isFetching: true,
@@ -60,7 +60,7 @@ describe('Delivery details async action', () => {
     fetchMock.restore();
   });
 
-  test('Should update state with success status of request', () => {
+  it('Should update state with success status of request', () => {
     fetchMock.getOnce(config.deliveryDetailsUrl, {
       body: [{ date: '2018-01-25' }],
       headers: { 'content-type': 'application/json' },

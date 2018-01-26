@@ -8,7 +8,7 @@ import styles from './styles';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('TimeStatus component', () => {
-  test('setStatusColor return correct styles for DONE status', () => {
+  it('setStatusColor return correct styles for DONE status', () => {
     const props = {
       timeStatus: {
         time: '16:30',
@@ -20,7 +20,7 @@ describe('TimeStatus component', () => {
     expect(enzymeWrapper.instance().setStatusColor(props.timeStatus)).toEqual(expectedStyles);
   });
 
-  test('setStatusColor return correct styles for NEW_ORDER status', () => {
+  it('setStatusColor return correct styles for NEW_ORDER status', () => {
     const props = {
       timeStatus: {
         time: '16:30',
@@ -32,7 +32,7 @@ describe('TimeStatus component', () => {
     expect(enzymeWrapper.instance().setStatusColor(props.timeStatus)).toEqual(expectedStyles);
   });
 
-  test('setStatusColor return correct styles for other statuses', () => {
+  it('setStatusColor return correct styles for other statuses', () => {
     const props = {
       timeStatus: {
         time: '16:30',

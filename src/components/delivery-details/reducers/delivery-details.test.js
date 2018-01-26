@@ -5,7 +5,7 @@ import { DELIVERY_DETAILS_SUCCESS, DELIVERY_DETAILS_FAILED } from '../delivery-s
 const initState = null;
 
 describe('Delivery details reducer', () => {
-  test('Should set delivery details to state if everything is ok', () => {
+  it('Should set delivery details to state if everything is ok', () => {
     const action = {
       type: DELIVERY_DETAILS_SUCCESS,
       payload: [{
@@ -22,7 +22,7 @@ describe('Delivery details reducer', () => {
     expect(deliveryDetailsReducer(initState, action)).toEqual(expectedDeliveryDetails);
   });
 
-  test('Should set error data to state if something wrong', () => {
+  it('Should set error data to state if something wrong', () => {
     const action = {
       type: DELIVERY_DETAILS_FAILED,
       payload: {
@@ -37,7 +37,7 @@ describe('Delivery details reducer', () => {
     expect(deliveryDetailsReducer(initState, action)).toEqual(expectedDeliveryDetails);
   });
 
-  test('Should return default state if action type is not recognized', () => {
+  it('Should return default state if action type is not recognized', () => {
     const action = {
       type: 'UNKNOWN',
     };
