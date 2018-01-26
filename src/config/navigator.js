@@ -27,9 +27,15 @@ const Navigator = () => (
           <Scene
             key="main"
             component={ MainOrderList }
-            title="My Orders"
-            navBar={() => <CustomNavBar title={'Your Order'} /> }
+            title="Products"
+            navBar={() => <CustomNavBar title={'Shop'} /> }
             initial
+          />
+          <Scene
+            key="orders"
+            component={ MainOrderList }
+            title="My Orders"
+            navBar={() => <CustomNavBar title={'Your Orders'} /> }
           />
           <Scene key="cart"
             component={ Cart }

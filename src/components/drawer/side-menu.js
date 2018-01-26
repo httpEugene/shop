@@ -18,7 +18,7 @@ const mainMenulist = [
   {
     title: 'My Orders',
     icon: 'flight-takeoff',
-    path: null,
+    path: 'orders',
   },
 ];
 

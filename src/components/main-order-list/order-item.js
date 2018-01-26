@@ -1,22 +1,24 @@
 import React, { PureComponent } from 'react';
+import { View, Text } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-import { ScrollView, View, Text } from 'react-native';
+import PropTypes from 'prop-types';
 
-import { connect } from 'react-redux';
 import Button from '../button';
+import ProductItem from './product-item';
 
 import styles from './styles';
 
-function mapStateToProps() {
-  return {};
-}
-
-function mapDispatchToProps() {
-  return {};
-}
-
-@connect(mapStateToProps, mapDispatchToProps)
 export default class OrderItem extends PureComponent {
+  static propTypes = {
+    post: PropTypes.shape({
+      id: PropTypes.string,
+      date: PropTypes.string,
+      products: PropTypes.array,
+      items: PropTypes.number,
+      summ: PropTypes.string,
+      deliveryStatus: PropTypes.string,
+    }),
+  };
   getDeliveryDetails = () => {
     Actions.deliveryDetails();
   };
@@ -25,22 +27,34 @@ export default class OrderItem extends PureComponent {
     Actions.order();
   };
 
+  renderProductList = (products) => {
+    return products.map((product, index) => {
+      return <ProductItem key={`product${index}`} product={product} />;
+    });
+  };
+
   render() {
+    const {
+      id, date, products, items, summ, deliveryStatus,
+    } = this.props.post;
+
     return (
-      <ScrollView style={styles.container}>
+      <View style={styles.orderContainer}>
         <View style={styles.listItemContainer}>
-          <Text style={styles.id}>id</Text>
-          <Text style={styles.date}>date</Text>
+          <Text style={styles.id}>{id}</Text>
+          <Text style={styles.date}>{date}</Text>
         </View>
+
+        <View style={ styles.productListStyle }>{this.renderProductList(products)}</View>
 
         <View style={styles.statusContainer}>
           <Text style={styles.statusText}>STATUS: </Text>
-          <Text style={styles.status}>DONE</Text>
+          <Text style={styles.status}>{deliveryStatus}</Text>
         </View>
 
         <View style={styles.purchaseContainer}>
-          <Text style={styles.purchaseItem}>1 ITEM</Text>
-          <Text style={styles.purchaseSumm}>180$</Text>
+          <Text style={styles.purchaseItem}>Items: {items}</Text>
+          <Text style={styles.purchaseSumm}>{summ}$</Text>
         </View>
 
         <View style={styles.buttonContainer}>
@@ -57,7 +71,7 @@ export default class OrderItem extends PureComponent {
             onPressHandler={() => this.getDeliveryDetails()}
           />
         </View>
-      </ScrollView>
+      </View>
     );
   }
 }

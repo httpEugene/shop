@@ -1,27 +1,49 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
+import { bindActionCreators } from 'redux';
+import PropTypes from 'prop-types';
+
 import styles from './styles';
+import { loadOrders } from './actions/orderActions';
 import OrderItem from './order-item';
 import SortForm from '../sort-form';
 
-function mapStateToProps() {
-  return {};
+function mapStateToProps(state) {
+  return {
+    orders: state.ordersData,
+  };
 }
 
-function mapDispatchToProps() {
-  return {};
-}
+const mapDispatchToProps = (dispatch) => {
+  return {
+    loadOrders: bindActionCreators(loadOrders, dispatch),
+  };
+};
 
 @connect(mapStateToProps, mapDispatchToProps)
-
 export default class MainOrderList extends PureComponent {
+  static propTypes = {
+    loadOrders: PropTypes.func,
+    orders: PropTypes.array,
+  };
+  componentDidMount() {
+    this.props.loadOrders();
+  }
+
   render() {
+    const { orders } = this.props;
+
     return (
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <SortForm />
-        <OrderItem />
-      </View>
+
+        <View style={ styles.container }>
+          {orders
+            ? orders.map(post => <OrderItem key={post.id} post={post} />)
+            : 'Loading...'}
+        </View>
+      </ScrollView>
     );
   }
 }
