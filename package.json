@@ -21,7 +21,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "test": "node node_modules/jest/bin/jest.js",
-    "eslint": "eslint src/**/*.js"
+    "eslint": "eslint './src/**/*.js'"
   },
   "jest": {
     "collectCoverage": true,
