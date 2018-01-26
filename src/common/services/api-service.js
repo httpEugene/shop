@@ -4,32 +4,32 @@ import {
   FETCH_REQUEST,
 } from '../../config/request-statuses';
 
-const successHandler = data => ({
-  type: FETCH_SUCCESS,
+const successHandler = (data, type) => ({
+  type: `${type}_${FETCH_SUCCESS}`,
   payload: data,
   isFetching: false,
 });
 
-const failureHandler = error => ({
-  type: FETCH_FAILED,
+const failureHandler = (error, type) => ({
+  type: `${type}_${FETCH_FAILED}`,
   payload: error,
   isFetching: false,
 });
 
-const requestHandler = () => ({
-  type: FETCH_REQUEST,
+const requestHandler = type => ({
+  type: `${type}_${FETCH_REQUEST}`,
   isFetching: true,
 });
 
-const fetchAndDispatchData = (url, options, dispatch) => {
+const fetchAndDispatchData = (url, options, type, dispatch) => {
   return fetch(url, options)
     .then(response => response.json())
-    .then(response => dispatch(successHandler(response)))
-    .catch(error => dispatch(failureHandler(error)));
+    .then(response => dispatch(successHandler(response, type)))
+    .catch(error => dispatch(failureHandler(error, type)));
 };
 
-const get = (url, dispatch) => {
-  requestHandler(dispatch);
+const get = (url, type, dispatch) => {
+  dispatch(requestHandler(type));
   const options = {
     method: 'GET',
     headers: {
@@ -40,8 +40,8 @@ const get = (url, dispatch) => {
   return fetchAndDispatchData(url, options, dispatch);
 };
 
-const post = (url, data, dispatch) => {
-  requestHandler(dispatch);
+const post = (url, data, type, dispatch) => {
+  dispatch(requestHandler(type));
   const options = {
     method: 'POST',
     headers: {
