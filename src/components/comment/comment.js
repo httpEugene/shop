@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { View, Text } from 'react-native';
-import styles from './styles';
+import { ListItem } from 'react-native-elements';
 
 export default class Comment extends PureComponent {
   static propTypes = {
@@ -10,9 +9,9 @@ export default class Comment extends PureComponent {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text>{this.props.comment}</Text>
-      </View>
+      <ListItem
+        title={this.props.comment}
+      />
     );
   }
 }
