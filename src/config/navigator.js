@@ -3,6 +3,8 @@ import { Router, Scene } from 'react-native-router-flux';
 import LoginForm from '../components/authorization/login';
 import MainOrderList from '../components/main-order-list';
 import OrderItem from '../components/order-item';
+import Map from '../components/map';
+
 import DeliveryDetails from '../components/delivery-details';
 import UiExamples from '../components/ui-example';
 import Cart from '../components/cart';
@@ -54,6 +56,11 @@ const Navigator = () => (
             component={ OrderItem }
             title="Order Details"
             navBar={() => <CustomNavBar title={'Order Details'} /> }
+          />
+          <Scene key="map"
+            component={ Map }
+            title="Shops"
+            navBar={() => <CustomNavBar title={'Shops'} /> }
           />
         </Scene>
       </Scene>

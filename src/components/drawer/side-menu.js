@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { Text, View } from 'react-native';
 import { Actions } from 'react-native-router-flux';
-
 import { List, ListItem, Avatar } from 'react-native-elements';
+import styles from './styles';
 
 const mainMenulist = [
   {
@@ -135,13 +135,13 @@ export default class SideMenu extends PureComponent {
           }}
         >
           <ListItem
-            containerStyle={{
-              marginTop: 0,
-              borderTopWidth: 0,
-              borderBottomWidth: 1,
-              borderBottomColor: '#fff',
-              color: '#000',
-            }}
+            containerStyle={ styles.listTypePlain }
+            title={'Shops'}
+            hideChevron={true}
+            onPress={() => this.navigateTo('map')}
+          />
+          <ListItem
+            containerStyle={ styles.listTypePlain }
             title={'Logout'}
             hideChevron={true}
           />
