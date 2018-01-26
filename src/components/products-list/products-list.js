@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+import { Actions } from 'react-native-router-flux';
 import {
   View,
   Image,
@@ -39,6 +40,10 @@ export default class ProductsList extends PureComponent {
     this.props.fetchProductsList();
   }
 
+  showProductPage(id) {
+    Actions.productPage({id});
+  }
+
   render() {
     if (!this.props.productsList) return null;
     return (
@@ -58,6 +63,7 @@ export default class ProductsList extends PureComponent {
                   </View>
                 }
                 avatar={{ uri: image }}
+                onPress={() => {this.showProductPage(id)}}
               />
             ))}
           </List>
