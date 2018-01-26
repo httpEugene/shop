@@ -46,6 +46,10 @@ export default class LoginForm extends PureComponent {
     Actions.UiExamples();
   };
 
+  showProductsList = () => {
+    Actions.productsList();
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -73,6 +77,12 @@ export default class LoginForm extends PureComponent {
               styleTextName="buttonText"
               label="Login"
               onPressHandler={this.handleFormSubmit}
+            />
+            <Button
+              styleName="button"
+              styleTextName="buttonText"
+              label="Products List"
+              onPressHandler={this.showProductsList}
             />
             <Button
               styleName="button"
