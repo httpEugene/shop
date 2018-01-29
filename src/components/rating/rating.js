@@ -15,11 +15,11 @@ export const defaultOptions = {
 };
 
 const isHalfOption = ({ half }) => half || defaultOptions.half;
-const setSpaceBetweenStars = ({ spacing }) =>
+const getSpaceBetweenStars = ({ spacing }) =>
   spacing || defaultOptions.spaceBetweenStars;
-const setCountOfStars = ({ count }) => count || defaultOptions.countOfStars;
+const getCountOfStars = ({ count }) => count || defaultOptions.countOfStars;
 
-export default class SortForm extends PureComponent {
+export default class Rating extends PureComponent {
   static propTypes = {
     changeRating: PropTypes.func,
     options: PropTypes.shape({
@@ -42,8 +42,8 @@ export default class SortForm extends PureComponent {
         <Stars
           half={isHalfOption(this.props.options)}
           rating={this.props.options.rating}
-          spacing={setSpaceBetweenStars(this.props.options)}
-          count={setCountOfStars(this.props.options)}
+          spacing={getSpaceBetweenStars(this.props.options)}
+          count={getCountOfStars(this.props.options)}
           fullStar={fullStar}
           emptyStar={emptyStar}
           halfStar={halfStar}

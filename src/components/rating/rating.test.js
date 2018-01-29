@@ -8,8 +8,13 @@ Enzyme.configure({ adapter: new Adapter() });
 
 describe('Rating component', () => {
   describe('Should not render', () => {
+    let wrapper;
+
+    beforeEach(() => {
+      wrapper = shallow(<Component />);
+    });
+
     it('Should not render if options are not exist', () => {
-      const wrapper = shallow(<Component />);
       expect(wrapper.isEmptyRender()).toBe(true);
     });
 
@@ -20,7 +25,7 @@ describe('Rating component', () => {
         },
       };
 
-      const wrapper = shallow(<Component {...props} />);
+      wrapper = shallow(<Component {...props} />);
       expect(wrapper.isEmptyRender()).toBe(true);
     });
   });
@@ -33,24 +38,23 @@ describe('Rating component', () => {
       },
     };
 
-    it('should render with default half value', () => {
-      const wrapper = shallow(<Component {...props} />);
-      const star = wrapper.find(Stars);
+    let wrapper;
+    let star;
 
+    beforeEach(() => {
+      wrapper = shallow(<Component {...props} />);
+      star = wrapper.find(Stars);
+    });
+
+    it('Should render with default half value', () => {
       expect(star.prop('half')).toBe(defaultOptions.half);
     });
 
-    it('should render with default spacing value', () => {
-      const wrapper = shallow(<Component {...props} />);
-      const star = wrapper.find(Stars);
-
+    it('Should render with default spacing value', () => {
       expect(star.prop('spacing')).toBe(defaultOptions.spaceBetweenStars);
     });
 
-    it('should render with default spacing value', () => {
-      const wrapper = shallow(<Component {...props} />);
-      const star = wrapper.find(Stars);
-
+    it('Should render with default spacing value', () => {
       expect(star.prop('count')).toBe(defaultOptions.countOfStars);
     });
   });
@@ -61,34 +65,42 @@ describe('Rating component', () => {
     const expectedCount = 3;
     const expectedHalf = true;
 
-    const props = {
-      options: {
-        rating: defaultRating,
-        spacing: 10,
-        count: 3,
-        half: true,
-      },
-    };
+    let props = {};
+    let wrapper;
+    let star;
 
-    it('should render with default half value', () => {
-      const wrapper = shallow(<Component {...props} />);
-      const star = wrapper.find(Stars);
+    beforeEach(() => {
+      props = {
+        options: {
+          rating: defaultRating,
+          spacing: 10,
+          count: 3,
+          half: true,
+        },
+      };
 
+      wrapper = shallow(<Component {...props} />);
+      star = wrapper.find(Stars);
+    });
+
+    it('Should render with default half value', () => {
       expect(star.prop('half')).toBe(expectedHalf);
     });
 
-    it('should render with default spacing value', () => {
-      const wrapper = shallow(<Component {...props} />);
-      const star = wrapper.find(Stars);
-
+    it('Should render with default spacing value', () => {
       expect(star.prop('spacing')).toBe(expectedSpacing);
     });
 
-    it('should render with default spacing value', () => {
-      const wrapper = shallow(<Component {...props} />);
-      const star = wrapper.find(Stars);
-
+    it('Should render with default spacing value', () => {
       expect(star.prop('count')).toBe(expectedCount);
+    });
+
+    it('Should run callback if it exist', () => {
+      const mockCallback = jest.fn();
+      wrapper = shallow(<Component {...props} changeRating={mockCallback} />);
+      const wrapperInstance = wrapper.instance();
+      wrapperInstance.props.changeRating('any');
+      expect(mockCallback).toHaveBeenCalledWith('any');
     });
   });
 });
