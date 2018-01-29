@@ -8,13 +8,25 @@ const fullStar = require('../../images/icons/star-full.png');
 const emptyStar = require('../../images/icons/star-empty.png');
 const halfStar = require('../../images/icons/star-full.png');
 
+export const defaultOptions = {
+  half: false,
+  spaceBetweenStars: 4,
+  countOfStars: 5,
+};
+
+const isHalfOption = ({ half }) => half || defaultOptions.half;
+const setSpaceBetweenStars = ({ spacing }) =>
+  spacing || defaultOptions.spaceBetweenStars;
+const setCountOfStars = ({ count }) => count || defaultOptions.countOfStars;
+
 export default class SortForm extends PureComponent {
   static propTypes = {
-    changeRating: PropTypes.fn,
+    changeRating: PropTypes.func,
     options: PropTypes.shape({
       count: PropTypes.number,
       half: PropTypes.boolean,
       spacing: PropTypes.number,
+      rating: PropTypes.rating,
     }),
   };
 
@@ -23,19 +35,21 @@ export default class SortForm extends PureComponent {
   };
 
   render() {
-    const { half, spacing, count } = this.props.options;
+    if (!this.props.options || !this.props.options.rating) return null;
 
     return (
       <View style={styles.stars}>
         <Stars
-          half={half || false}
-          rating={2.5}
-          spacing={spacing || 4}
-          count={count || 5}
+          half={isHalfOption(this.props.options)}
+          rating={this.props.options.rating}
+          spacing={setSpaceBetweenStars(this.props.options)}
+          count={setCountOfStars(this.props.options)}
           fullStar={fullStar}
           emptyStar={emptyStar}
           halfStar={halfStar}
-          update={(val) => { this.onChangeRatingHandler(val); }}
+          update={(val) => {
+            this.onChangeRatingHandler(val);
+          }}
         />
       </View>
     );
