@@ -66,8 +66,8 @@ export default class Comments extends PureComponent {
   renderComments = () => {
     return (
       <List>
-        {this.props.comments && this.props.comments.map(comment => (
-          <Comment comment={comment.comment} key={comment.id} />
+        {this.props.comments && this.props.comments.map((comment, id) => (
+          <Comment comment={comment} key={id} />
         ))}
       </List>
     );
