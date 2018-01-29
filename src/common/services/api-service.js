@@ -21,7 +21,7 @@ const requestHandler = type => ({
   isFetching: true,
 });
 
-const fetchAndDispatchData = (url, options, type, dispatch) => {
+const fetchAndDispatchData = (url, type, dispatch, options) => {
   return fetch(url, options)
     .then(response => response.json())
     .then(response => dispatch(successHandler(response, type)))
@@ -37,10 +37,10 @@ const get = (url, type, dispatch) => {
     },
   };
 
-  return fetchAndDispatchData(url, options, dispatch);
+  return fetchAndDispatchData(url, type, dispatch, options);
 };
 
-const post = (url, data, type, dispatch) => {
+const post = (url, type, dispatch, data) => {
   dispatch(requestHandler(type));
   const options = {
     method: 'POST',
@@ -50,7 +50,7 @@ const post = (url, data, type, dispatch) => {
     body: JSON.stringify(data),
   };
 
-  return fetchAndDispatchData(url, options, dispatch);
+  return fetchAndDispatchData(url, type, dispatch, options);
 };
 
-export default { post, get };
+export { post, get };
