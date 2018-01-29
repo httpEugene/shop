@@ -1,33 +1,18 @@
-import * as actions from '../orderActions';
-import { GET_ORDERS, LOADING_FAILED } from '../../constants';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import fetchMock from 'fetch-mock';
+import expect from 'expect';
+import * as actions from './orderActions';
+import mockData from '../mock-data';
+import { GET_ORDERS, LOADING_FAILED } from '../constants';
+
+const getOrdersUrl = 'https://private-bf0eb-test12906.apiary-mock.com/orders';
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 
 describe('actions', () => {
-  it('should create an action to add a todo', () => {
-    const payload = [
-      {
-        id: '69422655',
-        date: '24 октября 2016 14:47',
-        products: [
-          {
-            name: 'Sennheiser MX 585 ',
-            items: '1',
-            price: '1 055',
-            image:
-              'https://i1.rozetka.ua/goods/108367/sennheiser_mx585_images_108367104.jpg',
-          },
-        ],
-        items: 1,
-        summ: '1 055',
-        delivery: '35',
-        total: '1 090 ',
-        deliveryStatus: 'DONE',
-        feedback: {
-          status: 'Good',
-          statusCode: 2,
-          comment: '',
-        },
-      },
-    ];
+  it('should create an action to add an order ', () => {
+    const payload = [...mockData];
     const expectedAction = {
       type: GET_ORDERS,
       payload,
@@ -47,3 +32,32 @@ describe('actions', () => {
     expect(actions.loadingFailed(payload)).toEqual(expectedAction);
   });
 });
+
+describe('async actions', () => {
+  afterEach(() => {
+    fetchMock.reset();
+    fetchMock.restore();
+  });
+
+  it('should retrieve orders list and saves in store', () => {
+    fetchMock.getOnce(getOrdersUrl, {
+      body: [...mockData],
+      headers: { 'content-type': 'application/json' },
+    });
+
+    const expectedActions = [
+      {
+        type: GET_ORDERS,
+        payload: [...mockData],
+      },
+    ];
+
+    const store = mockStore([]);
+
+    return store.dispatch(actions.loadOrders()).then(() => {
+      // return of async actions
+      expect(store.getActions()).toEqual(expectedActions);
+    });
+  });
+});
+
