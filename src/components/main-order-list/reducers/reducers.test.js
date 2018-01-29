@@ -1,6 +1,5 @@
 import reducer from './reducers';
 import { GET_ORDERS } from '../constants';
-import mockData from '../mock-data';
 
 describe('todos reducer', () => {
   it('should return the initial state', () => {
@@ -10,7 +9,19 @@ describe('todos reducer', () => {
   it('should handle add data', () => {
     expect(reducer([], {
       type: GET_ORDERS,
-      payload: [...mockData],
-    })).toEqual([...mockData]);
+      payload: [
+        {
+          id: '69422655',
+          items: 1,
+          summ: '1 055',
+        },
+      ],
+    })).toEqual([
+      {
+        id: '69422655',
+        items: 1,
+        summ: '1 055',
+      },
+    ]);
   });
 });

@@ -3,12 +3,19 @@ import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
 import expect from 'expect';
 import * as actions from './orderActions';
-import mockData from '../mock-data';
 import { GET_ORDERS, LOADING_FAILED } from '../constants';
 
 const getOrdersUrl = 'https://private-bf0eb-test12906.apiary-mock.com/orders';
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
+
+const mockData = [
+  {
+    id: '69422655',
+    items: 1,
+    summ: '1 055',
+  },
+];
 
 describe('actions', () => {
   it('should create an action to add an order ', () => {
