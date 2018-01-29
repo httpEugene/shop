@@ -7,6 +7,12 @@ import Component, { defaultOptions } from './rating';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Rating component', () => {
+  const STARS_PROPS = {
+    HALF: 'half',
+    SPACING: 'spacing',
+    COUNT: 'count',
+  };
+
   describe('Should not render', () => {
     let wrapper;
 
@@ -47,15 +53,15 @@ describe('Rating component', () => {
     });
 
     it('Should render with default half value', () => {
-      expect(star.prop('half')).toBe(defaultOptions.half);
+      expect(star.prop(STARS_PROPS.HALF)).toBe(defaultOptions.half);
     });
 
     it('Should render with default spacing value', () => {
-      expect(star.prop('spacing')).toBe(defaultOptions.spaceBetweenStars);
+      expect(star.prop(STARS_PROPS.SPACING)).toBe(defaultOptions.spaceBetweenStars);
     });
 
     it('Should render with default spacing value', () => {
-      expect(star.prop('count')).toBe(defaultOptions.countOfStars);
+      expect(star.prop(STARS_PROPS.COUNT)).toBe(defaultOptions.countOfStars);
     });
   });
 
@@ -84,15 +90,15 @@ describe('Rating component', () => {
     });
 
     it('Should render with default half value', () => {
-      expect(star.prop('half')).toBe(expectedHalf);
+      expect(star.prop(STARS_PROPS.HALF)).toBe(expectedHalf);
     });
 
     it('Should render with default spacing value', () => {
-      expect(star.prop('spacing')).toBe(expectedSpacing);
+      expect(star.prop(STARS_PROPS.SPACING)).toBe(expectedSpacing);
     });
 
     it('Should render with default spacing value', () => {
-      expect(star.prop('count')).toBe(expectedCount);
+      expect(star.prop(STARS_PROPS.HALF)).toBe(expectedCount);
     });
 
     it('Should run callback if it exist', () => {
