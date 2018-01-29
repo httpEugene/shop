@@ -1,4 +1,4 @@
-import GET_ORDERS from '../constants';
+import { GET_ORDERS, LOADING_FAILED } from '../constants';
 
 const getOrdersUrl = 'https://private-bf0eb-test12906.apiary-mock.com/orders';
 
@@ -6,6 +6,13 @@ export const getOrders = (data) => {
   return {
     type: GET_ORDERS,
     payload: data,
+  };
+};
+
+export const loadingFailed = (payload) => {
+  return {
+    type: LOADING_FAILED,
+    payload,
   };
 };
 
@@ -22,6 +29,6 @@ export const loadOrders = () => {
       .then((data) => {
         dispatch(getOrders(data));
       })
-      .catch(err => console.log('Load error', err));
+      .catch(err => dispatch(loadingFailed(err)));
   };
 };

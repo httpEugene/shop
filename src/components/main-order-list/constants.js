@@ -1,3 +1,2 @@
-const GET_ORDERS = 'ARTICLES::GET_ORDERS';
-export default GET_ORDERS;
-
+export const GET_ORDERS = 'ORDERS::GET_ORDERS';
+export const LOADING_FAILED = 'ORDERS::LOADING_FAILED';

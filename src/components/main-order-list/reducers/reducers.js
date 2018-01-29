@@ -1,4 +1,4 @@
-import GET_ORDERS from '../constants';
+import { GET_ORDERS } from '../constants';
 
 const initialState = [];
 
@@ -11,4 +11,3 @@ export default (state = initialState, action) => {
       return state;
   }
 };
-

@@ -1,7 +1,10 @@
 {
   "presets": [
     "babel-preset-react-native-stage-0/decorator-support",
-    "jest"
+    "jest",
+    "react-native",
+    "es2015",
+    "babel-preset-stage-3"
   ],
   "env": {
     "development": {
