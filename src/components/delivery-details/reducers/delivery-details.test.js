@@ -3,7 +3,7 @@ import deliveryDetailsReducer from './index';
 import {
   DELIVERY_DETAILS_FETCH_SUCCESS,
   DELIVERY_DETAILS_FETCH_FAILED,
-  DELIVERY_DETAILS_FETCH_REQUEST
+  DELIVERY_DETAILS_FETCH_REQUEST,
 } from '../delivery-statuses';
 
 const initState = null;
@@ -16,7 +16,8 @@ describe('Delivery details reducer', () => {
       error: null,
     };
 
-    expect(deliveryDetailsReducer(initState, { type: DELIVERY_DETAILS_FETCH_REQUEST })).toEqual(expectedResult);
+    expect(deliveryDetailsReducer(initState, { type: DELIVERY_DETAILS_FETCH_REQUEST }))
+      .toEqual(expectedResult);
   });
 
   it('Should set delivery details to state if everything is ok', () => {

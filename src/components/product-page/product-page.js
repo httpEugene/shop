@@ -25,6 +25,8 @@ export default class ProductPage extends PureComponent {
   static propTypes = {
     id: PropTypes.string,
     onBackClick: PropTypes.func,
+    getProductData: PropTypes.func,
+    product: PropTypes.object,
   };
 
   componentDidMount() {

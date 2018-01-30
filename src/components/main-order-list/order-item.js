@@ -18,7 +18,7 @@ function mapDispatchToProps() {
 @connect(mapStateToProps, mapDispatchToProps)
 export default class OrderItem extends PureComponent {
   getDeliveryDetails = (id) => {
-    Actions.deliveryDetails({id});
+    Actions.deliveryDetails({ id });
   };
 
   getDetails = () => {
@@ -54,7 +54,7 @@ export default class OrderItem extends PureComponent {
             styleName="deliveryDetails"
             styleTextName="buttonTextSecond"
             label="Delivery Details"
-            onPressHandler={() => this.getDeliveryDetails("1")}
+            onPressHandler={() => this.getDeliveryDetails('1')}
           />
         </View>
       </ScrollView>

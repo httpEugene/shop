@@ -1,7 +1,7 @@
 import {
   PRODUCT_LIST_FETCH_SUCCESS,
   PRODUCT_LIST_FETCH_FAILED,
-  PRODUCT_LIST_FETCH_REQUEST
+  PRODUCT_LIST_FETCH_REQUEST,
 } from '../product-list-statuses';
 
 export default (state = null, action) => {
