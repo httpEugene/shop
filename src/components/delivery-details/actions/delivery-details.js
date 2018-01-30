@@ -1,10 +1,10 @@
-import config from '../../../config';
-
 import {
   DELIVERY_DETAILS_FAILED,
   DELIVERY_DETAILS_SUCCESS,
   DELIVERY_DETAILS_REQUEST,
 } from '../delivery-statuses';
+
+const deliveryDetailsUrl = 'http://private-880ca-test12906.apiary-mock.com/delivery-details/1';
 
 export const deliveryDetailsSuccess = (data) => {
   return {
@@ -29,7 +29,7 @@ export const deliveryDetailsRequest = () => ({
 
 export const fetchDeliveryDetails = () => (dispatch) => {
   dispatch(deliveryDetailsRequest());
-  return fetch(config.deliveryDetailsUrl)
+  return fetch(deliveryDetailsUrl)
     .then(response => response.json())
     .then(response => dispatch(deliveryDetailsSuccess(response)))
     .catch(error => dispatch(deliveryDetailsFailed(error)));

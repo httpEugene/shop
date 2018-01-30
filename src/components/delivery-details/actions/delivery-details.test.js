@@ -1,7 +1,6 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
-import config from '../../../config';
 
 import {
   DELIVERY_DETAILS_FAILED,
@@ -54,6 +53,7 @@ describe('Delivery details actions', () => {
 describe('Delivery details async action', () => {
   const middlewares = [thunk];
   const mockStore = configureMockStore(middlewares);
+  const deliveryDetailsUrl = 'http://private-880ca-test12906.apiary-mock.com/delivery-details/1';
 
   afterEach(() => {
     fetchMock.reset();
@@ -61,7 +61,7 @@ describe('Delivery details async action', () => {
   });
 
   it('Should update state with success status of request', () => {
-    fetchMock.getOnce(config.deliveryDetailsUrl, {
+    fetchMock.getOnce(deliveryDetailsUrl, {
       body: [{ date: '2018-01-25' }],
       headers: { 'content-type': 'application/json' },
     });
