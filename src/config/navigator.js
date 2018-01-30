@@ -1,17 +1,17 @@
 import React from 'react';
 import { Router, Scene } from 'react-native-router-flux';
-import LoginForm from '../components/authorization/login';
-import MainOrderList from '../components/main-order-list';
-import OrderItem from '../components/order-item';
-import Map from '../components/map';
+import LoginForm from '~/components/authorization/login';
+import MainOrderList from '~/components/main-order-list';
+import OrderItem from '~/components/order-item';
+import Map from '~/components/map';
 
-import DeliveryDetails from '../components/delivery-details';
-import ProductsList from '../components/products-list';
-import ProductPage from '../components/product-page';
-import UiExamples from '../components/ui-example';
-import Cart from '../components/cart';
-import SideMenu from '../components/drawer/side-menu';
-import CustomNavBar from '../components/navigation-header/header-component';
+import DeliveryDetails from '~/components/delivery-details';
+import ProductsList from '~/components/products-list';
+import ProductPage from '~/components/product-page';
+import UiExamples from '~/components/ui-example';
+import Cart from '~/components/cart';
+import SideMenu from '~/components/drawer/side-menu';
+import CustomNavBar from '~/components/navigation-header/header-component';
 
 const Navigator = () => (
   <Router>

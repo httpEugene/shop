@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { View, TextInput } from 'react-native';
 import { List, Button } from 'react-native-elements';
-import { get, post } from '../../common/services/api-service';
-import Comment from '../comment';
+import { get, post } from '~/common/services/api-service';
+import Comment from '~/components/comment';
 import styles from './styles';
 
 const savePostUrl = 'https://private-bf0eb-test12906.apiary-mock.com/comment';

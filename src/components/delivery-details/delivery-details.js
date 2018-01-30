@@ -3,7 +3,7 @@ import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { View } from 'react-native';
-import Button from '../button';
+import Button from '~/components/button';
 import styles from './styles';
 import fetchDeliveryDetails from './actions/delivery-details';
 import DeliveryDaysList from './delivery-days-list';

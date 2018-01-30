@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { View } from 'react-native';
-import Button from '../button';
+import Button from '~/components/button';
 import styles from './styles';
 
 function mapStateToProps() {
