@@ -6,6 +6,8 @@ import OrderItem from '../components/order-item';
 import Map from '../components/map';
 
 import DeliveryDetails from '../components/delivery-details';
+import ProductsList from '../components/products-list';
+import ProductPage from '../components/product-page';
 import UiExamples from '../components/ui-example';
 import Cart from '../components/cart';
 import SideMenu from '../components/drawer/side-menu';
@@ -36,6 +38,18 @@ const Navigator = () => (
             component={ MainOrderList }
             title="My Orders"
             navBar={() => <CustomNavBar title={'Your Orders'} /> }
+          />
+          <Scene
+            key="productsList"
+            component={ ProductsList }
+            title="Products"
+            navBar={() => <CustomNavBar title={'Products List'} /> }
+          />
+          <Scene
+            key="productPage"
+            component={ ProductPage }
+            title="Product"
+            navBar={() => <CustomNavBar title={'Product Page'} />}
           />
           <Scene key="cart"
             component={ Cart }
