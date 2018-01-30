@@ -1,38 +1,8 @@
-import config from '../../../config';
+import { get } from '../../../common/services/api-service';
 
-import {
-  DELIVERY_DETAILS_FAILED,
-  DELIVERY_DETAILS_SUCCESS,
-  DELIVERY_DETAILS_REQUEST,
-} from '../delivery-statuses';
+const deliveryDetailsUrl = 'http://private-880ca-test12906.apiary-mock.com/delivery-details/';
 
-export const deliveryDetailsSuccess = (data) => {
-  return {
-    type: DELIVERY_DETAILS_SUCCESS,
-    payload: data,
-    isFetching: false,
-  };
-};
+export const deliveryDetails = id => dispatch =>
+  get(deliveryDetailsUrl + id, 'DELIVERY_DETAILS', dispatch);
 
-export const deliveryDetailsFailed = (error) => {
-  return {
-    type: DELIVERY_DETAILS_FAILED,
-    payload: error,
-    isFetching: false,
-  };
-};
-
-export const deliveryDetailsRequest = () => ({
-  type: DELIVERY_DETAILS_REQUEST,
-  isFetching: true,
-});
-
-export const fetchDeliveryDetails = () => (dispatch) => {
-  dispatch(deliveryDetailsRequest());
-  return fetch(config.deliveryDetailsUrl)
-    .then(response => response.json())
-    .then(response => dispatch(deliveryDetailsSuccess(response)))
-    .catch(error => dispatch(deliveryDetailsFailed(error)));
-};
-
-export default fetchDeliveryDetails;
+export default deliveryDetails;

@@ -1,19 +1,21 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { Actions } from 'react-native-router-flux';
-import { View, Text } from 'react-native';
-import Button from '~/components/button';
+import { View } from 'react-native';
+import { Text } from 'react-native-elements';
 import styles from './styles';
+import fetchProductData from './actions';
 
-function mapStateToProps() {
-  return {};
+function mapStateToProps(state) {
+  return {
+    product: state.product && state.product.product,
+  };
 }
 
-function mapDispatchToProps() {
+function mapDispatchToProps(dispatch, ownProps) {
   return {
-    onBackClick() {
-      Actions.productsList();
+    getProductData() {
+      dispatch(fetchProductData(ownProps.id));
     },
   };
 }
@@ -23,19 +25,26 @@ export default class ProductPage extends PureComponent {
   static propTypes = {
     id: PropTypes.string,
     onBackClick: PropTypes.func,
+    getProductData: PropTypes.func,
+    product: PropTypes.object,
   };
 
-  render() {
-    return (
+  componentDidMount() {
+    this.props.getProductData();
+  }
+
+  renderProduct(product) {
+    return product ? (
       <View style={styles.container}>
-        <Button
-          styleName="backButton"
-          styleTextName="backButtonText"
-          label="< Back"
-          onPressHandler={this.props.onBackClick}
-        />
-        <Text>Product #{this.props.id}</Text>
+        <Text h1>{product.title}</Text>
+        <Text>{product.description}</Text>
+        <Text h3>${product.price}</Text>
       </View>
-    );
+    ) : null;
+  }
+
+  render() {
+    const { product } = this.props;
+    return this.renderProduct(product);
   }
 }
