@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { View } from 'react-native';
+import SortForm from '~/components/sort-form';
 import styles from './styles';
 import OrderItem from './order-item';
-import SortForm from '../sort-form';
 
 function mapStateToProps() {
   return {};
