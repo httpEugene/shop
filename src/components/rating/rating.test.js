@@ -37,10 +37,10 @@ describe('Rating component', () => {
   });
 
   describe('Should render with default option', () => {
-    const defaultRating = 5;
+    const propsRating = 5;
     const props = {
       options: {
-        rating: defaultRating,
+        rating: propsRating,
       },
     };
 
@@ -66,7 +66,7 @@ describe('Rating component', () => {
   });
 
   describe('Should render with passed props option', () => {
-    const defaultRating = 5;
+    const propsRating = 5;
     const expectedSpacing = 10;
     const expectedCount = 3;
     const expectedHalf = true;
@@ -78,7 +78,7 @@ describe('Rating component', () => {
     beforeEach(() => {
       props = {
         options: {
-          rating: defaultRating,
+          rating: propsRating,
           spacing: 10,
           count: 3,
           half: true,
@@ -97,16 +97,17 @@ describe('Rating component', () => {
       expect(star.prop(STARS_PROPS.SPACING)).toBe(expectedSpacing);
     });
 
-    it('Should render with default spacing value', () => {
-      expect(star.prop(STARS_PROPS.HALF)).toBe(expectedCount);
+    it('Should render with default count value', () => {
+      expect(star.prop(STARS_PROPS.COUNT)).toBe(expectedCount);
     });
 
     it('Should run callback if it exist', () => {
       const mockCallback = jest.fn();
+      const param = 'any';
       wrapper = shallow(<Component {...props} changeRating={mockCallback} />);
       const wrapperInstance = wrapper.instance();
-      wrapperInstance.props.changeRating('any');
-      expect(mockCallback).toHaveBeenCalledWith('any');
+      wrapperInstance.props.changeRating(param);
+      expect(mockCallback).toHaveBeenCalledWith(param);
     });
   });
 });
