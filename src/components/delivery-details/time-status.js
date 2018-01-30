@@ -9,7 +9,7 @@ export default class TimeStatus extends PureComponent {
     timeStatus: PropTypes.object,
   };
 
-  setStatusColor(timeStatus) {
+  getStatusColor(timeStatus) {
     switch (timeStatus.deliveryStatus) {
       case 'DONE':
         return styles.doneOrderStatus;
@@ -25,7 +25,7 @@ export default class TimeStatus extends PureComponent {
     return (
       <View style={styles.timeStatusRow}>
         <Text style={styles.time}>{timeStatus.time}</Text>
-        <Text style={[styles.status, this.setStatusColor(timeStatus)]}>
+        <Text style={[styles.status, this.getStatusColor(timeStatus)]}>
           {statuses[timeStatus.deliveryStatus]}
         </Text>
       </View>

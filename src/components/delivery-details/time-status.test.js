@@ -8,7 +8,7 @@ import styles from './styles';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('TimeStatus component', () => {
-  it('setStatusColor return correct styles for DONE status', () => {
+  it('getStatusColor return correct styles for DONE status', () => {
     const props = {
       timeStatus: {
         time: '16:30',
@@ -17,10 +17,10 @@ describe('TimeStatus component', () => {
     };
     const enzymeWrapper = shallow(<TimeStatus {...props} />);
     const expectedStyles = styles.doneOrderStatus;
-    expect(enzymeWrapper.instance().setStatusColor(props.timeStatus)).toEqual(expectedStyles);
+    expect(enzymeWrapper.instance().getStatusColor(props.timeStatus)).toEqual(expectedStyles);
   });
 
-  it('setStatusColor return correct styles for NEW_ORDER status', () => {
+  it('getStatusColor return correct styles for NEW_ORDER status', () => {
     const props = {
       timeStatus: {
         time: '16:30',
@@ -29,10 +29,10 @@ describe('TimeStatus component', () => {
     };
     const enzymeWrapper = shallow(<TimeStatus {...props} />);
     const expectedStyles = styles.newOrderStatus;
-    expect(enzymeWrapper.instance().setStatusColor(props.timeStatus)).toEqual(expectedStyles);
+    expect(enzymeWrapper.instance().getStatusColor(props.timeStatus)).toEqual(expectedStyles);
   });
 
-  it('setStatusColor return correct styles for other statuses', () => {
+  it('getStatusColor return correct styles for other statuses', () => {
     const props = {
       timeStatus: {
         time: '16:30',
@@ -41,6 +41,6 @@ describe('TimeStatus component', () => {
     };
     const enzymeWrapper = shallow(<TimeStatus {...props} />);
     const expectedStyles = styles.orderStatus;
-    expect(enzymeWrapper.instance().setStatusColor(props.timeStatus)).toEqual(expectedStyles);
+    expect(enzymeWrapper.instance().getStatusColor(props.timeStatus)).toEqual(expectedStyles);
   });
 });

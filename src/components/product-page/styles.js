@@ -6,6 +6,7 @@ export default StyleSheet.create({
   container: {
     display: 'flex',
     alignSelf: 'center',
+    alignItems: 'center',
     margin: 10,
     padding: 15,
     width: '95%',
