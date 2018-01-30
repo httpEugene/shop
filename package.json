@@ -5,6 +5,7 @@
   "eslint": "eslint './src/**/*.js'",
   "devDependencies": {
     "babel-eslint": "^8.2.1",
+    "babel-jest": "^22.1.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-native-stage-0": "^1.0.1",
     "enzyme": "^3.3.0",
