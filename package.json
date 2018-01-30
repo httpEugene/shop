@@ -4,7 +4,6 @@
   "private": true,
   "devDependencies": {
     "babel-eslint": "^8.2.1",
-    "babel-jest": "^22.1.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-native-stage-0": "^1.0.1",
     "eslint": "^4.15.0",
@@ -32,9 +31,6 @@
     "preset": "react-native"
   },
   "dependencies": {
-    "asyncawait": "^1.0.6",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1",
     "eslint-plugin-react-native": "^3.2.1",
     "expect": "^22.1.0",
     "md5": "^2.2.1",
