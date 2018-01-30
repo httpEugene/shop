@@ -26,7 +26,7 @@ export default class Rating extends PureComponent {
       count: PropTypes.number,
       half: PropTypes.boolean,
       spacing: PropTypes.number,
-      rating: PropTypes.rating.isRequired,
+      rating: PropTypes.number.isRequired,
     }),
   };
 

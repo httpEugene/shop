@@ -6,11 +6,11 @@ import { View, Text } from 'react-native';
 import Button from '../button';
 import styles from './styles';
 
-function mapStateToProps(state) {
+function mapStateToProps() {
   return {};
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps() {
   return {
     onBackClick() {
       Actions.productsList();
