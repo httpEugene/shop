@@ -1,4 +1,10 @@
 {
+
+  "plugins": [
+    ["babel-plugin-root-import", {
+      "rootPathSuffix": "src"
+    }]
+  ],
   "presets": [
     "babel-preset-react-native-stage-0/decorator-support",
     "jest"

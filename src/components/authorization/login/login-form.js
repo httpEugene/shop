@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
 
-import Field from '../../field';
-import Button from '../../button';
+import Button from '~/components/button';
+import Field from '~/components/field';
 import styles from './styles';
 import login from './actions/login';
 

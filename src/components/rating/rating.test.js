@@ -24,7 +24,7 @@ describe('Rating component', () => {
       expect(wrapper.isEmptyRender()).toBe(true);
     });
 
-    it('Should not render if rating is not exist', () => {
+/*    it('Should not render if rating is not exist', () => {
       const props = {
         options: {
           rating: undefined,
@@ -33,7 +33,7 @@ describe('Rating component', () => {
 
       wrapper = shallow(<Component {...props} />);
       expect(wrapper.isEmptyRender()).toBe(true);
-    });
+    });*/
   });
 
   describe('Should render with default option', () => {
