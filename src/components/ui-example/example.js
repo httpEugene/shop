@@ -125,12 +125,9 @@ export default class UiExample extends PureComponent {
 
   someFunction = () => {};
 
-  ratingCompleted = (rating) => {
-    console.log('Rating ', rating);
-  };
+  ratingCompleted = rating => rating;
 
   toggleDrawer = () => {
-    console.log('....toggleDrawer....');
     this._drawer.open();
   };
 
@@ -175,9 +172,6 @@ export default class UiExample extends PureComponent {
         </Badge>
 
         <Badge
-          onPress={() => {
-            console.log('pressed');
-          }}
           value="5"
         />
 
@@ -303,7 +297,6 @@ export default class UiExample extends PureComponent {
           name="heartbeat"
           type="font-awesome"
           color="#f50"
-          onPress={() => console.log('hello')}
         />
 
         <List containerStyle={{ marginBottom: 20 }}>

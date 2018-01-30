@@ -85,7 +85,6 @@ export default class SideMenu extends PureComponent {
               uri:
                 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
             }}
-            onPress={() => console.log('Works!')}
             activeOpacity={0.7}
           />
           <Text style={ styles.userText } >
