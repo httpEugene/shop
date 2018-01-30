@@ -39,7 +39,6 @@
   },
   "dependencies": {
     "eslint-plugin-react-native": "^3.2.1",
-    "expect": "^22.1.0",
     "md5": "^2.2.1",
     "prop-types": "^15.6.0",
     "react": "16.0.0",
