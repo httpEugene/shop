@@ -6,7 +6,7 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     display: 'flex',
-    backgroundColor: colors.secondColorLightGray,
+    backgroundColor: colors.secondColorWhite,
   },
 
   orderContainer: {
@@ -132,5 +132,8 @@ export default StyleSheet.create({
   deliveryDetails: {
     fontSize: 30,
     color: '#00e5ff',
+  },
+  containerStyle: {
+
   },
 });

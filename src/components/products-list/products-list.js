@@ -41,7 +41,7 @@ export default class ProductsList extends PureComponent {
   }
 
   showProductPage(id) {
-    Actions.productPage({id});
+    Actions.productPage({ id });
   }
 
   render() {
@@ -63,7 +63,7 @@ export default class ProductsList extends PureComponent {
                   </View>
                 }
                 avatar={{ uri: image }}
-                onPress={() => {this.showProductPage(id)}}
+                onPress={() => { this.showProductPage(id); }}
               />
             ))}
           </List>

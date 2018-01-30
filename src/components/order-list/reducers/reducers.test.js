@@ -1,4 +1,4 @@
-import reducer from './reducers';
+import reducer from './orders-reducer';
 import { GET_ORDERS } from '../constants';
 
 const mockData = [

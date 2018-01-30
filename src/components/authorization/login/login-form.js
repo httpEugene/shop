@@ -50,6 +50,10 @@ export default class LoginForm extends PureComponent {
     Actions.productsList();
   }
 
+  showOrderList = () => {
+    Actions.orders();
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -89,6 +93,12 @@ export default class LoginForm extends PureComponent {
               styleTextName="buttonText"
               label="UI EXAMPLES"
               onPressHandler={this.showUiExamples}
+            />
+            <Button
+              styleName="button"
+              styleTextName="buttonText"
+              label="UI EXAMPLES"
+              onPressHandler={this.showOrderList}
             />
           </View>
         </View>

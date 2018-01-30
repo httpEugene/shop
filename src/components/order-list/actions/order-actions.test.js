@@ -1,7 +1,7 @@
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
 import fetchMock from 'fetch-mock';
-import * as actions from './orderActions';
+import * as actions from './order-actions';
 import { GET_ORDERS, LOADING_FAILED } from '../constants';
 
 const getOrdersUrl = 'https://private-bf0eb-test12906.apiary-mock.com/orders';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Router, Scene } from 'react-native-router-flux';
 import LoginForm from '../components/authorization/login';
-import MainOrderList from '../components/main-order-list';
+import OrderList from '../components/order-list';
 import OrderItem from '../components/order-item';
 import Map from '../components/map';
 
@@ -10,6 +10,7 @@ import ProductsList from '../components/products-list';
 import ProductPage from '../components/product-page';
 import UiExamples from '../components/ui-example';
 import Cart from '../components/cart';
+import Feedback from '../components/feedback';
 import SideMenu from '../components/drawer/side-menu';
 import CustomNavBar from '../components/navigation-header/header-component';
 
@@ -19,7 +20,7 @@ const Navigator = () => (
       <Scene key="auth" initial>
         <Scene
           key="login"
-          component={ LoginForm }
+          component={LoginForm}
           hideNavBar
           titleStyle={{ display: 'none', textAlign: 'center' }}
         />
@@ -28,59 +29,62 @@ const Navigator = () => (
         <Scene key="main">
           <Scene
             key="main"
-            component={ MainOrderList }
+            component={OrderList}
             title="Products"
-            navBar={() => <CustomNavBar title={'Shop'} /> }
+            navBar={() => <CustomNavBar title={'Shop'} />}
             initial
           />
           <Scene
             key="orders"
-            component={ MainOrderList }
+            component={OrderList}
             title="My Orders"
-            navBar={() => <CustomNavBar title={'Your Orders'} /> }
+            navBar={() => <CustomNavBar title={'Your Orders'} />}
+          />
+          <Scene
+            key="order"
+            component={OrderItem}
+            title="Order Details"
+            navBar={() => <CustomNavBar title={'Order Details'} />}
+          />
+          <Scene
+            key="orderFeedback"
+            component={Feedback}
+            title="Order Feedback"
+            navBar={() => <CustomNavBar title={'Your Feedback'} />}
           />
           <Scene
             key="productsList"
-            component={ ProductsList }
+            component={ProductsList}
             title="Products"
-            navBar={() => <CustomNavBar title={'Products List'} /> }
+            navBar={() => <CustomNavBar title={'Products List'} />}
           />
           <Scene
             key="productPage"
-            component={ ProductPage }
+            component={ProductPage}
             title="Product"
             navBar={() => <CustomNavBar title={'Product Page'} />}
           />
-          <Scene key="cart"
-            component={ Cart }
-            navBar={() => <CustomNavBar title={'Your Cart'} /> }
+          <Scene
+            key="cart"
+            component={Cart}
+            navBar={() => <CustomNavBar title={'Your Cart'} />}
           />
           <Scene
             key="UiExamples"
             component={UiExamples}
-            navBar={() => <CustomNavBar title={'React Native Elements UI'} /> }
+            navBar={() => <CustomNavBar title={'React Native Elements UI'} />}
           />
           <Scene
             key="deliveryDetails"
-            component={ DeliveryDetails }
+            component={DeliveryDetails}
             title="Delivery Details"
-            navBar={() => <CustomNavBar title={'Delivery Details'} /> }
+            navBar={() => <CustomNavBar title={'Delivery Details'} />}
           />
           <Scene
-            key="order"
-            component={ OrderItem }
-            title="Order Detail"
-            navBar={() => <CustomNavBar title={'Your Order'} /> }
-          />
-          <Scene key="order"
-            component={ OrderItem }
-            title="Order Details"
-            navBar={() => <CustomNavBar title={'Order Details'} /> }
-          />
-          <Scene key="map"
-            component={ Map }
+            key="map"
+            component={Map}
             title="Shops"
-            navBar={() => <CustomNavBar title={'Shops'} /> }
+            navBar={() => <CustomNavBar title={'Shops'} />}
           />
         </Scene>
       </Scene>

@@ -5,13 +5,15 @@ import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
 import styles from './styles';
-import { loadOrders } from './actions/orderActions';
+import { loadOrders } from './actions/order-actions';
 import OrderItem from './order-item';
 import SortForm from '../sort-form';
+import Loader from '../loader';
+
 
 function mapStateToProps(state) {
   return {
-    orders: state.ordersData,
+    orders: state.orders,
   };
 }
 
@@ -41,7 +43,7 @@ export default class MainOrderList extends PureComponent {
         <View style={ styles.container }>
           {orders
             ? orders.map(post => <OrderItem key={post.id} post={post} />)
-            : 'Loading...'}
+            : <Loader />}
         </View>
       </ScrollView>
     );

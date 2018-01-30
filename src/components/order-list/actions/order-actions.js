@@ -1,4 +1,4 @@
-import { GET_ORDERS, LOADING_FAILED } from '../constants';
+import { GET_ORDERS, LOADING_FAILED, GET_ORDER } from '../constants';
 
 const getOrdersUrl = 'https://private-bf0eb-test12906.apiary-mock.com/orders';
 
@@ -16,6 +16,14 @@ export const loadingFailed = (payload) => {
   };
 };
 
+export const getOrderDetails = (id) => {
+  console.log('  action ', id);
+  return {
+    type: GET_ORDER,
+    id,
+  };
+};
+
 export const loadOrders = () => {
   return (dispatch) => {
     return fetch(getOrdersUrl, {
@@ -25,7 +33,9 @@ export const loadOrders = () => {
         'Content-Type': 'application/json',
       },
     })
-      .then(response => response.json())
+      .then((response) => {
+        return response.json();
+      })
       .then((data) => {
         dispatch(getOrders(data));
       })
