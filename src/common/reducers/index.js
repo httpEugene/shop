@@ -5,6 +5,7 @@ import shopsData from '../../components/map/reducers';
 import productsListData from '../../components/products-list/reducers';
 import { comments, newComment } from '../../components/comments/reducers';
 import product from '../../components/product-page/reducers';
+import basket from '../../components/basket/reducers';
 
 export default combineReducers({
   user,
@@ -14,4 +15,5 @@ export default combineReducers({
   comments,
   newComment,
   product,
+  basket,
 });
