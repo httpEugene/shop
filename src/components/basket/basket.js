@@ -8,10 +8,8 @@ import styles from './styles';
 
 const basketDataUrl = 'https://private-bf0eb-test12906.apiary-mock.com/basket';
 
-function mapStateToProps(state) {
-  return {
-    basket: state.basket,
-  };
+function mapStateToProps({ basket }) {
+  return { basket };
 }
 
 function mapDispatchToProps(dispatch) {
