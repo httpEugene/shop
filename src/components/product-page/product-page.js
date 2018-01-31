@@ -23,14 +23,6 @@ function mapDispatchToProps(dispatch, ownProps) {
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class ProductPage extends PureComponent {
-  constructor(props) {
-    super(props);
-  }
-
-  state = {
-    position: 1,
-  };
-
   static propTypes = {
     id: PropTypes.string,
     onBackClick: PropTypes.func,
