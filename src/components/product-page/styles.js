@@ -15,7 +15,7 @@ export default StyleSheet.create({
   title: {
     alignSelf: 'center',
   },
-  description : {
+  description: {
     marginTop: 10,
   },
   price: {
