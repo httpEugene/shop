@@ -3,7 +3,7 @@ import { Actions } from 'react-native-router-flux';
 import { ScrollView, View, Text } from 'react-native';
 
 import { connect } from 'react-redux';
-import Button from '~/components/button';
+import Button from '../button';
 
 import styles from './styles';
 

@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { View, Text } from 'react-native';
 import PropTypes from 'prop-types';
-import * as statuses from '~/constants/status-constants';
 import styles from './styles';
+import * as statuses from '../../constants/status-constants';
 
 export default class TimeStatus extends PureComponent {
   static propTypes = {
