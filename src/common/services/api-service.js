@@ -53,4 +53,4 @@ const post = (url, type, dispatch, data) => {
   return fetchAndDispatchData(url, type, dispatch, options);
 };
 
-export { post, get };
+export default { post, get };

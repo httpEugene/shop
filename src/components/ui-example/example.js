@@ -125,25 +125,15 @@ export default class UiExample extends PureComponent {
 
   someFunction = () => {};
 
+<<<<<<< HEAD
   ratingCompleted = rating => rating;
+=======
+  ratingCompleted = () => {};
+>>>>>>> clearing and tests for products
 
   toggleDrawer = () => {
     this._drawer.open();
   };
-
-  // closeControlPanel = () => {
-  //   this._drawer.close();
-  //   Actions.refresh({key: 'drawer', open: false });
-  // };
-  // openControlPanel = () => {
-  //   console.log('....toggleDrawer....');
-  //   this.setState({
-  //     test: 'open',
-  //   });
-  //
-  //   Actions.refresh({key: 'drawer', open: true });
-  //   //this._drawer.open();
-  // };
 
   render() {
     const buttons = ['Hello', 'World', 'Buttons'];
@@ -172,6 +162,10 @@ export default class UiExample extends PureComponent {
         </Badge>
 
         <Badge
+<<<<<<< HEAD
+=======
+          onPress={() => {}}
+>>>>>>> clearing and tests for products
           value="5"
         />
 
@@ -289,7 +283,7 @@ export default class UiExample extends PureComponent {
           reverse
           name="ios-american-football"
           type="ionicon"
-          color="#517fa4"
+        color="#517fa4"
         />
 
         <Icon
