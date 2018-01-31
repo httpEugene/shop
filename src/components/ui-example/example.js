@@ -131,20 +131,6 @@ export default class UiExample extends PureComponent {
     this._drawer.open();
   };
 
-  // closeControlPanel = () => {
-  //   this._drawer.close();
-  //   Actions.refresh({key: 'drawer', open: false });
-  // };
-  // openControlPanel = () => {
-  //   console.log('....toggleDrawer....');
-  //   this.setState({
-  //     test: 'open',
-  //   });
-  //
-  //   Actions.refresh({key: 'drawer', open: true });
-  //   //this._drawer.open();
-  // };
-
   render() {
     const buttons = ['Hello', 'World', 'Buttons'];
     const { selectedIndex } = this.state;
