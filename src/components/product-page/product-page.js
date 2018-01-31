@@ -1,8 +1,9 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { View, ScrollView, Image } from 'react-native';
 import { Text } from 'react-native-elements';
+import Swiper from 'react-native-swiper';
 import styles from './styles';
 import fetchProductData from './actions';
 
@@ -33,13 +34,38 @@ export default class ProductPage extends PureComponent {
     this.props.getProductData();
   }
 
+  renderSlide({ url }) {
+    return (
+      <View style={styles.slide} key={url}>
+        <Image style={styles.image} source={{ uri: url }} />
+      </View>
+    );
+  }
+
   renderProduct(product) {
     return product ? (
-      <View style={styles.container}>
-        <Text h1>{product.title}</Text>
-        <Text>{product.description}</Text>
-        <Text h3>${product.price}</Text>
-      </View>
+      <ScrollView>
+        <View style={styles.container}>
+          <Text h1 style={styles.title}>
+            {product.title}
+          </Text>
+          <Swiper
+            style={styles.slider}
+            loop
+            showsButtons
+            dot={<View style={styles.dot} />}
+            activeDot={<View style={styles.activeDot} />}
+            prevButton={<Text style={styles.controlButton}>‹</Text>}
+            nextButton={<Text style={styles.controlButton}>›</Text>}
+          >
+            {product.images.map(this.renderSlide)}
+          </Swiper>
+          <Text style={styles.description}>{product.description}</Text>
+          <Text h3 style={styles.price}>
+            ${product.price}
+          </Text>
+        </View>
+      </ScrollView>
     ) : null;
   }
 
