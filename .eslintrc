@@ -17,10 +17,7 @@
   },
   "plugins": ["react", "react-native"],
   "settings": {
-    "import/extensions": ["js", "jsx"],
-    "import/resolver": {
-      "babel-plugin-root-import": {}
-    }
+    "import/extensions": ["js", "jsx"]
   },
   "env": {
     "browser": true,
