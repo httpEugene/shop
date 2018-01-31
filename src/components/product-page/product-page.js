@@ -34,28 +34,36 @@ export default class ProductPage extends PureComponent {
     this.props.getProductData();
   }
 
-  renderSlide(image) {
-    return (<View style={styles.slide} key={image.url}>
-      <Image style={styles.image} source={{ uri: image.url }}/>
-    </View>);
+  renderSlide({ url }) {
+    return (
+      <View style={styles.slide} key={url}>
+        <Image style={styles.image} source={{ uri: url }} />
+      </View>
+    );
   }
 
   renderProduct(product) {
     return product ? (
       <ScrollView>
         <View style={styles.container}>
-          <Text h1 style={styles.title}>{product.title}</Text>
-          <Swiper style={styles.slider}
-                  loop
-                  showsButtons
-                  dot={<View style={styles.dot} />}
-                  activeDot={<View style={styles.activeDot} />}
-                  prevButton={<Text style={styles.controlButton}>‹</Text>}
-                  nextButton={<Text style={styles.controlButton}>›</Text>}>
+          <Text h1 style={styles.title}>
+            {product.title}
+          </Text>
+          <Swiper
+            style={styles.slider}
+            loop
+            showsButtons
+            dot={<View style={styles.dot} />}
+            activeDot={<View style={styles.activeDot} />}
+            prevButton={<Text style={styles.controlButton}>‹</Text>}
+            nextButton={<Text style={styles.controlButton}>›</Text>}
+          >
             {product.images.map(this.renderSlide)}
           </Swiper>
           <Text style={styles.description}>{product.description}</Text>
-          <Text h3 style={styles.price}>${product.price}</Text>
+          <Text h3 style={styles.price}>
+            ${product.price}
+          </Text>
         </View>
       </ScrollView>
     ) : null;
