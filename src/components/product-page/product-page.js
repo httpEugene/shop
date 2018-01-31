@@ -34,9 +34,9 @@ export default class ProductPage extends PureComponent {
     this.props.getProductData();
   }
 
-  renderSlide(slide) {
-    return (<View style={styles.slide} key={slide.url}>
-      <Image style={styles.image} source={{ uri: slide.url }}/>
+  renderSlide(image) {
+    return (<View style={styles.slide} key={image.url}>
+      <Image style={styles.image} source={{ uri: image.url }}/>
     </View>);
   }
 
