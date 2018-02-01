@@ -11,6 +11,7 @@ import ProductPage from '../components/product-page';
 import UiExamples from '../components/ui-example';
 import Cart from '../components/cart';
 import Feedback from '../components/feedback';
+import UserDetails from '../components/user-details';
 import SideMenu from '../components/drawer/side-menu';
 import CustomNavBar from '../components/navigation-header/header-component';
 
@@ -85,6 +86,12 @@ const Navigator = () => (
             component={Map}
             title="Shops"
             navBar={() => <CustomNavBar title={'Shops'} />}
+          />
+          <Scene
+            key="user"
+            component={UserDetails}
+            title="Personal info"
+            navBar={() => <CustomNavBar title={'Your info'} />}
           />
         </Scene>
       </Scene>
