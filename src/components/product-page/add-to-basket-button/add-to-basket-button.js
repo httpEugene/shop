@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Button } from 'react-native-elements';
 
-function mapStateToProps(state) {
+function mapStateToProps({ addToBasket }) {
   return {
-    basketCount: state.addToBasket && state.addToBasket.basketCount,
+    basketCount: addToBasket && addToBasket.basketCount,
   };
 }
 

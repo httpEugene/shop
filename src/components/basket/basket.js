@@ -78,9 +78,9 @@ export default class Basket extends PureComponent {
           {basket.map(this.renderListItem)}
         </List>
         <Button
-            title="Checkout"
-            backgroundColor="#0095EF"
-          />
+          title="Checkout"
+          backgroundColor="#0095EF"
+        />
       </View>
     );
   }

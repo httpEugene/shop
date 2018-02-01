@@ -6,9 +6,9 @@ import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 import styles from './styles';
 
-function mapStateToProps(state) {
+function mapStateToProps({ addToBasket }) {
   return {
-    basketCount: state.addToBasket && state.addToBasket.basketCount,
+    basketCount: addToBasket && addToBasket.basketCount,
   };
 }
 
