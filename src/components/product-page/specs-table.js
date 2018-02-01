@@ -17,7 +17,7 @@ export default class SpecsTable extends PureComponent {
       : styles.tableRowBackgroundGrey;
   }
 
-  renderTableRow({characteristic, value}, index) {
+  renderTableRow({ characteristic, value }, index) {
     return (
       <View
         key={index}
