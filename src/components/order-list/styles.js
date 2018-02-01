@@ -1,21 +1,25 @@
-import { StyleSheet, PixelRatio } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 import colors from '../../config/colors';
 
 export default StyleSheet.create({
-  container: {
+  containerScroll: {
     flex: 1,
     display: 'flex',
     backgroundColor: colors.secondColorWhite,
   },
 
-  orderContainer: {
+  container: {
     flex: 1,
-    display: 'flex',
-    backgroundColor: colors.secondColorWhite,
-    marginBottom: 10,
-    marginLeft: 10,
-    marginRight: 10,
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+  },
+
+  containerLoader: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   listItemContainer: {
@@ -102,8 +106,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     margin: 5,
-    borderWidth: 1 / PixelRatio.get(),
-    borderColor: colors.secondColorLightGray,
   },
 
   purchaseItem: {

@@ -17,7 +17,6 @@ export const loadingFailed = (payload) => {
 };
 
 export const getOrderDetails = (id) => {
-  console.log('  action ', id);
   return {
     type: GET_ORDER,
     id,

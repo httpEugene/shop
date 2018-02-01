@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, TouchableOpacity } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 import { List, ListItem, Avatar } from 'react-native-elements';
 import styles from './styles';
@@ -73,8 +73,9 @@ export default class SideMenu extends PureComponent {
   render() {
     return (
       <View>
-        <View
+        <TouchableOpacity
           style={ styles.avatarBlock }
+          onPress={() => this.navigateTo('user')}
         >
           <Avatar
             small
@@ -88,7 +89,7 @@ export default class SideMenu extends PureComponent {
           <Text style={ styles.userText } >
             User
           </Text>
-        </View>
+        </TouchableOpacity>
         <List>{this.mainListRender()}</List>
 
         <List>{this.secondListRender()}</List>

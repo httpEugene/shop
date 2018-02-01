@@ -10,6 +10,7 @@ import { ScrollView, View, Text } from 'react-native';
 import { loadOrderDetails } from './actions/order-detais-action';
 import styles from './styles';
 import ProductItem from './product-item';
+import Loader from '../loader';
 
 @connect(
   state => state,
@@ -54,6 +55,11 @@ export default class DetailedOrder extends PureComponent {
   }
 
   renderProducts = (id, products) => {
+    if (products.length === 0) {
+      return (
+        <Loader />
+      );
+    }
     return [...products].map((product, index) => {
       return <ProductItem key={`${id}${index}`} product={product} />;
     });
