@@ -1,9 +1,13 @@
 import { StyleSheet } from 'react-native';
+import colors from '../../config/colors';
 
 const styles = StyleSheet.create({
-  field: {
-    color: '#000',
-    fontSize: 24,
+  input: {
+    fontSize: 14,
+    color: colors.textInputValueColor,
+    backgroundColor: '#f2f2f2',
+    padding: 10,
+    marginBottom: 10,
   },
 });
 

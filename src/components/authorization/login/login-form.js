@@ -1,13 +1,17 @@
 import React, { PureComponent } from 'react';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 
 import Field from '../../field';
 import Button from '../../button';
 import styles from './styles';
 import login from './actions/login';
+
+import { isEmail } from '../../../common/services/validator';
+
+const logo = require('../../../images/logo.png');
 
 function mapStateToProps() {
   return {};
@@ -35,70 +39,94 @@ export default class LoginForm extends PureComponent {
   state = {
     username: '',
     password: '',
-    errors: '',
+    errors: {},
   };
 
-  handleFormSubmit = () => {
-    Actions.main();
+
+  checkEmailValue = () => {
+    return this.state.username !== 'test@gmail.com';
   };
 
-  showUiExamples = () => {
-    Actions.UiExamples();
+  checkPassword = () => {
+    return this.state.password !== 'test';
   };
 
-  showProductsList = () => {
-    Actions.productsList();
+  isCredentialsCorrect = () => {
+    this.checkEmailValue();
+    this.checkPassword();
+
+    this.setState({
+      errors: {
+        wrongEmailFormat: !isEmail(this.state.username),
+        wrongEmailValue: this.checkEmailValue(),
+        wrongPassword: this.checkPassword(),
+      },
+    });
+  };
+
+  componentWillUpdate(nextProps, nextState) {
+    const errorKeys = Object.keys(nextState.errors);
+    let errors = false;
+
+    errorKeys.some((key) => {
+      if (nextState.errors[key]) {
+        errors = true;
+        return true;
+      }
+
+      return false;
+    });
+
+    if (!errors) {
+      Actions.main();
+    }
   }
 
-  showOrderList = () => {
-    Actions.orders();
-  }
+  handleChangeInput = (prop, value) => {
+    this.setState({
+      [prop]: value,
+    });
+  };
 
   render() {
     return (
       <View style={styles.container}>
-        <View>
-          <View style={styles.fieldContainer}>
-            <Text style={styles.login}>Login</Text>
-            <Field
-              onChangeHandler={this.onChangeHandler}
-              handleForm={this.handleForm}
-              placeholder="Enter your login"
-              type="text"
-            />
-            <Text>{this.state.errors.username}</Text>
-            <Field
-              handleForm={e => this.handleForm(e)}
-              placeholder="Enter your password"
-              type="password"
-            />
-            <Text>{this.state.errors.password}</Text>
-          </View>
-
+        <Image
+          style={styles.logo}
+          source={logo}
+        />
+        <View style={styles.formWrapper}>
+          <Field
+            name="username"
+            onChangeHandler={this.onChangeHandler}
+            handleForm={this.handleChangeInput}
+            placeholder="Enter your login"
+            type="text"
+          />
+          {this.state.errors.wrongEmailFormat && (
+            <Text style={styles.error}>
+              You entered not valid email address
+            </Text>
+          )}
+          {this.state.errors.wrongEmailValue && (
+            <Text style={styles.error}>You entered wrong email</Text>
+          )}
+          <Field
+            name="password"
+            handleForm={this.handleChangeInput}
+            placeholder="Enter your password"
+            type="password"
+          />
+          <Text>{this.state.errors.password}</Text>
+          {this.state.errors.wrongPassword && (
+            <Text style={styles.error}>You entered wrong password</Text>
+          )}
           <View style={styles.buttonContainer}>
             <Button
               styleName="button"
               styleTextName="buttonText"
               label="Login"
-              onPressHandler={this.handleFormSubmit}
-            />
-            <Button
-              styleName="button"
-              styleTextName="buttonText"
-              label="Products List"
-              onPressHandler={this.showProductsList}
-            />
-            <Button
-              styleName="button"
-              styleTextName="buttonText"
-              label="UI EXAMPLES"
-              onPressHandler={this.showUiExamples}
-            />
-            <Button
-              styleName="button"
-              styleTextName="buttonText"
-              label="UI EXAMPLES"
-              onPressHandler={this.showOrderList}
+              onPressHandler={this.isCredentialsCorrect}
             />
           </View>
         </View>

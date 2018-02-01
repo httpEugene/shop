@@ -7,18 +7,28 @@ import styles from './styles';
 export default class Field extends PureComponent {
   static propTypes = {
     placeholder: PropTypes.string,
-    type: PropTypes.strategy,
+    type: PropTypes.string,
     handleForm: PropTypes.func,
+    name: PropTypes.string,
+  };
+
+  onInputChange = (text, name, cb) => {
+    cb(name, text);
   };
 
   render() {
+    const {
+      name, placeholder, type, handleForm,
+    } = this.props;
     return (
       <TextInput
-        placeholder={this.props.placeholder}
-        secureTextEntry={this.props.type === 'password'}
-        onChange={this.props.handleForm}
-        onKeyUp={this.props.handleForm}
+        name={name}
+        placeholder={placeholder}
+        secureTextEntry={type === 'password'}
+        onChangeText={text => this.onInputChange(text, name, handleForm)}
+        onKeyUp={handleForm}
         style={styles.input}
+        underlineColorAndroid='transparent'
       />
     );
   }

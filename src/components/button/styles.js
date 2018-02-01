@@ -10,7 +10,6 @@ export default StyleSheet.create({
     backgroundColor: colors.mainColorBlue,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 50,
   },
   details: {
     borderWidth: 1 / PixelRatio.get(),
@@ -33,7 +32,7 @@ export default StyleSheet.create({
   },
 
   buttonText: {
-    fontSize: 24,
+    fontSize: 16,
     color: colors.secondColorWhite,
     margin: 10,
   },
