@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
-import { View, Text } from 'react-native';
+import { View, Text, Image } from 'react-native';
 import PropTypes from 'prop-types';
 
 import Field from '../../field';
@@ -10,6 +10,8 @@ import styles from './styles';
 import login from './actions/login';
 
 import { isEmail } from '../../../common/services/validator';
+
+const logo = require('../../../images/logo.png');
 
 function mapStateToProps() {
   return {};
@@ -23,10 +25,6 @@ function mapDispatchToProps(dispatch) {
     },
   };
 }
-
-let wrongEmailFormat = false;
-let wrongEmailValue = false;
-let wrongPassword = false;
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class LoginForm extends PureComponent {
@@ -44,28 +42,24 @@ export default class LoginForm extends PureComponent {
     errors: {},
   };
 
-  checkEmailFormatCorrected = () => {
-    wrongEmailFormat = !isEmail(this.state.username);
-  };
 
   checkEmailValue = () => {
-    wrongEmailValue = this.state.username !== 'test@gmail.com';
+    return this.state.username !== 'test@gmail.com';
   };
 
   checkPassword = () => {
-    wrongPassword = this.state.password !== 'test';
+    return this.state.password !== 'test';
   };
 
   isCredentialsCorrect = () => {
-    this.checkEmailFormatCorrected();
     this.checkEmailValue();
     this.checkPassword();
 
     this.setState({
       errors: {
-        wrongEmailFormat,
-        wrongEmailValue,
-        wrongPassword,
+        wrongEmailFormat: !isEmail(this.state.username),
+        wrongEmailValue: this.checkEmailValue(),
+        wrongPassword: this.checkPassword(),
       },
     });
   };
@@ -97,6 +91,10 @@ export default class LoginForm extends PureComponent {
   render() {
     return (
       <View style={styles.container}>
+        <Image
+          style={styles.logo}
+          source={logo}
+        />
         <View style={styles.formWrapper}>
           <Field
             name="username"
@@ -105,12 +103,12 @@ export default class LoginForm extends PureComponent {
             placeholder="Enter your login"
             type="text"
           />
-          {wrongEmailFormat && (
+          {this.state.errors.wrongEmailFormat && (
             <Text style={styles.error}>
               You entered not valid email address
             </Text>
           )}
-          {wrongEmailValue && (
+          {this.state.errors.wrongEmailValue && (
             <Text style={styles.error}>You entered wrong email</Text>
           )}
           <Field
@@ -120,7 +118,7 @@ export default class LoginForm extends PureComponent {
             type="password"
           />
           <Text>{this.state.errors.password}</Text>
-          {wrongPassword && (
+          {this.state.errors.wrongPassword && (
             <Text style={styles.error}>You entered wrong password</Text>
           )}
           <View style={styles.buttonContainer}>

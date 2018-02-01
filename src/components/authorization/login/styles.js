@@ -6,7 +6,7 @@ export default StyleSheet.create({
     display: 'flex',
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     backgroundColor: colors.mainColorBlue,
   },
   formWrapper: {
@@ -25,5 +25,11 @@ export default StyleSheet.create({
     color: 'red',
     fontSize: 14,
     marginBottom: 10,
+  },
+  logo: {
+    width: 120,
+    height: 120,
+    marginBottom: 30,
+    marginTop: 30,
   },
 });
