@@ -1,9 +1,12 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  field: {
-    color: '#000',
-    fontSize: 24,
+  input: {
+    fontSize: 14,
+    color: '#666',
+    backgroundColor: '#f2f2f2',
+    padding: 10,
+    marginBottom: 10,
   },
 });
 

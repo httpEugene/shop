@@ -22,6 +22,10 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
+function checkCorrectInputData(name, password) {
+  return name === 'test' && password === 'test';
+}
+
 @connect(mapStateToProps, mapDispatchToProps)
 export default class LoginForm extends PureComponent {
   static propTypes = {
@@ -39,37 +43,36 @@ export default class LoginForm extends PureComponent {
   };
 
   handleFormSubmit = () => {
-    Actions.main();
+    if (checkCorrectInputData(this.state.username, this.state.password)) {
+      Actions.main();
+    }
   };
 
-  showUiExamples = () => {
-    Actions.UiExamples();
+  handleChangeInput = (prop, value) => {
+    this.setState({
+      [prop]: value,
+    });
   };
-
-  showProductsList = () => {
-    Actions.productsList();
-  }
 
   render() {
     return (
       <View style={styles.container}>
-        <View>
-          <View style={styles.fieldContainer}>
-            <Text style={styles.login}>Login</Text>
-            <Field
-              onChangeHandler={this.onChangeHandler}
-              handleForm={this.handleForm}
-              placeholder="Enter your login"
-              type="text"
-            />
-            <Text>{this.state.errors.username}</Text>
-            <Field
-              handleForm={e => this.handleForm(e)}
-              placeholder="Enter your password"
-              type="password"
-            />
-            <Text>{this.state.errors.password}</Text>
-          </View>
+        <View style={styles.formWrapper}>
+          <Field
+            name="username"
+            onChangeHandler={this.onChangeHandler}
+            handleForm={this.handleChangeInput}
+            placeholder="Enter your login"
+            type="text"
+          />
+          <Text>{this.state.errors.username}</Text>
+          <Field
+            name="password"
+            handleForm={this.handleChangeInput}
+            placeholder="Enter your password"
+            type="password"
+          />
+          <Text>{this.state.errors.password}</Text>
 
           <View style={styles.buttonContainer}>
             <Button
@@ -77,18 +80,6 @@ export default class LoginForm extends PureComponent {
               styleTextName="buttonText"
               label="Login"
               onPressHandler={this.handleFormSubmit}
-            />
-            <Button
-              styleName="button"
-              styleTextName="buttonText"
-              label="Products List"
-              onPressHandler={this.showProductsList}
-            />
-            <Button
-              styleName="button"
-              styleTextName="buttonText"
-              label="UI EXAMPLES"
-              onPressHandler={this.showUiExamples}
             />
           </View>
         </View>

@@ -48,7 +48,6 @@ export default class SideMenu extends PureComponent {
             title={title}
             leftIcon={{ name: icon }}
             containerStyle={styles.listItem}
-            wrapperStyle={{ border: 0 }}
             badge={{
               value: 3,
               textStyle: { color: 'orange' },
@@ -60,7 +59,6 @@ export default class SideMenu extends PureComponent {
             title={title}
             leftIcon={{ name: icon }}
             containerStyle={ styles.listItem }
-            wrapperStyle={{ border: 0 }}
             onPress={() => this.navigateTo(path)}
           />
       )));
