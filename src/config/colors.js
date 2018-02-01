@@ -22,6 +22,8 @@ const colors = {
   additionalColorPink: colorCodes.pink,
   additionalColorLightGreen: colorCodes.lightGreen,
   additionalColorLightOrange: colorCodes.lightOrange,
+  error: 'red',
+  textInputValueColor: '#666',
 };
 
 export default colors;
