@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
-import Button from '../button';
+import { ButtonGroup } from 'react-native-elements';
 import styles from './styles';
+
 
 function mapStateToProps() {
   return {};
@@ -20,32 +20,25 @@ function mapDispatchToProps() {
 export default class SortForm extends PureComponent {
   static propTypes = {};
 
-  handleSort = () => {};
+  state = {
+    selectedIndex: 0,
+  };
+
+  updateIndex = (selectedIndex) => {
+    this.setState({ selectedIndex });
+  };
 
   render() {
+    const buttons = ['last', 'Done', 'Undone'];
+    const { selectedIndex } = this.state;
+
     return (
-      <View style={styles.buttonContainer}>
-        <Button
-          styleName="sortButton"
-          styleTextName="sortButtonTextLast"
-          label="Last"
-          onPressHandler={() => this.handleSort}
-        />
-
-        <Button
-          styleName="sortButton"
-          styleTextName="sortButtonTextDone"
-          label="Done"
-          onPressHandler={() => this.handleSort}
-        />
-
-        <Button
-          styleName="sortButton"
-          styleTextName="sortButtonTextUndone"
-          label="Undone"
-          onPressHandler={() => this.handleSort}
-        />
-      </View>
+      <ButtonGroup
+        onPress={this.updateIndex}
+        selectedIndex={selectedIndex}
+        buttons={buttons}
+        containerStyle={styles.containerStyle}
+      />
     );
   }
 }

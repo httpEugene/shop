@@ -1,15 +1,21 @@
-import {
-  StyleSheet,
-  PixelRatio,
-} from 'react-native';
+import { StyleSheet, PixelRatio } from 'react-native';
 
 import colors from '../../config/colors';
 
 export default StyleSheet.create({
   container: {
+    flex: 1,
     display: 'flex',
-    borderWidth: 1 / PixelRatio.get(),
-    borderColor: colors.secondColorLightGray,
+    backgroundColor: colors.secondColorWhite,
+  },
+
+  orderContainer: {
+    flex: 1,
+    display: 'flex',
+    backgroundColor: colors.secondColorWhite,
+    marginBottom: 10,
+    marginLeft: 10,
+    marginRight: 10,
   },
 
   listItemContainer: {
@@ -17,6 +23,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     margin: 5,
+    backgroundColor: colors.secondColorWhite,
   },
 
   statusContainer: {
@@ -24,12 +31,15 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end',
     margin: 5,
+    borderWidth: 1 / PixelRatio.get(),
+    borderColor: colors.secondColorLightGray,
   },
 
   id: {
     color: colors.mainColorBlack,
-    fontSize: 24,
-    margin: 10,
+    fontSize: 16,
+    marginTop: 15,
+    marginLeft: 10,
   },
 
   name: {
@@ -40,20 +50,55 @@ export default StyleSheet.create({
 
   date: {
     color: colors.secondColorDarkGray,
-    fontSize: 20,
-    margin: 10,
+    fontSize: 16,
+    marginTop: 15,
+    marginRight: 10,
+  },
+
+  subtitleView: {
+    margin: 0,
+  },
+
+  image: {
+    margin: 0,
   },
 
   statusText: {
     color: colors.secondColorDarkGray,
     fontSize: 14,
     margin: 10,
+    marginTop: 20,
   },
 
   status: {
     color: colors.additionalColorGgreen,
-    fontSize: 18,
+    fontSize: 14,
     margin: 10,
+    marginTop: 20,
+  },
+
+  productListStyle: {
+    marginLeft: 0,
+  },
+
+  productName: {
+    color: colors.mainColorBlack,
+    fontSize: 20,
+    marginLeft: 30,
+  },
+
+  productItems: {
+    color: colors.secondColorDarkGray,
+    fontSize: 18,
+    marginTop: 5,
+    marginLeft: 30,
+  },
+
+  productPrice: {
+    color: colors.mainColorBlack,
+    fontSize: 20,
+    marginTop: 5,
+    marginLeft: 30,
   },
 
   purchaseContainer: {
@@ -61,16 +106,20 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     margin: 5,
+    borderWidth: 1 / PixelRatio.get(),
+    borderColor: colors.secondColorLightGray,
   },
 
   purchaseItem: {
     color: colors.secondColorDarkGray,
     fontSize: 20,
+    marginLeft: 10,
   },
 
   purchaseSumm: {
-    color: colors.mainColorBlue,
+    color: colors.mainColorBlack,
     fontSize: 24,
+    marginRight: 10,
   },
 
   buttonContainer: {
@@ -88,42 +137,7 @@ export default StyleSheet.create({
     fontSize: 30,
     color: '#00e5ff',
   },
-
-  shippingContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
-    margin: 5,
-  },
-
-  shippingText: {
-    color: colors.secondColorDarkGray,
-    fontSize: 18,
-    margin: 10,
-  },
-
-  shippingPrice: {
-    color: colors.secondColorDarkGray,
-    fontSize: 18,
-    margin: 10,
-  },
-
-  totalContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    margin: 5,
-  },
-
-  totalText: {
-    color: colors.mainColorBlue,
-    fontSize: 30,
-    margin: 10,
-  },
-
-  totalPrice: {
-    color: colors.mainColorBlue,
-    fontSize: 30,
-    margin: 10,
+  ButtonGroup: {
+    margin: 0,
   },
 });
