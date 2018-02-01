@@ -9,12 +9,8 @@ import DeliveryDetails from '../components/delivery-details';
 import ProductsList from '../components/products-list';
 import ProductPage from '../components/product-page';
 import UiExamples from '../components/ui-example';
-<<<<<<< HEAD
-import Cart from '../components/cart';
 import Feedback from '../components/feedback';
-=======
 import Basket from '../components/basket';
->>>>>>> created basket list and checkout
 import SideMenu from '../components/drawer/side-menu';
 import CustomNavBar from '../components/navigation-header/header-component';
 
@@ -68,16 +64,9 @@ const Navigator = () => (
             title="Product"
             navBar={() => <CustomNavBar title={'Product Page'} />}
           />
-<<<<<<< HEAD
-          <Scene
-            key="cart"
-            component={Cart}
-            navBar={() => <CustomNavBar title={'Your Cart'} />}
-=======
           <Scene key="cart"
             component={ Basket }
             navBar={() => <CustomNavBar title={'Your Cart'} /> }
->>>>>>> created basket list and checkout
           />
           <Scene
             key="UiExamples"
