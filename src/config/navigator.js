@@ -9,8 +9,8 @@ import DeliveryDetails from '../components/delivery-details';
 import ProductsList from '../components/products-list';
 import ProductPage from '../components/product-page';
 import UiExamples from '../components/ui-example';
-import Cart from '../components/cart';
 import Feedback from '../components/feedback';
+import Basket from '../components/basket';
 import SideMenu from '../components/drawer/side-menu';
 import CustomNavBar from '../components/navigation-header/header-component';
 
@@ -64,10 +64,9 @@ const Navigator = () => (
             title="Product"
             navBar={() => <CustomNavBar title={'Product Page'} />}
           />
-          <Scene
-            key="cart"
-            component={Cart}
-            navBar={() => <CustomNavBar title={'Your Cart'} />}
+          <Scene key="cart"
+            component={ Basket }
+            navBar={() => <CustomNavBar title={'Your Cart'} /> }
           />
           <Scene
             key="UiExamples"
