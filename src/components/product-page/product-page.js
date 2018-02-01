@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { View, ScrollView, Image } from 'react-native';
 import { Text } from 'react-native-elements';
 import Swiper from 'react-native-swiper';
+
 import styles from './styles';
 import fetchProductData from './actions';
 import SpecsTable from './specs-table';
