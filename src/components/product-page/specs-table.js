@@ -17,17 +17,17 @@ export default class SpecsTable extends PureComponent {
       : styles.tableRowBackgroundGrey;
   }
 
-  renderTableRow(data, index) {
+  renderTableRow({characteristic, value}, index) {
     return (
       <View
         key={index}
         style={[styles.tableRow, this.getRowBackgroundColor(index)]}
       >
         <View style={styles.tableCell}>
-          <Text style={styles.characteristic}>{data.characteristic}</Text>
+          <Text style={styles.characteristic}>{characteristic}</Text>
         </View>
         <View style={styles.tableCell}>
-          <Text style={styles.characteristicValue}>{data.value}</Text>
+          <Text style={styles.characteristicValue}>{value}</Text>
         </View>
       </View>
     );

@@ -25,15 +25,19 @@ describe('SpecsTable component', () => {
     ],
   };
 
+  let enzymeWrapper;
+
+  beforeEach(() => {
+    enzymeWrapper = shallow(<SpecsTable {...props} />);
+  });
+
   it('Should check getRowBackgroundColor returns correct styles for odd index', () => {
-    const enzymeWrapper = shallow(<SpecsTable {...props} />);
     const expectedStyles = styles.tableRowBackgroundWhite;
     const index = 1;
     expect(enzymeWrapper.instance().getRowBackgroundColor(index)).toEqual(expectedStyles);
   });
 
   it('Should check getRowBackgroundColor returns correct styles for even index', () => {
-    const enzymeWrapper = shallow(<SpecsTable {...props} />);
     const expectedStyles = styles.tableRowBackgroundGrey;
     const index = 2;
     expect(enzymeWrapper.instance().getRowBackgroundColor(index)).toEqual(expectedStyles);
