@@ -24,9 +24,9 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-function checkCorrectInputData(email, password) {
-  return isEmail(email) && email === 'test@gmail.com' && password === 'test';
-}
+let wrongEmailFormat = false;
+let wrongEmailValue = false;
+let wrongPassword = false;
 
 @connect(mapStateToProps, mapDispatchToProps)
 export default class LoginForm extends PureComponent {
@@ -41,14 +41,52 @@ export default class LoginForm extends PureComponent {
   state = {
     username: '',
     password: '',
-    errors: '',
+    errors: {},
   };
 
-  handleFormSubmit = () => {
-    if (checkCorrectInputData(this.state.username, this.state.password)) {
+  checkEmailFormatCorrected = () => {
+    wrongEmailFormat = !isEmail(this.state.username);
+  };
+
+  checkEmailValue = () => {
+    wrongEmailValue = this.state.username !== 'test@gmail.com';
+  };
+
+  checkPassword = () => {
+    wrongPassword = this.state.password !== 'test';
+  };
+
+  isCredentialsCorrect = () => {
+    this.checkEmailFormatCorrected();
+    this.checkEmailValue();
+    this.checkPassword();
+
+    this.setState({
+      errors: {
+        wrongEmailFormat,
+        wrongEmailValue,
+        wrongPassword,
+      },
+    });
+  };
+
+  componentWillUpdate(nextProps, nextState) {
+    const errorKeys = Object.keys(nextState.errors);
+    let errors = false;
+
+    errorKeys.some((key) => {
+      if (nextState.errors[key]) {
+        errors = true;
+        return true;
+      }
+
+      return false;
+    });
+
+    if (!errors) {
       Actions.main();
     }
-  };
+  }
 
   handleChangeInput = (prop, value) => {
     this.setState({
@@ -67,7 +105,14 @@ export default class LoginForm extends PureComponent {
             placeholder="Enter your login"
             type="text"
           />
-          <Text>{this.state.errors.username}</Text>
+          {wrongEmailFormat && (
+            <Text style={styles.error}>
+              You entered not valid email address
+            </Text>
+          )}
+          {wrongEmailValue && (
+            <Text style={styles.error}>You entered wrong email</Text>
+          )}
           <Field
             name="password"
             handleForm={this.handleChangeInput}
@@ -75,13 +120,15 @@ export default class LoginForm extends PureComponent {
             type="password"
           />
           <Text>{this.state.errors.password}</Text>
-
+          {wrongPassword && (
+            <Text style={styles.error}>You entered wrong password</Text>
+          )}
           <View style={styles.buttonContainer}>
             <Button
               styleName="button"
               styleTextName="buttonText"
               label="Login"
-              onPressHandler={this.handleFormSubmit}
+              onPressHandler={this.isCredentialsCorrect}
             />
           </View>
         </View>

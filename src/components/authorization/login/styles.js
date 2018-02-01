@@ -23,5 +23,7 @@ export default StyleSheet.create({
   },
   error: {
     color: 'red',
+    fontSize: 14,
+    marginBottom: 10,
   },
 });

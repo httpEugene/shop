@@ -12,7 +12,7 @@ export default class Field extends PureComponent {
     name: PropTypes.string,
   };
 
-  onChangeHandler = (text, name, cb) => {
+  onInputChange = (text, name, cb) => {
     cb(name, text);
   };
 
@@ -25,7 +25,7 @@ export default class Field extends PureComponent {
         name={name}
         placeholder={placeholder}
         secureTextEntry={type === 'password'}
-        onChangeText={text => this.onChangeHandler(text, name, handleForm)}
+        onChangeText={text => this.onInputChange(text, name, handleForm)}
         onKeyUp={handleForm}
         style={styles.input}
         underlineColorAndroid='transparent'
