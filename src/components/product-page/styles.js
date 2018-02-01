@@ -12,17 +12,15 @@ export default StyleSheet.create({
     width: '95%',
     backgroundColor: colors.secondColorWhite,
   },
-  title: {
-    alignSelf: 'center',
-  },
+  title: {},
   description: {
     marginTop: 10,
-    marginBottom: 10,
+    marginBottom: 20,
     fontSize: 16,
   },
   price: {
     alignSelf: 'center',
-    marginTop: 10,
+    marginTop: 20,
   },
   slider: {
     marginTop: 10,
@@ -84,5 +82,8 @@ export default StyleSheet.create({
   },
   characteristicValue: {
     fontSize: 16,
+  },
+  rating: {
+    alignSelf: 'flex-start',
   },
 });

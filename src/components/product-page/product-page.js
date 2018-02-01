@@ -7,6 +7,7 @@ import Swiper from 'react-native-swiper';
 import styles from './styles';
 import fetchProductData from './actions';
 import SpecsTable from './specs-table';
+import Rating from './../rating';
 
 function mapStateToProps(state) {
   return {
@@ -50,6 +51,9 @@ export default class ProductPage extends PureComponent {
           <Text h1 style={styles.title}>
             {product.title}
           </Text>
+          <View style={styles.rating}>
+            <Rating options={{ rating: 4 }} />
+          </View>
           <Swiper
             style={styles.slider}
             loop
