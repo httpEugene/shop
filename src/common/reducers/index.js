@@ -7,6 +7,8 @@ import order from '../../components/order-list/reducers/order-reducer';
 import orderDetails from '../../components/order-item/reducers/order-details-reducer';
 import productsListData from '../../components/products-list/reducers';
 import { comments, newComment } from '../../components/comments/reducers';
+import product from '../../components/product-page/reducers';
+import basket from '../../components/basket/reducers';
 
 export default combineReducers({
   user,
@@ -18,4 +20,6 @@ export default combineReducers({
   productsListData,
   comments,
   newComment,
+  product,
+  basket,
 });

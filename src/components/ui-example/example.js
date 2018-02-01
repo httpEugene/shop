@@ -125,28 +125,11 @@ export default class UiExample extends PureComponent {
 
   someFunction = () => {};
 
-  ratingCompleted = (rating) => {
-    console.log('Rating ', rating);
-  };
+  ratingCompleted = rating => rating;
 
   toggleDrawer = () => {
-    console.log('....toggleDrawer....');
     this._drawer.open();
   };
-
-  // closeControlPanel = () => {
-  //   this._drawer.close();
-  //   Actions.refresh({key: 'drawer', open: false });
-  // };
-  // openControlPanel = () => {
-  //   console.log('....toggleDrawer....');
-  //   this.setState({
-  //     test: 'open',
-  //   });
-  //
-  //   Actions.refresh({key: 'drawer', open: true });
-  //   //this._drawer.open();
-  // };
 
   render() {
     const buttons = ['Hello', 'World', 'Buttons'];
@@ -175,9 +158,6 @@ export default class UiExample extends PureComponent {
         </Badge>
 
         <Badge
-          onPress={() => {
-            console.log('pressed');
-          }}
           value="5"
         />
 
@@ -303,7 +283,6 @@ export default class UiExample extends PureComponent {
           name="heartbeat"
           type="font-awesome"
           color="#f50"
-          onPress={() => console.log('hello')}
         />
 
         <List containerStyle={{ marginBottom: 20 }}>

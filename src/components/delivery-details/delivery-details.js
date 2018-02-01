@@ -10,14 +10,14 @@ import DeliveryDaysList from './delivery-days-list';
 
 function mapStateToProps(state) {
   return {
-    deliveryDetails: state.deliveryDetails,
+    deliveryDetails: state.deliveryDetails && state.deliveryDetails.deliveryDetails,
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch, ownProps) {
   return {
     getDeliveryDetails() {
-      dispatch(fetchDeliveryDetails());
+      dispatch(fetchDeliveryDetails(ownProps.id));
     },
     onBackClick() {
       Actions.main();
@@ -29,6 +29,7 @@ function mapDispatchToProps(dispatch) {
 @connect(mapStateToProps, mapDispatchToProps)
 export default class DeliveryDetails extends PureComponent {
   static propTypes = {
+    id: PropTypes.string,
     getDeliveryDetails: PropTypes.func,
     onBackClick: PropTypes.func,
     onFeedBackClick: PropTypes.func,

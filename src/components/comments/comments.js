@@ -32,7 +32,7 @@ function mapDispatchToProps(dispatch) {
 export default class Comments extends PureComponent {
   static propTypes = {
     comments: PropTypes.array,
-    id: PropTypes.number,
+    id: PropTypes.string,
     saveComment: PropTypes.func,
     getComments: PropTypes.func,
   };
