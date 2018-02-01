@@ -1,20 +1,21 @@
-import { StyleSheet, PixelRatio } from 'react-native';
+import { StyleSheet } from 'react-native';
+import colors from '../../../config/colors';
 
 export default StyleSheet.create({
   container: {
     display: 'flex',
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colors.mainColorBlue,
   },
-  fieldContainer: {
-    display: 'flex',
-    margin: 50,
+  formWrapper: {
+    backgroundColor: '#fff',
+    width: '90%',
+    padding: 30,
   },
   buttonContainer: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  login: {
-    fontSize: 30,
-    color: '#333',
+    width: '100%',
   },
   validation: {
     fontSize: 12,
@@ -22,11 +23,5 @@ export default StyleSheet.create({
   },
   error: {
     color: 'red',
-  },
-  input: {
-    fontSize: 30,
-    color: '#666',
-    borderWidth: 1 / PixelRatio.get(),
-    borderColor: '#dadada',
   },
 });

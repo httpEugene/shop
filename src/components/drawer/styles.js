@@ -18,7 +18,6 @@ const styles = StyleSheet.create({
     borderTopWidth: 0,
     borderBottomWidth: 1,
     borderBottomColor: '#fff',
-    color: '#000',
   },
   listItem: {
     marginTop: 0,
