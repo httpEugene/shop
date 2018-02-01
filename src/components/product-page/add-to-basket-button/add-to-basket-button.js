@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Button } from 'react-native-elements';
+import ADD_TO_BASKET from './add-to-basket-types';
 
 function mapStateToProps({ addToBasket }) {
   return {
@@ -13,7 +14,7 @@ function mapDispatchToProps(dispatch) {
   return {
     addToBasket() {
       dispatch({
-        type: 'ADD_TO_BASKET',
+        type: ADD_TO_BASKET,
       });
     },
   };
