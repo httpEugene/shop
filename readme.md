@@ -53,12 +53,6 @@ Generate key
  
  * https://react-native-training.github.io/react-native-elements/
  
- ## We use react-native-indicators for Spinner ##
- 
- * Take a look documentation:
- 
- * https://github.com/n4kz/react-native-indicators
- 
  ## We use React Native Debugger ##
  
  * Take a look documentation:
