@@ -8,11 +8,9 @@ import { getOrderDetails } from './actions/order-actions';
 
 import Button from '../button';
 import ProductItem from './product-item';
-
 import styles from './styles';
 
 @connect(state => state, dispatch => bindActionCreators({ getOrderDetails }, dispatch))
-
 export default class OrderItem extends PureComponent {
   static propTypes = {
     getOrderDetails: PropTypes.func,

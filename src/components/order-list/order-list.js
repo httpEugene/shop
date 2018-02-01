@@ -10,7 +10,6 @@ import OrderItem from './order-item';
 import SortForm from '../sort-form';
 import Loader from '../loader';
 
-
 function mapStateToProps(state) {
   return {
     orders: state.orders,

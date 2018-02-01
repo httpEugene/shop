@@ -36,9 +36,7 @@ export const loadOrders = () => {
       .then((response) => {
         return response.json();
       })
-      .then((data) => {
-        dispatch(getOrders(data));
-      })
+      .then(data => dispatch(getOrders(data)))
       .catch(err => dispatch(loadingFailed(err)));
   };
 };

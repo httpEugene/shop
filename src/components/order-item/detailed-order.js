@@ -36,12 +36,9 @@ export default class DetailedOrder extends PureComponent {
     loadOrderDetails: PropTypes.func,
   };
 
-  constructor() {
-    super();
-    this.state = {
-      selectedIndex: 2,
-    };
-  }
+  state = {
+    selectedIndex: 2,
+  };
 
   componentDidMount() {
     this.props.loadOrderDetails(this.props.order.id);

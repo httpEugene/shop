@@ -3,7 +3,6 @@ import { GET_ORDER_DETAILS, LOADING_FAILED } from '../constants';
 const getOrderDetailsUrl =
   'https://private-bf0eb-test12906.apiary-mock.com/order';
 
-
 export const getOrderDetails = (data) => {
   console.log('...Details order... ', data);
 
@@ -19,7 +18,6 @@ export const loadingFailed = (payload) => {
     payload,
   };
 };
-
 
 export const loadOrderDetails = (id) => {
   console.log('URL.... ', `${getOrderDetailsUrl}/${id}`);

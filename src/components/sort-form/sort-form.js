@@ -19,12 +19,10 @@ function mapDispatchToProps() {
 @connect(mapStateToProps, mapDispatchToProps)
 export default class SortForm extends PureComponent {
   static propTypes = {};
-  constructor() {
-    super();
-    this.state = {
-      selectedIndex: 0,
-    };
-  }
+
+  state = {
+    selectedIndex: 0,
+  };
 
   updateIndex = (selectedIndex) => {
     this.setState({ selectedIndex });
