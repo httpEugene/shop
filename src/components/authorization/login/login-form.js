@@ -9,6 +9,8 @@ import Button from '../../button';
 import styles from './styles';
 import login from './actions/login';
 
+import { isEmail } from '../../../common/services/validator';
+
 function mapStateToProps() {
   return {};
 }
@@ -22,8 +24,8 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-function checkCorrectInputData(name, password) {
-  return name === 'test' && password === 'test';
+function checkCorrectInputData(email, password) {
+  return isEmail(email) && email === 'test@gmail.com' && password === 'test';
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
