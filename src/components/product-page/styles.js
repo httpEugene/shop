@@ -17,6 +17,8 @@ export default StyleSheet.create({
   },
   description: {
     marginTop: 10,
+    marginBottom: 10,
+    fontSize: 16,
   },
   price: {
     alignSelf: 'center',
@@ -58,5 +60,29 @@ export default StyleSheet.create({
   controlButton: {
     fontSize: 40,
     color: colors.secondColorWhite,
+  },
+  table: {
+  },
+  tableRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    borderRadius: 20,
+    paddingLeft: 10,
+  },
+  tableCell: {
+    width: '50%',
+  },
+  tableRowBackgroundWhite: {
+    backgroundColor: colors.secondColorWhite,
+  },
+  tableRowBackgroundGrey: {
+    backgroundColor: colors.secondColorLightGray,
+  },
+  characteristic: {
+    fontSize: 16,
+  },
+  characteristicValue: {
+    fontSize: 16,
   },
 });
