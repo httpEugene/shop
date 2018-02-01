@@ -8,6 +8,7 @@ import styles from './styles';
 import fetchProductData from './actions';
 import SpecsTable from './specs-table';
 import Rating from './../rating';
+import AddToBasketButton from './add-to-basket-button/add-to-basket-button';
 import Comments from './../comments';
 
 function mapStateToProps(state) {
@@ -72,6 +73,7 @@ export default class ProductPage extends PureComponent {
           <Text h3 style={styles.price}>
             ${product.price}
           </Text>
+          <AddToBasketButton/>
           <Text h4>Comments:</Text>
           <Comments/>
         </View>

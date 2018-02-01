@@ -1,9 +1,16 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { View, FlatList } from 'react-native';
-import { get } from '../../common/services/api-service';
-import Product from './product';
+import { View } from 'react-native';
+import {
+  Text,
+  List,
+  ListItem,
+  FormInput,
+  Button,
+} from 'react-native-elements';
+
+import ApiService from '../../common/services/api-service';
 import styles from './styles';
 
 const basketDataUrl = 'https://private-bf0eb-test12906.apiary-mock.com/basket';
@@ -15,7 +22,7 @@ function mapStateToProps({ basket }) {
 function mapDispatchToProps(dispatch) {
   return {
     getBasketData() {
-      get(basketDataUrl, 'BASKET', dispatch);
+      ApiService.get(basketDataUrl, 'BASKET', dispatch);
     },
   };
 }
@@ -39,30 +46,41 @@ export default class Basket extends PureComponent {
 
   keyExtractor = ({ id }) => id;
 
-  renderItem = ({ item }) => (
-    <Product
-      data={item}
+  renderListItem = ({
+    id, title, price, image,
+  }) => (
+    <ListItem
+      roundAvatar
+      key={id}
+      title={title}
+      subtitle={
+        <View>
+          <Text>{ price }$</Text>
+          <FormInput
+            name="username"
+            placeholder="Amount"
+            type="text"
+            defaultValue="1"
+          />
+        </View>
+      }
+      avatar={{ uri: image }}
     />
   );
 
-  renderBasket = () => {
+  render() {
     const basket = this.props.basket && this.props.basket.data;
-
     if (!basket) return null;
 
     return (
-      <FlatList
-        data={basket}
-        renderItem={this.renderItem}
-        keyExtractor={this.keyExtractor}
-      />
-    );
-  };
-
-  render() {
-    return (
       <View style={styles.container}>
-        {this.renderBasket()}
+        <List>
+          {basket.map(this.renderListItem)}
+        </List>
+        <Button
+            title="Checkout"
+            backgroundColor="#0095EF"
+          />
       </View>
     );
   }
