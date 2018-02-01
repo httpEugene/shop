@@ -6,13 +6,10 @@ import { AutoGrowingTextInput } from 'react-native-autogrow-textinput';
 import styles from './styles';
 
 export default class Loader extends PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = {
-      textValue: '',
-      textStyle: 'testimonialTextArea',
-    };
-  }
+  state = {
+    textValue: '',
+    textStyle: 'testimonialTextArea',
+  };
 
   onFeedbackChange = (event) => {
     this.setState({
