@@ -19,8 +19,9 @@ export default StyleSheet.create({
     fontSize: 16,
   },
   price: {
-    alignSelf: 'center',
+    alignSelf: 'flex-end',
     marginTop: 20,
+    marginBottom: 20,
   },
   slider: {
     marginTop: 10,
@@ -58,6 +59,9 @@ export default StyleSheet.create({
   controlButton: {
     fontSize: 40,
     color: colors.secondColorWhite,
+  },
+  specsTitle: {
+    marginBottom: 5,
   },
   table: {
   },

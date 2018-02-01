@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { View, TextInput } from 'react-native';
 import { List, Button } from 'react-native-elements';
-import { get, post } from '../../common/services/api-service';
+import ApiService from '../../common/services/api-service';
 import Comment from '../comment';
 import styles from './styles';
 
@@ -20,10 +20,10 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     getComments() {
-      get(getAllCommentsUrl, 'COMMENTS', dispatch);
+      ApiService.get(getAllCommentsUrl, 'COMMENTS', dispatch);
     },
     saveComment(data) {
-      post(savePostUrl, 'ADD_COMMENT', dispatch, data);
+      ApiService.post(savePostUrl, 'ADD_COMMENT', dispatch, data);
     },
   };
 }
@@ -67,7 +67,7 @@ export default class Comments extends PureComponent {
     return (
       <List>
         {this.props.comments && this.props.comments.map((comment, id) => (
-          <Comment comment={comment} key={id} />
+          <Comment comment={comment.comment} key={id} />
         ))}
       </List>
     );
@@ -82,6 +82,7 @@ export default class Comments extends PureComponent {
             style={styles.textArea}
             onChangeText={text => this.onChangeHandler({ text })}
             value={this.state.comment}
+            underlineColorAndroid='transparent'
           />
         </View>
         <Button
