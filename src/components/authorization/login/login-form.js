@@ -58,25 +58,27 @@ export default class LoginForm extends PureComponent {
         wrongEmailValue: this.checkEmailValue(),
         wrongPassword: this.checkPassword(),
       },
-    });
+    }, this.authorizeUser);
   };
 
-  componentWillUpdate(nextProps, nextState) {
-    const errorKeys = Object.keys(nextState.errors);
-    let errors = false;
+  authorizeUser = () => {
+    const errors = this.state.errors;
+    const errorKeys = Object.keys(errors);
+    let error = false;
+
     errorKeys.some((key) => {
-      if (nextState.errors[key]) {
-        errors = true;
+      if (errors[key]) {
+        error = true;
         return true;
       }
 
       return false;
     });
 
-    if (!errors) {
+    if (!error) {
       Actions.main();
     }
-  }
+  };
 
   handleChangeInput = (prop, value) => {
     this.setState({
