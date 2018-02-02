@@ -52,7 +52,6 @@ Generate key
  * Take a look documentation:
  
  * https://react-native-training.github.io/react-native-elements/
- 
  ## We use React Native Debugger ##
  
  * Take a look documentation:
