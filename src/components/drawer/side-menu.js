@@ -80,8 +80,7 @@ export default class SideMenu extends PureComponent {
             small
             rounded
             source={{
-              uri:
-                'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
+              uri: 'https://s3.amazonaws.com/uifaces/faces/twitter/ladylexy/128.jpg',
             }}
             activeOpacity={0.7}
           />

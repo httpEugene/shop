@@ -4,14 +4,11 @@ import { PropTypes } from 'prop-types';
 import { Actions } from 'react-native-router-flux';
 import {
   View,
-  Image,
+  ScrollView,
 } from 'react-native';
-import {
-  Text,
-  List,
-  ListItem,
-} from 'react-native-elements';
 import fetchProductsListAction from './actions';
+import ProductItem from './product-item';
+import styles from './styles';
 
 function mapStateToProps(state) {
   return {
@@ -47,27 +44,21 @@ export default class ProductsList extends PureComponent {
   render() {
     if (!this.props.productsList) return null;
     return (
-        <View>
-          <List>
+        <ScrollView style={styles.container}>
+          <View style={ styles.container }>
             {this.props.productsList.map(({
               id, title, price, image,
             }) => (
-              <ListItem
-                roundAvatar
-                key={id}
-                title={title}
-                subtitle={
-                  <View>
-                    <Image source={{ uri: 'https://www.zappas.co.uk/files/2013/01/five-stars.png' }}/>
-                    <Text>{ price }$</Text>
-                  </View>
-                }
-                avatar={{ uri: image }}
-                onPress={() => { this.showProductPage(id); }}
+              <ProductItem
+                key={ id }
+                product={{
+                  id, title, price, image, items: Math.floor(Math.random() * 20),
+                }}
+                showProductPage={this.showProductPage}
               />
             ))}
-          </List>
-        </View>
+          </View>
+        </ScrollView>
     );
   }
 }

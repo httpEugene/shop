@@ -9,8 +9,7 @@ export default class Loader extends PureComponent {
         <Image
           style={{ width: 50, height: 50 }}
           source={{
-            uri:
-              'https://loading.io/spinners/coolors/lg.palette-rotating-ring-loader.gif',
+            uri: 'https://loading.io/spinners/coolors/lg.palette-rotating-ring-loader.gif',
           }}
         />
       </View>
