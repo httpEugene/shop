@@ -304,8 +304,7 @@ export default class UiExample extends PureComponent {
               <View style={styles.subtitleView}>
                 <Image
                   source={{
-                    uri:
-                      'https://www.zappas.co.uk/files/2013/01/five-stars.png',
+                    uri: 'https://www.zappas.co.uk/files/2013/01/five-stars.png',
                   }}
                   style={styles.ratingImage}
                 />
