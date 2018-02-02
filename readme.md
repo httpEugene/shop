@@ -52,7 +52,6 @@ Generate key
  * Take a look documentation:
  
  * https://react-native-training.github.io/react-native-elements/
-
  ## We use React Native Debugger ##
  
  * Take a look documentation:
@@ -66,3 +65,4 @@ Generate key
  * https://blog.jetbrains.com/webstorm/2016/08/using-external-tools/
 
  * https://medium.com/@jm90mm/adding-prettier-to-webstorm-a218eeec04d2
+

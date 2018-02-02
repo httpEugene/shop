@@ -36,13 +36,15 @@ export default class MainOrderList extends PureComponent {
     const { orders } = this.props;
 
     return (
-      <ScrollView style={styles.container}>
+      <ScrollView contentContainerStyle={styles.containerScroll}>
         <SortForm />
-
-        <View style={ styles.container }>
-          {orders
-            ? orders.map(post => <OrderItem key={post.id} post={post} />)
-            : <Loader />}
+        <View style={styles.container}>
+          {orders.length === 0 ?
+            (<View style={styles.containerLoader}>
+              <Loader />
+            </View>)
+              : orders.map(post => <OrderItem key={post.id} post={post} />)
+          }
         </View>
       </ScrollView>
     );
