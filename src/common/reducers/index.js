@@ -10,6 +10,7 @@ import { comments, newComment } from '../../components/comments/reducers';
 import product from '../../components/product-page/reducers';
 import basket from '../../components/basket/reducers';
 import addToBasket from '../../components/product-page/add-to-basket-button/reducers';
+import search from '../../components/search/reducers';
 
 export default combineReducers({
   user,
@@ -24,4 +25,5 @@ export default combineReducers({
   product,
   basket,
   addToBasket,
+  search,
 });

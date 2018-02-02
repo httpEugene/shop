@@ -42,9 +42,8 @@ export default class LoginForm extends PureComponent {
     errors: {},
   };
 
-
   checkEmailValue = () => {
-    return this.state.username !== 'test@gmail.com';
+    return this.state.username.toLocaleLowerCase() !== 'test@gmail.com';
   };
 
   checkPassword = () => {

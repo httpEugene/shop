@@ -8,12 +8,15 @@ import {
 } from 'react-native';
 import fetchProductsListAction from './actions';
 import ProductItem from './product-item';
+import Field from '../../components/field';
+import { searchProductsByName } from '../search/actions';
+import getFilteredProducts from '../search/search-helper';
 import styles from './styles';
 
 function mapStateToProps(state) {
   return {
-    productsList: state.productsListData
-      ? state.productsListData.productsList
+    productsList: state.productsListData && state.productsListData.productsList
+      ? getFilteredProducts(state.productsListData.productsList, state.search)
       : null,
   };
 }
@@ -23,6 +26,9 @@ function mapDispatchToProps(dispatch) {
     fetchProductsList: () => {
       dispatch(fetchProductsListAction());
     },
+    filterProductsByName: (name) => {
+      dispatch(searchProductsByName(name));
+    },
   };
 }
 
@@ -31,6 +37,7 @@ export default class ProductsList extends PureComponent {
   static propTypes = {
     fetchProductsList: PropTypes.func,
     productsList: PropTypes.array,
+    filterProductsByName: PropTypes.func,
   };
 
   componentDidMount() {
@@ -41,10 +48,20 @@ export default class ProductsList extends PureComponent {
     Actions.productPage({ id });
   }
 
+  handleChangeInput = (name, text) => {
+    this.props.filterProductsByName(text);
+  };
+
   render() {
     if (!this.props.productsList) return null;
     return (
         <ScrollView style={styles.container}>
+          <Field
+            name="search"
+            handleForm={this.handleChangeInput}
+            placeholder="Enter test for search"
+            type="text"
+          />
           <View style={ styles.container }>
             {this.props.productsList.map(({
               id, title, price, image,
