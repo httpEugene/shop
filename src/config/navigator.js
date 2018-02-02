@@ -30,7 +30,7 @@ const Navigator = () => (
         <Scene key="main">
           <Scene
             key="main"
-            component={OrderList}
+            component={ProductsList}
             title="Products"
             navBar={() => <CustomNavBar title={'Shop'} />}
             initial
@@ -65,7 +65,7 @@ const Navigator = () => (
             title="Product"
             navBar={() => <CustomNavBar title={'Product Page'} />}
           />
-          <Scene key="cart"
+          <Scene key="basket"
             component={ Basket }
             navBar={() => <CustomNavBar title={'Your Cart'} /> }
           />

@@ -19,7 +19,7 @@ export default class rightNavigationComponent extends PureComponent {
           }
           centerComponent={{ text: this.props.title, style: { color: '#fff' } }}
           rightComponent={
-            <RightNavigationComponent route={'cart'} />
+            <RightNavigationComponent route={'basket'} />
           }
         />
       </View>
