@@ -1,15 +1,15 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import {
   Text,
-  List,
   ListItem,
   FormInput,
   Button,
 } from 'react-native-elements';
 
+import ProductItem from '../products-list/product-item';
 import ApiService from '../../common/services/api-service';
 import styles from './styles';
 
@@ -73,15 +73,25 @@ export default class Basket extends PureComponent {
     if (!basket) return null;
 
     return (
-      <View style={styles.container}>
-        <List>
-          {basket.map(this.renderListItem)}
-        </List>
+      <ScrollView style={styles.container}>
+        <View style={ styles.container }>
+          {basket.map(({
+            id, title, price, image,
+          }) => (
+            <ProductItem
+              key={ id }
+              product={{
+                id, title, price, image, items: Math.floor(Math.random() * 20),
+              }}
+              basket={true}
+            />
+          ))}
+        </View>
         <Button
           title="Checkout"
           backgroundColor="#0095EF"
         />
-      </View>
+      </ScrollView>
     );
   }
 }
