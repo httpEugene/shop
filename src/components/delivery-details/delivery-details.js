@@ -20,7 +20,7 @@ function mapDispatchToProps(dispatch, ownProps) {
       dispatch(fetchDeliveryDetails(ownProps.id));
     },
     onBackClick() {
-      Actions.main();
+      Actions.orders();
     },
     onFeedBackClick() {},
   };
