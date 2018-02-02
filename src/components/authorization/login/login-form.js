@@ -52,9 +52,6 @@ export default class LoginForm extends PureComponent {
   };
 
   isCredentialsCorrect = () => {
-    this.checkEmailValue();
-    this.checkPassword();
-
     this.setState({
       errors: {
         wrongEmailFormat: !isEmail(this.state.username),
@@ -67,7 +64,6 @@ export default class LoginForm extends PureComponent {
   componentWillUpdate(nextProps, nextState) {
     const errorKeys = Object.keys(nextState.errors);
     let errors = false;
-
     errorKeys.some((key) => {
       if (nextState.errors[key]) {
         errors = true;
