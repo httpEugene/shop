@@ -75,7 +75,7 @@ export default class ProductPage extends PureComponent {
             ${product.price}
           </Text>
           <AddToBasketButton product={product.title}/>
-          <Text h4>Comments:</Text>
+          <Text h4 style={styles.commentsTitle}>Comments:</Text>
           <Comments/>
         </View>
       </ScrollView>

@@ -37,9 +37,9 @@ export default class AddToBasketButton extends PureComponent {
 
   componentDidMount() {
     PushNotification.configure({
-      onNotification: function (notification) {
+      onNotification() {
         Actions.basket();
-      }
+      },
     });
   }
 
