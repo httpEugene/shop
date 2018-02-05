@@ -23,8 +23,8 @@ export default class OrderItem extends PureComponent {
       deliveryStatus: PropTypes.string,
     }),
   };
-  getDeliveryDetails = () => {
-    Actions.deliveryDetails();
+  getDeliveryDetails = (id) => {
+    Actions.deliveryDetails({ id });
   };
 
   getDetails = (id) => {
@@ -73,7 +73,7 @@ export default class OrderItem extends PureComponent {
             styleName="deliveryDetails"
             styleTextName="buttonTextSecond"
             label="Delivery Details"
-            onPressHandler={() => this.getDeliveryDetails()}
+            onPressHandler={() => this.getDeliveryDetails(id)}
           />
         </View>
       </View>
