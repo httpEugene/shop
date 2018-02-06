@@ -2,7 +2,6 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Button } from 'react-native-elements';
-import { Actions } from 'react-native-router-flux';
 import PushNotification from 'react-native-push-notification';
 import ADD_TO_BASKET from './add-to-basket-types';
 
@@ -22,6 +21,7 @@ function mapDispatchToProps(dispatch, ownProps) {
         message: `${ownProps.product} added to cart`,
         title: '',
         playSound: false,
+        route: 'basket',
       });
     },
   };
@@ -34,14 +34,6 @@ export default class AddToBasketButton extends PureComponent {
     basketCount: PropTypes.number,
     product: PropTypes.string,
   };
-
-  componentDidMount() {
-    PushNotification.configure({
-      onNotification() {
-        Actions.basket();
-      },
-    });
-  }
 
   render() {
     return (
