@@ -7,7 +7,7 @@ import {
   ScrollView,
 } from 'react-native';
 import fetchProductsListAction from './actions';
-import ProductItem from './product-item';
+import ProductItem from '../../common/components/product-item';
 import Field from '../../components/field';
 import { searchProductsByName } from '../search/actions';
 import getFilteredProducts from '../search/search-helper';

@@ -9,7 +9,7 @@ import {
   Button,
 } from 'react-native-elements';
 
-import ProductItem from '../products-list/product-item';
+import ProductItem from '../../common/components/product-item';
 import ApiService from '../../common/services/api-service';
 import styles from './styles';
 
