@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 
 import Field from '../../field';
 import Button from '../../button';
+import FaceBookLogin from './facebook-login';
 import styles from './styles';
 import login from './actions/login';
 
@@ -13,8 +14,10 @@ import { isEmail } from '../../../common/services/validator';
 
 const logo = require('../../../images/logo.png');
 
-function mapStateToProps() {
-  return {};
+function mapStateToProps(state) {
+  return {
+    user: state.user,
+  };
 }
 
 function mapDispatchToProps(dispatch) {
@@ -29,6 +32,11 @@ function mapDispatchToProps(dispatch) {
 @connect(mapStateToProps, mapDispatchToProps)
 export default class LoginForm extends PureComponent {
   static propTypes = {
+    user: PropTypes.shape({
+      email: PropTypes.string,
+      name: PropTypes.string,
+      isLogged: PropTypes.boolean,
+    }),
     loginUser: PropTypes.func,
     onLogin: PropTypes.func,
     nextProps: PropTypes.shape({
@@ -41,6 +49,12 @@ export default class LoginForm extends PureComponent {
     password: '',
     errors: {},
   };
+
+  componentWillReceiveProps(nextProps) {
+    if (!nextProps.user || !nextProps.user.isLogged) return;
+
+    Actions.main();
+  }
 
   checkEmailValue = () => {
     return this.state.username.toLocaleLowerCase() !== 'test@gmail.com';
@@ -126,6 +140,7 @@ export default class LoginForm extends PureComponent {
               onPressHandler={this.isCredentialsCorrect}
             />
           </View>
+          <FaceBookLogin onLogin={this.props.onLogin} />
         </View>
       </View>
     );
