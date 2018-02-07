@@ -2,11 +2,11 @@ import React, { PureComponent } from 'react';
 import { View, Text, TextInput } from 'react-native';
 import { List, ListItem, Button } from 'react-native-elements';
 import PropTypes from 'prop-types';
-import AddToBasketButton from '../product-page/add-to-basket-button/add-to-basket-button';
+import AddToBasketButton from '../../../components/product-page/add-to-basket-button/add-to-basket-button';
 
 import styles from './styles';
 
-export default class OrderItem extends PureComponent {
+export default class ProductItem extends PureComponent {
   static propTypes = {
     product: PropTypes.shape({
       id: PropTypes.string,

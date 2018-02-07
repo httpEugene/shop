@@ -89,4 +89,8 @@ export default StyleSheet.create({
   rating: {
     alignSelf: 'flex-start',
   },
+  commentsTitle: {
+    marginTop: 25,
+    marginBottom: 5,
+  },
 });
