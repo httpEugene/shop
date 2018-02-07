@@ -3,7 +3,7 @@ import colors from '../../../config/colors';
 
 export default StyleSheet.create({
   container: {
-    display: 'flex',
+   paddingTop: 50,
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
@@ -16,6 +16,7 @@ export default StyleSheet.create({
   },
   buttonContainer: {
     width: '100%',
+    marginBottom: 20,
   },
   validation: {
     fontSize: 12,
