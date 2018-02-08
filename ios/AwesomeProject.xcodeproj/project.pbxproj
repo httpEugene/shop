@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -28,6 +29,7 @@
 		13E3F6618A23421A86D8E39F /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA709B6D9A444D5EAE049C0A /* libRNVectorIcons.a */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		1A1966B53E7A4FD083E35DEE /* libAutoGrowTextInput.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32756359DA2842ED9077E3B1 /* libAutoGrowTextInput.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -56,7 +58,6 @@
 		CE8C84609A684D34ACDD61DA /* libAutoGrowTextInput.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1407D76B26984E0EB2FA1238 /* libAutoGrowTextInput.a */; };
 		CFFFDD9DE150431AA408091F /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F3160E0BBCA43D88FBFA9F1 /* Feather.ttf */; };
 		E456F9F6BC2643AFB35D500B /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9648002F395A4862AE3D2406 /* SimpleLineIcons.ttf */; };
-		1A1966B53E7A4FD083E35DEE /* libAutoGrowTextInput.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32756359DA2842ED9077E3B1 /* libAutoGrowTextInput.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 9350E0F11CE3B0920041D815;
 			remoteInfo = RCTFBSDK;
+		};
+		0633E00C202C4E2300FEA721 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A5C380DB202B123E00AB2941 /* RCTPushNotification.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D05745F1DE6004600184BB4;
+			remoteInfo = "RCTPushNotification-tvOS";
 		};
 		06B9B2E42018C2F000794C5E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -388,6 +396,8 @@
 		2D02E47B1E0B4A5D006451C7 /* AwesomeProject-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AwesomeProject-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* AwesomeProject-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AwesomeProject-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		32756359DA2842ED9077E3B1 /* libAutoGrowTextInput.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAutoGrowTextInput.a; sourceTree = "<group>"; };
+		41398C2E4B8641428549682E /* AutoGrowTextInput.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AutoGrowTextInput.xcodeproj; path = "../node_modules/react-native-autogrow-textinput/ios/AutoGrowTextInput.xcodeproj"; sourceTree = "<group>"; };
 		4E2D4EE10125425EA913DFBB /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
 		5F3160E0BBCA43D88FBFA9F1 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
@@ -408,8 +418,6 @@
 		B30A36D7F3ACEE97CE2AEDA2 /* Pods-AwesomeProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AwesomeProject.release.xcconfig"; path = "Pods/Target Support Files/Pods-AwesomeProject/Pods-AwesomeProject.release.xcconfig"; sourceTree = "<group>"; };
 		BA027CE29D8D4248863B8103 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
 		FA709B6D9A444D5EAE049C0A /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
-		41398C2E4B8641428549682E /* AutoGrowTextInput.xcodeproj */ = {isa = PBXFileReference; name = "AutoGrowTextInput.xcodeproj"; path = "../node_modules/react-native-autogrow-textinput/ios/AutoGrowTextInput.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
-		32756359DA2842ED9077E3B1 /* libAutoGrowTextInput.a */ = {isa = PBXFileReference; name = "libAutoGrowTextInput.a"; path = "libAutoGrowTextInput.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -729,7 +737,7 @@
 			isa = PBXGroup;
 			children = (
 				A5C380EE202B123E00AB2941 /* libRCTPushNotification.a */,
-				A5C380F0202B123E00AB2941 /* libRCTPushNotification-tvOS.a */,
+				0633E00D202C4E2300FEA721 /* libRCTPushNotification-tvOS.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1014,6 +1022,13 @@
 			fileType = archive.ar;
 			path = libRCTFBSDK.a;
 			remoteRef = 0614044B2029F6E7009F0F37 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0633E00D202C4E2300FEA721 /* libRCTPushNotification-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRCTPushNotification-tvOS.a";
+			remoteRef = 0633E00C202C4E2300FEA721 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		06B9B2E52018C2F000794C5E /* libthird-party.a */ = {
@@ -1450,7 +1465,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-					"$(SRCROOT)\..\node_modules\react-native-autogrow-textinput\ios",
+					"$(SRCROOT)..\node_modules\neact-native-autogrow-textinputios",
 					"$(SRCROOT)/../node_modules/react-native-autogrow-textinput/ios",
 					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
 					"$(SRCROOT)..\node_modules\neact-native-autogrow-textinputios",
@@ -1482,7 +1497,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-					"$(SRCROOT)\..\node_modules\react-native-autogrow-textinput\ios",
+					"$(SRCROOT)..\node_modules\neact-native-autogrow-textinputios",
 					"$(SRCROOT)/../node_modules/react-native-autogrow-textinput/ios",
 					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
 					"$(SRCROOT)..\node_modules\neact-native-autogrow-textinputios",
@@ -1517,13 +1532,13 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"\"$(SRCROOT)/../../../Documents/FacebookSDK\"/**",
+					"\"$(SRCROOT)/FacebookSDK\"/**",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)..\node_modules\neact-native-autogrow-textinputios",
-					"$(SRCROOT)\..\node_modules\react-native-autogrow-textinput\ios",
+					"$(SRCROOT)..\node_modules\neact-native-autogrow-textinputios",
 					"$(SRCROOT)/../node_modules/react-native-autogrow-textinput/ios",
 					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
 				);
@@ -1550,7 +1565,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					"\"$(SRCROOT)/../../../Documents/FacebookSDK\"/**",
+					"\"$(SRCROOT)/FacebookSDK\"/**",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1558,7 +1573,7 @@
 					"$(SRCROOT)..\node_modules\neact-native-autogrow-textinputios",
 					"$(SRCROOT)/../node_modules/react-native-autogrow-textinput/ios",
 					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
-					"$(SRCROOT)\..\node_modules\react-native-autogrow-textinput\ios",
+					"$(SRCROOT)..\node_modules\neact-native-autogrow-textinputios",
 				);
 				INFOPLIST_FILE = AwesomeProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1589,7 +1604,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)..\node_modules\neact-native-autogrow-textinputios",
-					"$(SRCROOT)\..\node_modules\react-native-autogrow-textinput\ios",
+					"$(SRCROOT)..\node_modules\neact-native-autogrow-textinputios",
 					"$(SRCROOT)/../node_modules/react-native-autogrow-textinput/ios",
 					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
 				);
@@ -1630,7 +1645,7 @@
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)..\node_modules\neact-native-autogrow-textinputios",
-					"$(SRCROOT)\..\node_modules\react-native-autogrow-textinput\ios",
+					"$(SRCROOT)..\node_modules\neact-native-autogrow-textinputios",
 					"$(SRCROOT)/../node_modules/react-native-autogrow-textinput/ios",
 					"$(SRCROOT)/../node_modules/react-native-fbsdk/ios/RCTFBSDK/**",
 				);
