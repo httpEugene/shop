@@ -6,10 +6,11 @@ import {
   StyleSheet,
   Text,
   View,
+  AsyncStorage,
 } from 'react-native';
 import Auth0 from 'react-native-auth0';
 
-const credentials = require('./auth0-credentials');
+import credentials from './auth0-credentials';
 
 const auth0 = new Auth0(credentials);
 
@@ -24,7 +25,6 @@ export default class Auth0Sample extends Component {
         audience: `https://${credentials.domain}/userinfo`,
       })
       .then((credentials) => {
-        console.log('Credentials', credentials);
         Alert.alert(
           'Success',
           `AccessToken: ${credentials.accessToken}`,
@@ -32,6 +32,7 @@ export default class Auth0Sample extends Component {
           { cancelable: false },
         );
         this.setState({ accessToken: credentials.accessToken });
+        AsyncStorage.setItem('credentials', credentials.accessToken);
       })
       .catch(error => console.log(error));
   };

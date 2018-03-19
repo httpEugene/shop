@@ -50,6 +50,11 @@ export default class LoginForm extends PureComponent {
     Actions.productsList();
   }
 
+  gotoAuth0Sample = () => {
+    console.log('gotoAuth0Sample');
+    Actions.auth0();
+  }
+
   showOrderList = () => {
     Actions.orders();
   }
@@ -88,6 +93,13 @@ export default class LoginForm extends PureComponent {
               label="Products List"
               onPressHandler={this.showProductsList}
             />
+            <Button
+              styleName="button"
+              styleTextName="buttonText"
+              label="Auth0"
+              onPressHandler={this.gotoAuth0Sample}
+            />
+
             <Button
               styleName="button"
               styleTextName="buttonText"

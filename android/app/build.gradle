@@ -98,7 +98,7 @@ android {
     buildToolsVersion '26.0.2'
 
     defaultConfig {
-        applicationId "com.awesomeproject"
+        applicationId "com.screwfixtestshop"
         minSdkVersion 16
         targetSdkVersion 22
         versionCode 1
@@ -137,6 +137,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-auth0')
     compile project(':react-native-vector-icons')
     compile(project(':react-native-maps')){
             exclude group: 'com.google.android.gms', module: 'play-services-base'

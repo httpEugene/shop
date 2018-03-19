@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, AsyncStorage } from 'react-native';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
@@ -29,7 +29,10 @@ export default class MainOrderList extends PureComponent {
     orders: PropTypes.array,
   };
   componentDidMount() {
-    this.props.loadOrders();
+    AsyncStorage.getItem('credentials', (err, result) => {
+      console.log('credentials  ', result);
+      this.props.loadOrders(result);
+    });
   }
 
   render() {

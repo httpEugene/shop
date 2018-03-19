@@ -14,6 +14,7 @@ import Feedback from '../components/feedback';
 import UserDetails from '../components/user-details';
 import SideMenu from '../components/drawer/side-menu';
 import CustomNavBar from '../components/navigation-header/header-component';
+import Auth0Sample from '../components/auth0/index';
 
 const Navigator = () => (
   <Router>
@@ -92,6 +93,12 @@ const Navigator = () => (
             component={UserDetails}
             title="Personal info"
             navBar={() => <CustomNavBar title={'Your info'} />}
+          />
+          <Scene
+            key="auth0"
+            component={Auth0Sample}
+            title="Auth0Sample"
+            navBar={() => <CustomNavBar title={'Auth0Sample'} />}
           />
         </Scene>
       </Scene>

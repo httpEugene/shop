@@ -59,6 +59,9 @@ Generate key
  
  * https://github.com/jhen0409/react-native-debugger/blob/master/docs/getting-started.md
  
+ * run debugger: 
+ * open "rndebugger://set-debugger-loc?host=localhost&port=8081"
+ 
  ## We use ESLint autofix and Prettier for better code ##
  
  * Take a look documentation:
@@ -66,4 +69,8 @@ Generate key
  * https://blog.jetbrains.com/webstorm/2016/08/using-external-tools/
 
  * https://medium.com/@jm90mm/adding-prettier-to-webstorm-a218eeec04d2
+ 
+ ## Auth 0 authentications ##
+ 
+ * Test user: test@screwtest.com P: Qwerty!23
 
